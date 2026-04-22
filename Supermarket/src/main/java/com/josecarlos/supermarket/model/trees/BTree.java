@@ -15,7 +15,7 @@ import java.util.List;
 public class BTree {
 
     private BNode<Product> root;
-    private int degree;
+    private final int degree;
 
     public BTree(int degree) {
         this.root = null;
@@ -73,7 +73,7 @@ public class BTree {
         int i = node.numKeys - 1;
 
         if (node.isLeaf()) {
-            while (i >= 0 && key.compareDate(node.keys[0]) < 0) {
+            while (i >= 0 && key.compareDate(node.keys[i]) < 0) {
                 node.keys[i + 1] = node.keys[i];
                 i--;
             }
@@ -101,7 +101,7 @@ public class BTree {
             splitChild(node, i);
         }
     }
-    
+
     private void splitChild(BNode<Product> parent, int index) {
         BNode<Product> child = parent.children[index];
         int d = child.getDegree();
@@ -113,11 +113,15 @@ public class BTree {
         child.numKeys = d;
 
         System.arraycopy(child.keys, d + 1, rightChild.keys, 0, d);
-        for (int j = d; j <= 2 * d; j++) child.keys[j] = null;
+        for (int j = d; j <= 2 * d; j++) {
+            child.keys[j] = null;
+        }
 
         if (!child.isLeaf()) {
             System.arraycopy(child.children, d + 1, rightChild.children, 0, d + 1);
-            for (int j = d + 1; j <= 2 * d + 1; j++) child.children[j] = null;
+            for (int j = d + 1; j <= 2 * d + 1; j++) {
+                child.children[j] = null;
+            }
         }
 
         if (parent.numKeys > index) {
@@ -129,7 +133,7 @@ public class BTree {
         parent.children[index + 1] = rightChild;
         parent.numKeys++;
     }
-    
+
     public boolean remove(Product key) {
         if (root == null) {
             return false;
@@ -147,7 +151,7 @@ public class BTree {
 
         return removed;
     }
-    
+
     private boolean removeFromSubtree(BNode<Product> node, Product key) {
         int keyPosition = findKeyPosition(node, key);
         boolean keyExistsInNode = keyPosition < node.numKeys && node.keys[keyPosition].compareDate(key) == 0;
@@ -343,7 +347,7 @@ public class BTree {
     private boolean isAtMinimumKeys(BNode<Product> node) {
         return node.numKeys == degree;
     }
-    
+
     public List<Product> searchByExpiryDateRange(String startDate, String endDate) {
         List<Product> resultList = new ArrayList<>();
         if (root != null) {
@@ -353,7 +357,9 @@ public class BTree {
     }
 
     private void searchByExpiryDateRange(BNode<Product> node, String startDate, String endDate, List<Product> resultList) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         String startDateLower = startDate.toLowerCase();
         String endDateLower = endDate.toLowerCase();
@@ -363,7 +369,7 @@ public class BTree {
             String keyDateLower = node.keys[i].getExpireDate().toLowerCase();
 
             if (keyDateLower.compareTo(startDateLower) >= 0 && keyDateLower.compareTo(endDateLower) <= 0) {
-                resultList.add(node.keys[i]); 
+                resultList.add(node.keys[i]);
             }
 
             if (keyDateLower.compareTo(startDateLower) < 0) {
@@ -389,7 +395,6 @@ public class BTree {
         }
     }
 
-    // --- Graphviz / DOT File Generator nativo de Java ---
     public void generateDotFile(String filename) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
             writer.println("digraph BTree {");
@@ -402,7 +407,7 @@ public class BTree {
                 generateDot(root, writer, nodeId, -1);
             }
             writer.println("}");
-            
+
             generateImageFiles(filename);
 
         } catch (IOException e) {
@@ -411,17 +416,21 @@ public class BTree {
     }
 
     private void generateDot(BNode<Product> node, PrintWriter writer, int[] nodeId, int parentId) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
 
         int currentNodeId = nodeId[0];
         nodeId[0]++;
 
         StringBuilder label = new StringBuilder();
         for (int i = 0; i < node.numKeys; i++) {
-            if (i > 0) label.append("|");
+            if (i > 0) {
+                label.append("|");
+            }
             label.append(node.keys[i].getExpireDate()).append("\\n")
-                 .append(node.keys[i].getBarcode()).append("\\n")
-                 .append(node.keys[i].getName());
+                    .append(node.keys[i].getBarcode()).append("\\n")
+                    .append(node.keys[i].getName());
         }
 
         writer.printf("node%d [label=\"%s\"];\n", currentNodeId, label.toString());
@@ -447,7 +456,7 @@ public class BTree {
 
             Process svgProcess = new ProcessBuilder("dot", "-Tsvg", filename, "-o", svgFilename).start();
             Process pngProcess = new ProcessBuilder("dot", "-Tpng", "-Gdpi=220", filename, "-o", pngFilename).start();
-            
+
             svgProcess.waitFor();
             pngProcess.waitFor();
 
@@ -458,5 +467,5 @@ public class BTree {
             System.out.println("Aviso: No se pudieron generar los SVG/PNG automáticos. Verifica que 'Graphviz' esté instalado en tu sistema. " + e.getMessage());
         }
     }
-    
+
 }
