@@ -6,7 +6,7 @@ import com.josecarlos.supermarket.model.product.Product;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-
+ 
 /**
  *
  * @author LENOVO
