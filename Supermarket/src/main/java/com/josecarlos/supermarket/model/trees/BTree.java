@@ -1,12 +1,11 @@
 package com.josecarlos.supermarket.model.trees;
 
 import com.josecarlos.supermarket.model.exceptions.OperationException;
+import com.josecarlos.supermarket.model.lists.SimpleList;
 import com.josecarlos.supermarket.model.product.Product;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -348,15 +347,15 @@ public class BTree {
         return node.numKeys == degree;
     }
 
-    public List<Product> searchByExpiryDateRange(String startDate, String endDate) {
-        List<Product> resultList = new ArrayList<>();
+    public SimpleList searchByExpiryDateRange(String startDate, String endDate) {
+        SimpleList resultList = new SimpleList();
         if (root != null) {
             searchByExpiryDateRange(root, startDate, endDate, resultList);
         }
         return resultList;
     }
 
-    private void searchByExpiryDateRange(BNode<Product> node, String startDate, String endDate, List<Product> resultList) {
+    private void searchByExpiryDateRange(BNode<Product> node, String startDate, String endDate, SimpleList resultList) {
         if (node == null) {
             return;
         }

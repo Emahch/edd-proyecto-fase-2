@@ -1,9 +1,8 @@
 package com.josecarlos.supermarket.model.trees;
 
 import com.josecarlos.supermarket.model.exceptions.OperationException;
+import com.josecarlos.supermarket.model.lists.SimpleList;
 import com.josecarlos.supermarket.model.product.Product;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BPlusTree {
 
@@ -295,15 +294,15 @@ public class BPlusTree {
         parent.numKeys--;
     }
 
-    public List<Product> search(Product key) {
-        List<Product> result = new ArrayList<>();
+    public SimpleList search(Product key) {
+        SimpleList result = new SimpleList();
         if (root != null) {
             searchNode(root, key, result);
         }
         return result;
     }
 
-    private void searchNode(BNode<Product> node, Product key, List<Product> result) {
+    private void searchNode(BNode<Product> node, Product key, SimpleList result) {
         int i = findKeyIndex(node, key);
 
         if (node.isLeaf()) {
@@ -319,15 +318,15 @@ public class BPlusTree {
         }
     }
 
-    public List<Product> searchByCategory(String category) {
-        List<Product> result = new ArrayList<>();
+    public SimpleList searchByCategory(String category) {
+        SimpleList result = new SimpleList();
         if (root != null) {
             searchByCategory(root, category, result);
         }
         return result;
     }
 
-    private void searchByCategory(BNode<Product> node, String category, List<Product> result) {
+    private void searchByCategory(BNode<Product> node, String category, SimpleList result) {
         if (node.isLeaf()) {
             for (int i = 0; i < node.numKeys; i++) {
                 if (node.keys[i].getCategory().equalsIgnoreCase(category)) {

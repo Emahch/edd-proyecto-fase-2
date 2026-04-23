@@ -1,9 +1,8 @@
 package com.josecarlos.supermarket.model.trees;
 
 import com.josecarlos.supermarket.model.exceptions.OperationException;
+import com.josecarlos.supermarket.model.lists.SimpleList;
 import com.josecarlos.supermarket.model.product.Product;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -36,8 +35,8 @@ public class AVLTree {
         }
     }
 
-    public List<Product> searchByName(String name) {
-        ArrayList<Product> resultList = new ArrayList<>();
+    public SimpleList searchByName(String name) {
+        SimpleList resultList = new SimpleList();
         searchByName(root, name.toLowerCase(), resultList);
         return resultList;
     }
@@ -46,8 +45,8 @@ public class AVLTree {
         root = clear(root);
     }
 
-    public List<Product> inorder() {
-        List<Product> products = new ArrayList<>();
+    public SimpleList inorder() {
+        SimpleList products = new SimpleList();
         inorder(root, products);
         return products;
     }
@@ -101,7 +100,7 @@ public class AVLTree {
         return balance(node);
     }
 
-    private void searchByName(AVLNode<Product> node, String name, List<Product> resultList) {
+    private void searchByName(AVLNode<Product> node, String name, SimpleList resultList) {
         if (node == null) {
             return;
         }
@@ -129,7 +128,7 @@ public class AVLTree {
         return null;
     }
 
-    private void inorder(AVLNode<Product> node, List<Product> products) {
+    private void inorder(AVLNode<Product> node, SimpleList products) {
         if (node == null) {
             return;
         }
