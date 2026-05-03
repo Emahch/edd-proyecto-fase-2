@@ -1,5 +1,6 @@
-package com.josecarlos.supermarket.model.product;
+package com.josecarlos.supermarket.model.graphs;
 
+import com.josecarlos.supermarket.model.hash.Almacenable;
 import java.text.DecimalFormat;
 
 /**
@@ -7,7 +8,7 @@ import java.text.DecimalFormat;
  * @author LENOVO
  * @param <T>
  */
-public class Edge<T> {
+public class Edge<T extends Almacenable<T>> implements Almacenable<Edge<T>>{
 
     private T destination;
     private double time;
@@ -48,5 +49,17 @@ public class Edge<T> {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public String getKey() {
+        return destination.getKey();
+    }
+
+    @Override
+    public int compareTo(Edge<T> o) {
+        return destination.compareTo(o.getDestination());
+    }
+    
+    
 
 }

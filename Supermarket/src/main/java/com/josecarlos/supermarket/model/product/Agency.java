@@ -1,13 +1,14 @@
 package com.josecarlos.supermarket.model.product;
 
 import java.util.List;
+import com.josecarlos.supermarket.model.hash.Almacenable;
 
 /**
  *
  * @author LENOVO
  */
-public class Agency implements Comparable<Agency> {
-    private int id;
+public class Agency implements Almacenable<Agency> {
+    private String id;
     private String name;
     private String location;
     private String startTime;
@@ -15,16 +16,30 @@ public class Agency implements Comparable<Agency> {
     private String dispatchInterval;
     private List dispatchs;
 
-    @Override
-    public int compareTo(Agency o) {
-        return this.id - o.getId();
+    public Agency(String id, String name, String location, String startTime, String prepareTime, String dispatchInterval) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.startTime = startTime;
+        this.prepareTime = prepareTime;
+        this.dispatchInterval = dispatchInterval;
     }
 
-    public int getId() {
+    @Override
+    public String getKey() {
         return id;
     }
 
-    public void setId(int id) {
+    @Override
+    public int compareTo(Agency o) {
+        return this.getKey().compareTo(o.getKey());
+    }
+    
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -1,5 +1,7 @@
 package com.josecarlos.supermarket.model.hash;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -8,7 +10,7 @@ import java.util.Optional;
  * @param <K>
  * @param <V>
  */
-public class HashTable<K, V> {
+public class HashTable<K extends Almacenable, V> {
 
     private int size;
     private HashNode<K, V>[] values;
@@ -17,7 +19,7 @@ public class HashTable<K, V> {
     public HashTable(int wishedCapacity) {
         this.capacity = getNextPrime(wishedCapacity);
         size = 0;
-        values = (HashNode<K, V>[]) new Object[this.capacity];
+        values = (HashNode<K, V>[]) new HashNode[this.capacity];
     }
 
     private int getNextPrime(int n) {
@@ -58,13 +60,14 @@ public class HashTable<K, V> {
     }
 
     private int getIndex(K key) {
-        int hashCode = key.hashCode();
-        int index = hashCode % capacity;
+        String hashCode = key.getKey();
+        int index = hashCode.hashCode();
 
-        if (index >= capacity) {
-            return Math.abs(index);
+        index = Math.abs(index);
+        while (index >= capacity) {
+            index = index % capacity;
         }
-        return Math.abs(index);
+        return index;
     }
 
     public void put(K key, V value) {
@@ -72,13 +75,13 @@ public class HashTable<K, V> {
         HashNode<K, V> head = values[index];
 
         while (head != null) {
-            if (head.getKey().equals(key)) {
+            if (head.getKey().compareTo(key) == 0) {
                 head.setValue(value);
                 return;
             }
             head = head.getNext();
         }
-
+        
         size++;
         head = values[index];
         HashNode<K, V> newNode = new HashNode<>(key, value);
@@ -91,7 +94,7 @@ public class HashTable<K, V> {
         HashNode<K, V> head = values[index];
 
         while (head != null) {
-            if (head.getKey().equals(key)) {
+            if (head.getKey().compareTo(key) == 0) {
                 return Optional.of(head.getValue());
             }
             head = head.getNext();
@@ -128,4 +131,15 @@ public class HashTable<K, V> {
         return true;
     }
 
+    public List<HashNode<K, V>> getValues() {
+        List<HashNode<K, V>> val = new ArrayList();
+
+        for (HashNode<K, V> value : values) {
+            while (value != null) {
+                val.add(value);
+                value = value.getNext();
+            }
+        }
+        return val;
+    }
 }
