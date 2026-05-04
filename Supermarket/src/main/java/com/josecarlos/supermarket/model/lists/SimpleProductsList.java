@@ -7,7 +7,7 @@ import java.util.Optional;
  *
  * @author LENOVO
  */
-public class SimpleList {
+public class SimpleProductsList {
 
     protected Node<Product> head;
     protected Node<Product> tail;
@@ -19,8 +19,8 @@ public class SimpleList {
             head = newNode;
             tail = newNode;
         } else {
-            tail.setNext(newNode);
-            tail = newNode;
+            newNode.setNext(head);
+            head = newNode;
         }
 
         size++;
@@ -31,7 +31,7 @@ public class SimpleList {
         Node<Product> current = head;
         Node<Product> previous = null;
 
-        while (current != null && current.getValue().compare(product) != 0) {
+        while (current != null && current.getValue().compareTo(product) != 0) {
             previous = current;
             current = current.getNext();
         }
@@ -73,6 +73,10 @@ public class SimpleList {
 
     public int getSize() {
         return size;
+    }
+    
+    public boolean isEmpty() {
+        return size == 0;
     }
     
     

@@ -1,12 +1,12 @@
 package com.josecarlos.supermarket.model.trees;
 
 import com.josecarlos.supermarket.model.exceptions.OperationException;
-import com.josecarlos.supermarket.model.lists.SimpleList;
+import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
 
 public class BPlusTree {
 
-    private BNode<Product> root;
+    private BNode root;
     private final int degree;
 
     public BPlusTree(int degree) {
@@ -16,7 +16,7 @@ public class BPlusTree {
 
     public boolean insert(Product key) {
         if (root == null) {
-            root = new BNode<>(degree, true);
+            root = new BNode(degree, true);
             root.keys[0] = key;
             root.numKeys = 1;
             return true;
@@ -30,7 +30,7 @@ public class BPlusTree {
         }
 
         if (root.numKeys == root.getMaxKeys()) {
-            BNode<Product> newRoot = new BNode<>(degree, false);
+            BNode newRoot = new BNode(degree, false);
             newRoot.children[0] = root;
             splitChild(newRoot, 0, root);
             root = newRoot;
@@ -38,7 +38,7 @@ public class BPlusTree {
         return true;
     }
 
-    private void insert(BNode<Product> node, Product key) throws OperationException {
+    private void insert(BNode node, Product key) throws OperationException {
         if (node.isLeaf()) {
             int i = node.numKeys - 1;
             while (i >= 0 && key.compareCategory(node.keys[i]) < 0) {
@@ -68,9 +68,9 @@ public class BPlusTree {
         }
     }
 
-    private void splitChild(BNode<Product> parent, int childIndex, BNode<Product> fullChild) {
+    private void splitChild(BNode parent, int childIndex, BNode fullChild) {
         int d = degree;
-        BNode<Product> newChild = new BNode<>(degree, fullChild.isLeaf());
+        BNode newChild = new BNode(degree, fullChild.isLeaf());
 
         for (int j = parent.numKeys; j > childIndex; j--) {
             parent.keys[j] = parent.keys[j - 1];
@@ -115,7 +115,7 @@ public class BPlusTree {
         return removed;
     }
 
-    private boolean remove(BNode<Product> node, Product key) {
+    private boolean remove(BNode node, Product key) {
         int i = findKeyIndex(node, key);
 
         if (node.isLeaf()) {
@@ -139,7 +139,7 @@ public class BPlusTree {
         }
     }
 
-    private boolean removeFromInternal(BNode<Product> node, int i) {
+    private boolean removeFromInternal(BNode node, int i) {
         Product key = node.keys[i];
 
         if (node.children[i].numKeys > degree) {
@@ -170,14 +170,14 @@ public class BPlusTree {
         }
     }
 
-    private void shiftLeft(BNode<Product> node, int i) {
+    private void shiftLeft(BNode node, int i) {
         for (int j = i + 1; j < node.numKeys; j++) {
             node.keys[j - 1] = node.keys[j];
         }
         node.keys[--node.numKeys] = null;
     }
 
-    private int findKeyIndex(BNode<Product> node, Product key) {
+    private int findKeyIndex(BNode node, Product key) {
         int i = 0;
         while (i < node.numKeys && key.compareCategory(node.keys[i]) > 0) {
             i++;
@@ -185,23 +185,23 @@ public class BPlusTree {
         return i;
     }
 
-    private Product getRightmostLeafKey(BNode<Product> node) {
-        BNode<Product> cur = node;
+    private Product getRightmostLeafKey(BNode node) {
+        BNode cur = node;
         while (!cur.isLeaf()) {
             cur = cur.children[cur.numKeys];
         }
         return cur.keys[cur.numKeys - 1];
     }
 
-    private Product getLeftmostLeafKey(BNode<Product> node) {
-        BNode<Product> cur = node;
+    private Product getLeftmostLeafKey(BNode node) {
+        BNode cur = node;
         while (!cur.isLeaf()) {
             cur = cur.children[0];
         }
         return cur.keys[0];
     }
 
-    private void fillChild(BNode<Product> parent, int i) {
+    private void fillChild(BNode parent, int i) {
         if (i > 0 && parent.children[i - 1].numKeys > degree) {
             borrowFromPrev(parent, i);
         } else if (i < parent.numKeys && parent.children[i + 1].numKeys > degree) {
@@ -213,9 +213,9 @@ public class BPlusTree {
         }
     }
 
-    private void borrowFromPrev(BNode<Product> parent, int i) {
-        BNode<Product> child = parent.children[i];
-        BNode<Product> sibling = parent.children[i - 1];
+    private void borrowFromPrev(BNode parent, int i) {
+        BNode child = parent.children[i];
+        BNode sibling = parent.children[i - 1];
 
         for (int j = child.numKeys - 1; j >= 0; j--) {
             child.keys[j + 1] = child.keys[j];
@@ -239,9 +239,9 @@ public class BPlusTree {
         child.numKeys++;
     }
 
-    private void borrowFromNext(BNode<Product> parent, int i) {
-        BNode<Product> child = parent.children[i];
-        BNode<Product> sibling = parent.children[i + 1];
+    private void borrowFromNext(BNode parent, int i) {
+        BNode child = parent.children[i];
+        BNode sibling = parent.children[i + 1];
 
         if (child.isLeaf()) {
             child.keys[child.numKeys] = sibling.keys[0];
@@ -267,9 +267,9 @@ public class BPlusTree {
         child.numKeys++;
     }
 
-    private void mergeChildren(BNode<Product> parent, int i) {
-        BNode<Product> left = parent.children[i];
-        BNode<Product> right = parent.children[i + 1];
+    private void mergeChildren(BNode parent, int i) {
+        BNode left = parent.children[i];
+        BNode right = parent.children[i + 1];
 
         if (!left.isLeaf()) {
             left.keys[left.numKeys++] = parent.keys[i];
@@ -294,15 +294,15 @@ public class BPlusTree {
         parent.numKeys--;
     }
 
-    public SimpleList search(Product key) {
-        SimpleList result = new SimpleList();
+    public SimpleProductsList search(Product key) {
+        SimpleProductsList result = new SimpleProductsList();
         if (root != null) {
             searchNode(root, key, result);
         }
         return result;
     }
 
-    private void searchNode(BNode<Product> node, Product key, SimpleList result) {
+    private void searchNode(BNode node, Product key, SimpleProductsList result) {
         int i = findKeyIndex(node, key);
 
         if (node.isLeaf()) {
@@ -318,15 +318,15 @@ public class BPlusTree {
         }
     }
 
-    public SimpleList searchByCategory(String category) {
-        SimpleList result = new SimpleList();
+    public SimpleProductsList searchByCategory(String category) {
+        SimpleProductsList result = new SimpleProductsList();
         if (root != null) {
             searchByCategory(root, category, result);
         }
         return result;
     }
 
-    private void searchByCategory(BNode<Product> node, String category, SimpleList result) {
+    private void searchByCategory(BNode node, String category, SimpleProductsList result) {
         if (node.isLeaf()) {
             for (int i = 0; i < node.numKeys; i++) {
                 if (node.keys[i].getCategory().equalsIgnoreCase(category)) {

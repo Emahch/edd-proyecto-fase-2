@@ -8,6 +8,7 @@ import com.josecarlos.supermarket.model.hash.Almacenable;
  * @author LENOVO
  */
 public class Agency implements Almacenable<Agency> {
+
     private String id;
     private String name;
     private String location;
@@ -15,6 +16,7 @@ public class Agency implements Almacenable<Agency> {
     private String prepareTime;
     private String dispatchInterval;
     private List dispatchs;
+    private Catalog catalog;
 
     public Agency(String id, String name, String location, String startTime, String prepareTime, String dispatchInterval) {
         this.id = id;
@@ -23,6 +25,7 @@ public class Agency implements Almacenable<Agency> {
         this.startTime = startTime;
         this.prepareTime = prepareTime;
         this.dispatchInterval = dispatchInterval;
+        this.catalog = new Catalog();
     }
 
     @Override
@@ -34,7 +37,7 @@ public class Agency implements Almacenable<Agency> {
     public int compareTo(Agency o) {
         return this.getKey().compareTo(o.getKey());
     }
-    
+
     public String getId() {
         return id;
     }
@@ -90,7 +93,13 @@ public class Agency implements Almacenable<Agency> {
     public void setDispatchs(List dispatchs) {
         this.dispatchs = dispatchs;
     }
-    
-    
-    
+
+    public Catalog getCatalog() {
+        return catalog;
+    }
+
+    public void setCatalog(Catalog catalog) {
+        this.catalog = catalog;
+    }
+
 }

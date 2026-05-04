@@ -1,24 +1,26 @@
 package com.josecarlos.supermarket.model.trees;
 
+import com.josecarlos.supermarket.model.product.Product;
+
 /**
  *
  * @author LENOVO
  * @param <T>
  */
-public class BNode<T> {
+public class BNode {
 
     private int degree;
     private boolean leaf;
     public int numKeys;
-    public T[] keys;
-    public BNode<T>[] children;
+    public Product[] keys;
+    public BNode[] children;
 
     public BNode(int degree, boolean leaf) {
         this.degree = degree;
         this.numKeys = 0;
         this.leaf = leaf;
-        keys = (T[]) new Object[getMaxKeys()];
-        keys = (T[]) new Object[getMaxKeys() + 1];
+        keys = new Product[getMaxKeys()];
+        children = new BNode[getMaxKeys() + 1];
     }
 
     public final int getMaxKeys() {

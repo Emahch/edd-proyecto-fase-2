@@ -1,11 +1,13 @@
 package com.josecarlos.supermarket.model.product;
 
+import com.josecarlos.supermarket.model.hash.Almacenable;
+
 /**
  *
  * @author LENOVO
  * @param <T>
  */
-public interface ComparableSuper<T> {
+public interface ComparableSuper<T> extends Almacenable<T> {
     /**
      * Compara el nombre y el codigo de barras
      * 
@@ -27,11 +29,4 @@ public interface ComparableSuper<T> {
      * @return 
      */
     int compareCategory(T other);
-    /**
-     * Compara el codigo de barras
-     * 
-     * @param other
-     * @return 
-     */
-    int compare(T other);
 }

@@ -3,27 +3,18 @@ package com.josecarlos.supermarket.model.hash;
 /**
  *
  * @author LENOVO
- * @param <K>
  * @param <V>
  */
-public class HashNode<K, V> {
+public class HashNode<V> {
 
-    private K key;
+    private String key;
     private V value;
-    private HashNode<K, V> next;
+    private HashNode<V> next;
 
-    public HashNode(K key, V value) {
+    public HashNode(String key, V value) {
         this.key = key;
         this.value = value;
         this.next = null;
-    }
-
-    public K getKey() {
-        return key;
-    }
-
-    public void setKey(K key) {
-        this.key = key;
     }
 
     public V getValue() {
@@ -34,12 +25,20 @@ public class HashNode<K, V> {
         this.value = value;
     }
 
-    public HashNode<K, V> getNext() {
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public HashNode<V> getNext() {
         return next;
     }
 
-    public void setNext(HashNode<K, V> next) {
+    public void setNext(HashNode<V> next) {
         this.next = next;
     }
-    
+
 }

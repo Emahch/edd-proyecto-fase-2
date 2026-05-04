@@ -1,7 +1,7 @@
 package com.josecarlos.supermarket.model.trees;
 
 import com.josecarlos.supermarket.model.exceptions.OperationException;
-import com.josecarlos.supermarket.model.lists.SimpleList;
+import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
 
 /**
@@ -35,18 +35,18 @@ public class AVLTree {
         }
     }
 
-    public SimpleList searchByName(String name) {
-        SimpleList resultList = new SimpleList();
+    public SimpleProductsList searchByName(String name) {
+        SimpleProductsList resultList = new SimpleProductsList();
         searchByName(root, name.toLowerCase(), resultList);
         return resultList;
     }
-
+    
     public void clear() {
         root = clear(root);
     }
 
-    public SimpleList inorder() {
-        SimpleList products = new SimpleList();
+    public SimpleProductsList inorder() {
+        SimpleProductsList products = new SimpleProductsList();
         inorder(root, products);
         return products;
     }
@@ -59,9 +59,9 @@ public class AVLTree {
             return new AVLNode<>(value);
         }
 
-        if (value.compareName(value) < 0) {
+        if (node.getValue().compareName(value) < 0) {
             node.setLeft(insert(node.getLeft(), value));
-        } else if (value.compare(value) > 0) {
+        } else if (node.getValue().compareName(value) > 0) {
             node.setRight(insert(node.getRight(), value));
         } else {
             throw new OperationException("El producto ya existe en Árbol AVL");
@@ -75,9 +75,9 @@ public class AVLTree {
             throw new OperationException("El valor no existe en el árbol AVL");
         }
 
-        if (value.compareName(value) < 0) {
+        if (node.getValue().compareName(value) < 0) {
             node.setLeft(remove(node.getLeft(), value));
-        } else if (value.compare(value) > 0) {
+        } else if (node.getValue().compareName(value) > 0) {
             node.setRight(remove(node.getRight(), value));
         } else {
             if (node.getLeft() == null && node.getRight() == null) {
@@ -100,7 +100,7 @@ public class AVLTree {
         return balance(node);
     }
 
-    private void searchByName(AVLNode<Product> node, String name, SimpleList resultList) {
+    private void searchByName(AVLNode<Product> node, String name, SimpleProductsList resultList) {
         if (node == null) {
             return;
         }
@@ -117,7 +117,7 @@ public class AVLTree {
             searchByName(node.getRight(), name, resultList);
         }
     }
-
+    
     private AVLNode<Product> clear(AVLNode<Product> node) {
         if (node == null) {
             return null;
@@ -128,7 +128,7 @@ public class AVLTree {
         return null;
     }
 
-    private void inorder(AVLNode<Product> node, SimpleList products) {
+    private void inorder(AVLNode<Product> node, SimpleProductsList products) {
         if (node == null) {
             return;
         }

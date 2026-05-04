@@ -7,19 +7,18 @@ import java.util.Optional;
 /**
  *
  * @author LENOVO
- * @param <K>
  * @param <V>
  */
-public class HashTable<K extends Almacenable, V> {
+public class HashTable<V> {
 
     private int size;
-    private HashNode<K, V>[] values;
+    private HashNode<V>[] values;
     private final int capacity;
 
     public HashTable(int wishedCapacity) {
         this.capacity = getNextPrime(wishedCapacity);
         size = 0;
-        values = (HashNode<K, V>[]) new HashNode[this.capacity];
+        values = (HashNode<V>[]) new HashNode[this.capacity];
     }
 
     private int getNextPrime(int n) {
@@ -59,9 +58,8 @@ public class HashTable<K extends Almacenable, V> {
         return size == 0;
     }
 
-    private int getIndex(K key) {
-        String hashCode = key.getKey();
-        int index = hashCode.hashCode();
+    private int getIndex(String key) {
+        int index = key.hashCode();
 
         index = Math.abs(index);
         while (index >= capacity) {
@@ -70,9 +68,9 @@ public class HashTable<K extends Almacenable, V> {
         return index;
     }
 
-    public void put(K key, V value) {
+    public void put(String key, V value) {
         int index = getIndex(key);
-        HashNode<K, V> head = values[index];
+        HashNode<V> head = values[index];
 
         while (head != null) {
             if (head.getKey().compareTo(key) == 0) {
@@ -84,14 +82,14 @@ public class HashTable<K extends Almacenable, V> {
         
         size++;
         head = values[index];
-        HashNode<K, V> newNode = new HashNode<>(key, value);
+        HashNode<V> newNode = new HashNode<>(key, value);
         newNode.setNext(head);
         values[index] = newNode;
     }
 
-    public Optional<V> get(K key) {
+    public Optional<V> get(String key) {
         int index = getIndex(key);
-        HashNode<K, V> head = values[index];
+        HashNode<V> head = values[index];
 
         while (head != null) {
             if (head.getKey().compareTo(key) == 0) {
@@ -102,11 +100,25 @@ public class HashTable<K extends Almacenable, V> {
 
         return Optional.empty();
     }
-
-    public boolean remove(K key) {
+    
+    public boolean exists(String key) {
         int index = getIndex(key);
-        HashNode<K, V> head = values[index];
-        HashNode<K, V> prev = null;
+        HashNode<V> head = values[index];
+
+        while (head != null) {
+            if (head.getKey().compareTo(key) == 0) {
+                return true;
+            }
+            head = head.getNext();
+        }
+
+        return false;
+    }
+
+    public boolean remove(String key) {
+        int index = getIndex(key);
+        HashNode<V> head = values[index];
+        HashNode<V> prev = null;
 
         while (head != null) {
             if (head.getKey().equals(key)) {
@@ -131,10 +143,10 @@ public class HashTable<K extends Almacenable, V> {
         return true;
     }
 
-    public List<HashNode<K, V>> getValues() {
-        List<HashNode<K, V>> val = new ArrayList();
+    public List<HashNode<V>> getValues() {
+        List<HashNode<V>> val = new ArrayList();
 
-        for (HashNode<K, V> value : values) {
+        for (HashNode<V> value : values) {
             while (value != null) {
                 val.add(value);
                 value = value.getNext();

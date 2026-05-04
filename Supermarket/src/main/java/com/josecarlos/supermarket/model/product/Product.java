@@ -14,12 +14,25 @@ public class Product implements ComparableSuper<Product>{
     private double price;
     private int stock;
 
+    public Product(String name, String barcode, String category, String expireDate, String brand, double price, int stock) {
+        this.name = name;
+        this.barcode = barcode;
+        this.category = category;
+        this.expireDate = expireDate;
+        this.brand = brand;
+        this.price = price;
+        this.stock = stock;
+    }
+
+    public Product() {
+    }
+    
     @Override
     public int compareName(Product other) {
         int compareResult = name.toLowerCase().compareTo(other.name.toLowerCase());
         
         if (compareResult == 0) {
-            return compare(other);
+            return compareTo(other);
         }
         return compareResult;
     }
@@ -29,7 +42,7 @@ public class Product implements ComparableSuper<Product>{
         int compareResult = expireDate.toLowerCase().compareTo(other.expireDate.toLowerCase());
         
         if (compareResult == 0) {
-            return compare(other);
+            return compareTo(other);
         }
         return compareResult;
     }
@@ -39,13 +52,13 @@ public class Product implements ComparableSuper<Product>{
         int compareResult = category.toLowerCase().compareTo(other.category.toLowerCase());
         
         if (compareResult == 0) {
-            return compare(other);
+            return compareTo(other);
         }
         return compareResult;
     }
 
     @Override
-    public int compare(Product other) {
+    public int compareTo(Product other) {
         return barcode.compareTo(other.barcode);
     }
 
@@ -103,5 +116,10 @@ public class Product implements ComparableSuper<Product>{
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    @Override
+    public String getKey() {
+        return barcode;
     }
 }

@@ -1,7 +1,7 @@
 package com.josecarlos.supermarket.model.trees;
 
 import com.josecarlos.supermarket.model.exceptions.OperationException;
-import com.josecarlos.supermarket.model.lists.SimpleList;
+import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +13,7 @@ import java.io.PrintWriter;
  */
 public class BTree {
 
-    private BNode<Product> root;
+    private BNode root;
     private final int degree;
 
     public BTree(int degree) {
@@ -22,7 +22,7 @@ public class BTree {
     }
 
     public Product search(Product key) {
-        BNode<Product> current = root;
+        BNode current = root;
 
         while (current != null) {
             int i = current.numKeys - 1;
@@ -46,7 +46,7 @@ public class BTree {
 
     public boolean insert(Product key) {
         if (root == null) {
-            root = new BNode<>(degree, true);
+            root = new BNode(degree, true);
             root.keys[0] = key;
             root.numKeys = 1;
             return true;
@@ -59,7 +59,7 @@ public class BTree {
         }
 
         if (root.numKeys == root.getMaxKeys()) {
-            BNode<Product> newRoot = new BNode<>(degree, false);
+            BNode newRoot = new BNode(degree, false);
             newRoot.children[0] = root;
             splitChild(newRoot, 0);
             root = newRoot;
@@ -68,7 +68,7 @@ public class BTree {
 
     }
 
-    private void insert(BNode<Product> node, Product key) throws OperationException {
+    private void insert(BNode node, Product key) throws OperationException {
         int i = node.numKeys - 1;
 
         if (node.isLeaf()) {
@@ -101,11 +101,11 @@ public class BTree {
         }
     }
 
-    private void splitChild(BNode<Product> parent, int index) {
-        BNode<Product> child = parent.children[index];
+    private void splitChild(BNode parent, int index) {
+        BNode child = parent.children[index];
         int d = child.getDegree();
 
-        BNode<Product> rightChild = new BNode<>(d, child.isLeaf());
+        BNode rightChild = new BNode(d, child.isLeaf());
         Product middleKey = child.keys[d];
 
         rightChild.numKeys = d;
@@ -151,7 +151,7 @@ public class BTree {
         return removed;
     }
 
-    private boolean removeFromSubtree(BNode<Product> node, Product key) {
+    private boolean removeFromSubtree(BNode node, Product key) {
         int keyPosition = findKeyPosition(node, key);
         boolean keyExistsInNode = keyPosition < node.numKeys && node.keys[keyPosition].compareDate(key) == 0;
 
@@ -160,8 +160,8 @@ public class BTree {
                 return removeFromLeafIfExists(node, key, keyPosition);
             }
 
-            BNode<Product> leftChild = node.children[keyPosition];
-            BNode<Product> rightChild = node.children[keyPosition + 1];
+            BNode leftChild = node.children[keyPosition];
+            BNode rightChild = node.children[keyPosition + 1];
 
             if (leftChild.numKeys > degree) {
                 Product predecessor = extractGreatestKey(leftChild);
@@ -184,7 +184,7 @@ public class BTree {
         }
 
         int childIndex = keyPosition;
-        BNode<Product> targetChild = node.children[childIndex];
+        BNode targetChild = node.children[childIndex];
 
         if (isAtMinimumKeys(targetChild)) {
             if (canBorrowFromLeft(node, childIndex)) {
@@ -205,7 +205,7 @@ public class BTree {
         return removeFromSubtree(targetChild, key);
     }
 
-    private int findKeyPosition(BNode<Product> node, Product key) {
+    private int findKeyPosition(BNode node, Product key) {
         int i = 0;
         while (i < node.numKeys && node.keys[i].compareDate(key) < 0) {
             i++;
@@ -213,7 +213,7 @@ public class BTree {
         return i;
     }
 
-    private boolean removeFromLeafIfExists(BNode<Product> leaf, Product key, int keyIndex) {
+    private boolean removeFromLeafIfExists(BNode leaf, Product key, int keyIndex) {
         if (keyIndex < 0 || keyIndex >= leaf.numKeys || key.compareDate(leaf.keys[keyIndex]) != 0) {
             return false;
         }
@@ -226,7 +226,7 @@ public class BTree {
         return true;
     }
 
-    private Product extractGreatestKey(BNode<Product> node) {
+    private Product extractGreatestKey(BNode node) {
         if (node.isLeaf()) {
             int lastIndex = node.numKeys - 1;
             Product greatest = node.keys[lastIndex];
@@ -236,7 +236,7 @@ public class BTree {
         }
 
         int rightmostChildIndex = node.numKeys;
-        BNode<Product> rightmostChild = node.children[rightmostChildIndex];
+        BNode rightmostChild = node.children[rightmostChildIndex];
 
         if (isAtMinimumKeys(rightmostChild)) {
             if (canBorrowFromLeft(node, rightmostChildIndex)) {
@@ -249,7 +249,7 @@ public class BTree {
         return extractGreatestKey(rightmostChild);
     }
 
-    private Product extractSmallestKey(BNode<Product> node) {
+    private Product extractSmallestKey(BNode node) {
         if (node.isLeaf()) {
             Product smallest = node.keys[0];
             System.arraycopy(node.keys, 1, node.keys, 0, node.numKeys - 1);
@@ -258,7 +258,7 @@ public class BTree {
             return smallest;
         }
 
-        BNode<Product> leftmostChild = node.children[0];
+        BNode leftmostChild = node.children[0];
         if (isAtMinimumKeys(leftmostChild)) {
             if (canBorrowFromRight(node, 0)) {
                 borrowFromRightSibling(node, 0);
@@ -270,9 +270,9 @@ public class BTree {
         return extractSmallestKey(leftmostChild);
     }
 
-    private void borrowFromLeftSibling(BNode<Product> parent, int childIndex) {
-        BNode<Product> child = parent.children[childIndex];
-        BNode<Product> leftSibling = parent.children[childIndex - 1];
+    private void borrowFromLeftSibling(BNode parent, int childIndex) {
+        BNode child = parent.children[childIndex];
+        BNode leftSibling = parent.children[childIndex - 1];
 
         System.arraycopy(child.keys, 0, child.keys, 1, child.numKeys);
         if (!child.isLeaf()) {
@@ -292,9 +292,9 @@ public class BTree {
         child.numKeys++;
     }
 
-    private void borrowFromRightSibling(BNode<Product> parent, int childIndex) {
-        BNode<Product> child = parent.children[childIndex];
-        BNode<Product> rightSibling = parent.children[childIndex + 1];
+    private void borrowFromRightSibling(BNode parent, int childIndex) {
+        BNode child = parent.children[childIndex];
+        BNode rightSibling = parent.children[childIndex + 1];
 
         child.keys[child.numKeys] = parent.keys[childIndex];
         parent.keys[childIndex] = rightSibling.keys[0];
@@ -312,9 +312,9 @@ public class BTree {
         child.numKeys++;
     }
 
-    private void mergeChildren(BNode<Product> parent, int leftChildIndex) {
-        BNode<Product> leftChild = parent.children[leftChildIndex];
-        BNode<Product> rightChild = parent.children[leftChildIndex + 1];
+    private void mergeChildren(BNode parent, int leftChildIndex) {
+        BNode leftChild = parent.children[leftChildIndex];
+        BNode rightChild = parent.children[leftChildIndex + 1];
 
         int separatorPosition = leftChild.numKeys;
         leftChild.keys[separatorPosition] = parent.keys[leftChildIndex];
@@ -335,27 +335,27 @@ public class BTree {
         parent.children[parent.numKeys + 1] = null;
     }
 
-    private boolean canBorrowFromLeft(BNode<Product> parent, int childIndex) {
+    private boolean canBorrowFromLeft(BNode parent, int childIndex) {
         return childIndex > 0 && parent.children[childIndex - 1].numKeys > degree;
     }
 
-    private boolean canBorrowFromRight(BNode<Product> parent, int childIndex) {
+    private boolean canBorrowFromRight(BNode parent, int childIndex) {
         return childIndex < parent.numKeys && parent.children[childIndex + 1].numKeys > degree;
     }
 
-    private boolean isAtMinimumKeys(BNode<Product> node) {
+    private boolean isAtMinimumKeys(BNode node) {
         return node.numKeys == degree;
     }
 
-    public SimpleList searchByExpiryDateRange(String startDate, String endDate) {
-        SimpleList resultList = new SimpleList();
+    public SimpleProductsList searchByExpiryDateRange(String startDate, String endDate) {
+        SimpleProductsList resultList = new SimpleProductsList();
         if (root != null) {
             searchByExpiryDateRange(root, startDate, endDate, resultList);
         }
         return resultList;
     }
 
-    private void searchByExpiryDateRange(BNode<Product> node, String startDate, String endDate, SimpleList resultList) {
+    private void searchByExpiryDateRange(BNode node, String startDate, String endDate, SimpleProductsList resultList) {
         if (node == null) {
             return;
         }
@@ -414,7 +414,7 @@ public class BTree {
         }
     }
 
-    private void generateDot(BNode<Product> node, PrintWriter writer, int[] nodeId, int parentId) {
+    private void generateDot(BNode node, PrintWriter writer, int[] nodeId, int parentId) {
         if (node == null) {
             return;
         }

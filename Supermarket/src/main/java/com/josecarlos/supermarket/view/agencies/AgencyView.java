@@ -7,16 +7,29 @@ package com.josecarlos.supermarket.view.agencies;
 import com.josecarlos.supermarket.model.graphs.Edge;
 import com.josecarlos.supermarket.model.graphs.Vertex;
 import com.josecarlos.supermarket.model.lists.DoubleNode;
+import com.josecarlos.supermarket.model.lists.Node;
+import com.josecarlos.supermarket.model.lists.SimpleProductsList;
+import com.josecarlos.supermarket.model.product.Product;
+import com.josecarlos.supermarket.view.listeners.ProductsLoaderListener;
+import com.josecarlos.supermarket.view.products.CreateProductDialog;
+import com.josecarlos.supermarket.view.products.ProductActionsDialog;
+import com.josecarlos.supermarket.view.products.SearchProductDialog;
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.GridLayout;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 /**
  *
  * @author LENOVO
  */
-public class AgencyView extends javax.swing.JPanel {
+public class AgencyView extends javax.swing.JPanel implements ProductsLoaderListener {
 
     private Vertex vertex;
 
@@ -29,8 +42,6 @@ public class AgencyView extends javax.swing.JPanel {
         initComponents();
         this.vertex = vertex;
         this.agencyTitle.setText(vertex.getAgency().getName());
-        loadEdges();
-        this.remove(centerPanel);
     }
 
     /**
@@ -49,7 +60,7 @@ public class AgencyView extends javax.swing.JPanel {
         searchProduct = new javax.swing.JButton();
         addProduct = new javax.swing.JButton();
         movements = new javax.swing.JButton();
-        deleteProduct = new javax.swing.JButton();
+        loadCsv = new javax.swing.JButton();
         centerPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
@@ -64,7 +75,7 @@ public class AgencyView extends javax.swing.JPanel {
         titlePanel.setLayout(titlePanelLayout);
         titlePanelLayout.setHorizontalGroup(
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(agencyTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 871, Short.MAX_VALUE)
+            .addComponent(agencyTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
         );
         titlePanelLayout.setVerticalGroup(
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,38 +96,39 @@ public class AgencyView extends javax.swing.JPanel {
         movements.addActionListener(this::movementsActionPerformed);
         buttonsPanel.add(movements);
 
-        deleteProduct.setText("Eliminar Producto");
-        buttonsPanel.add(deleteProduct);
+        loadCsv.setText("Cargar CSV");
+        loadCsv.addActionListener(this::loadCsvActionPerformed);
+        buttonsPanel.add(loadCsv);
 
         infoPanel.add(buttonsPanel, java.awt.BorderLayout.CENTER);
 
         add(infoPanel, java.awt.BorderLayout.NORTH);
 
-        javax.swing.GroupLayout centerPanelLayout = new javax.swing.GroupLayout(centerPanel);
-        centerPanel.setLayout(centerPanelLayout);
-        centerPanelLayout.setHorizontalGroup(
-            centerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 871, Short.MAX_VALUE)
-        );
-        centerPanelLayout.setVerticalGroup(
-            centerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
-        );
-
+        centerPanel.setLayout(new java.awt.CardLayout());
         add(centerPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProductActionPerformed
-        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(() -> {
+            CreateProductDialog dialog = new CreateProductDialog(new javax.swing.JFrame(), true, vertex.getAgency().getCatalog());
+            dialog.setVisible(true);
+        });
     }//GEN-LAST:event_addProductActionPerformed
 
     private void searchProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProductActionPerformed
-        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(() -> {
+            SearchProductDialog dialog = new SearchProductDialog(new javax.swing.JFrame(), true, this, vertex.getAgency().getCatalog());
+            dialog.setVisible(true);
+        });
     }//GEN-LAST:event_searchProductActionPerformed
 
     private void movementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movementsActionPerformed
-        // TODO add your handling code here:
+        loadEdges();
     }//GEN-LAST:event_movementsActionPerformed
+
+    private void loadCsvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadCsvActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loadCsvActionPerformed
 
     private void loadEdges() {
         JPanel panel = new JPanel(new GridLayout(5, 5));
@@ -125,9 +137,51 @@ public class AgencyView extends javax.swing.JPanel {
             panel.add(new JLabel(head.getValue().getDestination().getAgency().getName()));
             head = head.getNext();
         }
-        this.add(panel, BorderLayout.CENTER);
-        panel.revalidate();
-        panel.repaint();
+        remove(((BorderLayout) getLayout())
+                .getLayoutComponent(BorderLayout.CENTER));
+        add(panel, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }
+
+    @Override
+    public void onProductsLoaded(SimpleProductsList products) {
+        JPanel listPanel = new JPanel();
+        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
+
+        JScrollPane scrollPane = new JScrollPane(listPanel);
+        Node<Product> head = products.getHead();
+        while (head != null) {
+            final Product product = head.getValue();
+            JButton productBtn = new JButton(head.getValue().getName() + " - $" + head.getValue().getPrice());
+            productBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
+            productBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+            productBtn.addActionListener(e -> {
+                handleProductSelection(product);
+            });
+
+            listPanel.add(productBtn);
+            listPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+            head = head.getNext();
+        }
+        remove(((BorderLayout) getLayout())
+                .getLayoutComponent(BorderLayout.CENTER));
+        add(scrollPane, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }
+    
+    private void handleProductSelection(Product product) {
+        java.awt.EventQueue.invokeLater(() -> {
+            ProductActionsDialog dialog = new ProductActionsDialog(new javax.swing.JFrame(), true, vertex.getAgency().getCatalog(), this, product);
+            dialog.setVisible(true);
+        });
+    }
+
+    @Override
+    public void onLoadAllProducts() {
+        this.onProductsLoaded(vertex.getAgency().getCatalog().inorder());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -135,8 +189,8 @@ public class AgencyView extends javax.swing.JPanel {
     private javax.swing.JLabel agencyTitle;
     private javax.swing.JPanel buttonsPanel;
     private javax.swing.JPanel centerPanel;
-    private javax.swing.JButton deleteProduct;
     private javax.swing.JPanel infoPanel;
+    private javax.swing.JButton loadCsv;
     private javax.swing.JButton movements;
     private javax.swing.JButton searchProduct;
     private javax.swing.JPanel titlePanel;

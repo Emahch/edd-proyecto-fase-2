@@ -47,12 +47,11 @@ public class CreateAgencyDialog extends javax.swing.JDialog {
         this.setLocationRelativeTo(null);
         this.listener = listener;
 
-        SpinnerNumberModel model = new SpinnerNumberModel(0.0, 0.0, 100.0, 0.1);
-        movementTimeSpinner.setModel(model);
+        movementTimeSpinner.setModel(new SpinnerNumberModel(0.0, 0.0, 100.0, 0.1));
         movementTimeSpinner.setEditor(new JSpinner.NumberEditor(movementTimeSpinner, "0.00"));
-        enterTimeSpinner.setModel(model);
+        enterTimeSpinner.setModel(new SpinnerNumberModel(0.0, 0.0, 100.0, 0.1));
         enterTimeSpinner.setEditor(new JSpinner.NumberEditor(enterTimeSpinner, "0.00"));
-        dispatchTimeSpinner.setModel(model);
+        dispatchTimeSpinner.setModel(new SpinnerNumberModel(0.0, 0.0, 100.0, 0.1));
         dispatchTimeSpinner.setEditor(new JSpinner.NumberEditor(dispatchTimeSpinner, "0.00"));
 
         // Close the dialog when Esc is pressed
