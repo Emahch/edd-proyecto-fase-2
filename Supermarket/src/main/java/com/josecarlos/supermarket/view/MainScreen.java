@@ -2,7 +2,10 @@ package com.josecarlos.supermarket.view;
 
 import com.josecarlos.supermarket.model.graphs.Graph;
 import com.josecarlos.supermarket.model.graphs.Vertex;
+import com.josecarlos.supermarket.model.lists.Node;
 import com.josecarlos.supermarket.model.product.Agency;
+import com.josecarlos.supermarket.model.product.Product;
+import com.josecarlos.supermarket.services.CSVService;
 import com.josecarlos.supermarket.view.agencies.AgenciesListView;
 import com.josecarlos.supermarket.view.agencies.AgencyView;
 import com.josecarlos.supermarket.view.agencies.CreateAgencyDialog;
@@ -11,6 +14,18 @@ import java.awt.BorderLayout;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import com.josecarlos.supermarket.view.listeners.SelectVertexListener;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.io.File;
+import java.util.List;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -27,14 +42,6 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
         this.agencies = new Graph();
         initComponents();
         this.setLocationRelativeTo(null);
-        Agency a1 = new Agency("12431f", "sucursal-1", "xela", "3", "3", "34");
-        Agency a2 = new Agency("124gf3", "sucursal-2", "toto", "5", "5", "44");
-        Agency a3 = new Agency("qwgwq", "sucursal-3", "huehue", "9", "12", "23");
-        Agency a4 = new Agency("f2f", "sucursal-4", "cocales", "56", "14", "8");
-        agencies.addEdge(a1, a3, 15, 6);
-        agencies.addEdge(a3, a2, 9, 2);
-        agencies.addEdge(a2, a1, 12, 5);
-        agencies.addVertex(a4);
     }
 
     /**
@@ -48,6 +55,10 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
 
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
+        CSVMenu = new javax.swing.JMenu();
+        agenciesCSVMenu = new javax.swing.JMenuItem();
+        connectionsCSVMenu = new javax.swing.JMenuItem();
+        productsCSVMenu = new javax.swing.JMenuItem();
         agenciesMenu = new javax.swing.JMenu();
         selectAgencyMenu = new javax.swing.JMenuItem();
         createAgencyMenu = new javax.swing.JMenuItem();
@@ -57,6 +68,26 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
         setMinimumSize(new java.awt.Dimension(1000, 800));
 
         fileMenu.setText("Archivos");
+
+        CSVMenu.setText("CSV");
+
+        agenciesCSVMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        agenciesCSVMenu.setText("Sucursales");
+        agenciesCSVMenu.addActionListener(this::agenciesCSVMenuActionPerformed);
+        CSVMenu.add(agenciesCSVMenu);
+
+        connectionsCSVMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        connectionsCSVMenu.setText("Conexiones");
+        connectionsCSVMenu.addActionListener(this::connectionsCSVMenuActionPerformed);
+        CSVMenu.add(connectionsCSVMenu);
+
+        productsCSVMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        productsCSVMenu.setText("Productos");
+        productsCSVMenu.addActionListener(this::productsCSVMenuActionPerformed);
+        CSVMenu.add(productsCSVMenu);
+
+        fileMenu.add(CSVMenu);
+
         menuBar.add(fileMenu);
 
         agenciesMenu.setText("Sucursales");
@@ -94,6 +125,90 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
         });
     }//GEN-LAST:event_createAgencyMenuActionPerformed
 
+    private void productsCSVMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productsCSVMenuActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Cargar CSV de productos");
+
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos CSV", "csv");
+        fileChooser.setFileFilter(filter);
+        fileChooser.setMultiSelectionEnabled(false);
+
+        int result = fileChooser.showOpenDialog(this);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            String path = selectedFile.getAbsolutePath();
+
+            CSVService cSVService = new CSVService();
+            List<String> errors = cSVService.loadProducts(agencies, path);
+
+            showResult(errors, selectedFile);
+        }
+    }//GEN-LAST:event_productsCSVMenuActionPerformed
+
+    private void agenciesCSVMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agenciesCSVMenuActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Cargar CSV de sucursales");
+        
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos CSV", "csv");
+        fileChooser.setFileFilter(filter);
+        fileChooser.setMultiSelectionEnabled(false);
+
+        int result = fileChooser.showOpenDialog(this);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            String path = selectedFile.getAbsolutePath();
+
+            CSVService cSVService = new CSVService();
+            List<String> errors = cSVService.loadAgencies(agencies, path);
+            showResult(errors, selectedFile);
+        }
+    }//GEN-LAST:event_agenciesCSVMenuActionPerformed
+
+    private void connectionsCSVMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connectionsCSVMenuActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Cargar CSV de conexiones");
+        
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos CSV", "csv");
+        fileChooser.setFileFilter(filter);
+        fileChooser.setMultiSelectionEnabled(false);
+
+        int result = fileChooser.showOpenDialog(this);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            String path = selectedFile.getAbsolutePath();
+
+            CSVService cSVService = new CSVService();
+            List<String> errors = cSVService.loadConnections(agencies, path);
+            showResult(errors, selectedFile);
+        }
+    }//GEN-LAST:event_connectionsCSVMenuActionPerformed
+
+    private void showResult(List<String> errors, File selectedFile) {
+        if (errors.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Datos cargados desde: " + selectedFile.getName());
+        } else {
+            JPanel listPanel = new JPanel();
+            listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
+
+            JScrollPane scrollPane = new JScrollPane(listPanel);
+            for (String error : errors) {
+                JLabel label = new JLabel(error);
+                label.setMaximumSize(new Dimension(Integer.MAX_VALUE, 15));
+                label.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+                listPanel.add(label);
+                listPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+            }
+            getContentPane().removeAll();
+            getContentPane().add(scrollPane, BorderLayout.CENTER);
+            getContentPane().revalidate();
+            getContentPane().repaint();
+        }
+    }
+
     @Override
     public void onVertexSelected(Vertex agency) {
         this.getContentPane().removeAll();
@@ -119,11 +234,15 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu CSVMenu;
+    private javax.swing.JMenuItem agenciesCSVMenu;
     private javax.swing.JMenu agenciesMenu;
+    private javax.swing.JMenuItem connectionsCSVMenu;
     private javax.swing.JMenuItem createAgencyMenu;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu moveMenu;
+    private javax.swing.JMenuItem productsCSVMenu;
     private javax.swing.JMenuItem selectAgencyMenu;
     // End of variables declaration//GEN-END:variables
 }

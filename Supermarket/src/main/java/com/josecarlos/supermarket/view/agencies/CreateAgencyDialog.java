@@ -235,7 +235,7 @@ public class CreateAgencyDialog extends javax.swing.JDialog {
         } catch (NumberFormatException e) {
             movementTime = 1;
         }
-        listener.onAgencyCreated(new Agency(idTxt.getText(), nameTxt.getText(), locationTxt.getText(), String.valueOf(enterTime), String.valueOf(dispatchTime), String.valueOf(movementTime)));
+        listener.onAgencyCreated(new Agency(idTxt.getText(), nameTxt.getText(), locationTxt.getText(), enterTime, movementTime, dispatchTime));
         doClose(RET_OK);
     }//GEN-LAST:event_okButtonActionPerformed
 

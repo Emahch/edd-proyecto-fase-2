@@ -24,7 +24,7 @@ public class Graph {
         return adjacencyList.add(vertex);
     }
 
-    public void addEdge(Agency source, Agency destination, double time, double price) {
+    public boolean addEdge(Agency source, Agency destination, double time, double price) {
         Optional<Vertex> sourceVertex = adjacencyList.getById(source.getKey());
         if (sourceVertex.isEmpty()) {
             sourceVertex = Optional.of(new Vertex(source));
@@ -36,11 +36,15 @@ public class Graph {
             addVertex(destinationVertex.get());
         }
         
-        sourceVertex.get().addDestination(destinationVertex.get(), time, price);
+        return sourceVertex.get().addDestination(destinationVertex.get(), time, price);
     }
 
     public boolean exists(Agency key) {
         return adjacencyList.getById(key.getKey()).isPresent();
+    }
+    
+    public Optional<Vertex> getById(String key) {
+        return adjacencyList.getById(key);
     }
 
     public AgenciesList<Vertex> getAdjacencyList() {
