@@ -3,10 +3,12 @@ package com.josecarlos.supermarket.model.trees;
 import com.josecarlos.supermarket.model.exceptions.OperationException;
 import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
+import com.josecarlos.supermarket.services.ExporterSVG;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
- 
+
 /**
  *
  * @author LENOVO
@@ -394,77 +396,50 @@ public class BTree {
         }
     }
 
-    public void generateDotFile(String filename) {
-        try (PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
-            writer.println("digraph BTree {");
-            writer.println("graph [ranksep=0.8, nodesep=0.35, splines=false, overlap=false];");
-            writer.println("node [shape=record, style=\"rounded,filled\", fillcolor=\"#FFF9F0\", color=\"#A44A3F\", fontname=\"Helvetica\", fontsize=9, margin=\"0.08,0.04\"];");
-            writer.println("edge [color=\"#7A6C5D\", penwidth=1.0, tailclip=false, arrowtail=none];\n");
+    public void generateGraphviz(String fileName) {
+        String file = fileName + File.separator + "b";
+        try (PrintWriter pw = new PrintWriter(new FileWriter(file + ".dot"))) {
+            pw.println("digraph BTree {");
+            pw.println("    node [shape=record, height=.1];");
 
             if (root != null) {
-                int[] nodeId = {0};
-                generateDot(root, writer, nodeId, -1);
+                generateGraphvizRecursive(root, pw);
+            } else {
+                pw.println("    empty [label=\"Árbol Vacío\"];");
             }
-            writer.println("}");
 
-            generateImageFiles(filename);
-
+            pw.println("}");
+            System.out.println("Archivo Graphviz (Árbol B) generado: " + file);
         } catch (IOException e) {
-            System.out.println("Error al generar el archivo DOT: " + e.getMessage());
+            System.err.println("Error al escribir el archivo: " + e.getMessage());
         }
+        ExporterSVG.exportToSvg(file);
     }
 
-    private void generateDot(BNode node, PrintWriter writer, int[] nodeId, int parentId) {
+    private void generateGraphvizRecursive(BNode node, PrintWriter pw) {
         if (node == null) {
             return;
         }
 
-        int currentNodeId = nodeId[0];
-        nodeId[0]++;
+        String nodeID = "node" + System.identityHashCode(node);
 
         StringBuilder label = new StringBuilder();
+        label.append("<p0>");
         for (int i = 0; i < node.numKeys; i++) {
-            if (i > 0) {
-                label.append("|");
-            }
-            label.append(node.keys[i].getExpireDate()).append("\\n")
-                    .append(node.keys[i].getBarcode()).append("\\n")
-                    .append(node.keys[i].getName());
+            String keyLabel = node.keys[i].getExpireDate().replace("\"", "\\\"");
+            label.append(" | ").append(keyLabel).append("--").append(node.keys[i].getBarcode()).append(" | <p").append(i + 1).append(">");
         }
 
-        writer.printf("node%d [label=\"%s\"];\n", currentNodeId, label.toString());
-
-        if (parentId != -1) {
-            writer.printf("node%d -> node%d;\n", parentId, currentNodeId);
-        }
+        pw.println("    " + nodeID + " [label=\"" + label.toString() + "\"];");
 
         if (!node.isLeaf()) {
             for (int i = 0; i <= node.numKeys; i++) {
                 if (node.children[i] != null) {
-                    generateDot(node.children[i], writer, nodeId, currentNodeId);
+                    String childID = "node" + System.identityHashCode(node.children[i]);
+                    pw.println("    " + nodeID + ":p" + i + " -> " + childID + ";");
+                    generateGraphvizRecursive(node.children[i], pw);
                 }
             }
         }
     }
-
-    private void generateImageFiles(String filename) {
-        try {
-            String baseFilename = filename.substring(0, filename.lastIndexOf('.'));
-            String svgFilename = baseFilename + ".svg";
-            String pngFilename = baseFilename + ".png";
-
-            Process svgProcess = new ProcessBuilder("dot", "-Tsvg", filename, "-o", svgFilename).start();
-            Process pngProcess = new ProcessBuilder("dot", "-Tpng", "-Gdpi=220", filename, "-o", pngFilename).start();
-
-            svgProcess.waitFor();
-            pngProcess.waitFor();
-
-            System.out.println("SVG generado (recomendado para muchos nodos): " + svgFilename);
-            System.out.println("PNG generado: " + pngFilename);
-
-        } catch (IOException | InterruptedException e) {
-            System.out.println("Aviso: No se pudieron generar los SVG/PNG automáticos. Verifica que 'Graphviz' esté instalado en tu sistema. " + e.getMessage());
-        }
-    }
-
 }

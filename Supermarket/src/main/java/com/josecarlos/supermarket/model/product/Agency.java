@@ -12,17 +12,17 @@ public class Agency implements Almacenable<Agency> {
     private String id;
     private String name;
     private String location;
-    private Double startTime;
+    private Double enterTime;
     private Double prepareTime;
     private Double dispatchInterval;
     private List dispatchs;
     private Catalog catalog;
 
-    public Agency(String id, String name, String location, Double startTime, Double prepareTime, Double dispatchInterval) {
+    public Agency(String id, String name, String location, Double enterTime, Double prepareTime, Double dispatchInterval) {
         this.id = id;
         this.name = name;
         this.location = location;
-        this.startTime = startTime;
+        this.enterTime = enterTime;
         this.prepareTime = prepareTime;
         this.dispatchInterval = dispatchInterval;
         this.catalog = new Catalog();
@@ -62,12 +62,12 @@ public class Agency implements Almacenable<Agency> {
         this.location = location;
     }
 
-    public Double getStartTime() {
-        return startTime;
+    public Double getEnterTime() {
+        return enterTime;
     }
 
-    public void setStartTime(Double startTime) {
-        this.startTime = startTime;
+    public void setEnterTime(Double enterTime) {
+        this.enterTime = enterTime;
     }
 
     public Double getPrepareTime() {

@@ -9,6 +9,7 @@ import com.josecarlos.supermarket.model.trees.AVLTree;
 import com.josecarlos.supermarket.model.trees.BPlusTree;
 import com.josecarlos.supermarket.model.trees.BTree;
 import com.josecarlos.supermarket.view.listeners.ProductListener;
+import java.io.IOException;
 import java.util.Optional;
 
 /**
@@ -60,9 +61,9 @@ public class Catalog implements ProductListener {
     }
 
     @Override
-    public boolean onProductModified(Product product) {
+    public boolean onProductModified(Product product, Product newProduct) {
         removeProduct(product);
-        return addProduct(product);
+        return addProduct(newProduct);
     }
 
     @Override
@@ -127,9 +128,25 @@ public class Catalog implements ProductListener {
         }
         return coincidences;
     }
-    
+
     public SimpleProductsList inorder() {
         return avlTree.inorder();
     }
 
+    public void generateDiagrams(String directory) {
+        avlTree.generateGraphviz(directory);
+        bTree.generateGraphviz(directory);
+        bPlusTree.generateGraphviz(directory);
+        hashTable.generateGraphviz(directory);
+    }
+
+    public static void exportToSvg(String dotFileName, String svgFileName) {
+        try {
+            ProcessBuilder pb = new ProcessBuilder("dot", "-Tsvg", dotFileName, "-o", svgFileName);
+            pb.start();
+            System.out.println("SVG generado exitosamente: " + svgFileName);
+        } catch (IOException e) {
+            System.err.println("Error al ejecutar Graphviz: " + e.getMessage());
+        }
+    }
 }

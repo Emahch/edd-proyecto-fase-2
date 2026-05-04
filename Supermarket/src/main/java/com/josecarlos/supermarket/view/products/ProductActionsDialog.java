@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import javax.swing.AbstractAction;
@@ -258,6 +259,7 @@ public class ProductActionsDialog extends javax.swing.JDialog {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         String formattedValue = format.format(dateValue);
         listener.onProductModified(
+                product,
                 new Product(nameTxt.getText(), barcodeTxt.getText(), categoryTxt.getText(), formattedValue, brandTxt.getText(), price, stock)
         );
         listenerLoader.onLoadAllProducts();
@@ -274,7 +276,7 @@ public class ProductActionsDialog extends javax.swing.JDialog {
         brandTxt.setText(product.getBrand());
         categoryTxt.setText(product.getCategory());
         LocalDate date = LocalDate.parse(product.getExpireDate(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        dateSpinner.setValue(new Date(date.getYear(), date.getMonth().getValue(), date.getDayOfMonth()));
+        dateSpinner.setValue(Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()));
         nameTxt.setText(product.getName());
         priceSpinner.setValue(product.getPrice());
         stockSpinner.setValue(product.getStock());

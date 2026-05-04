@@ -1,7 +1,6 @@
 package com.josecarlos.supermarket.model.lists;
 
 import com.josecarlos.supermarket.model.hash.Almacenable;
-import com.josecarlos.supermarket.model.product.Product;
 import java.util.Optional;
 
 /**
@@ -65,13 +64,13 @@ public class AgenciesList<T extends Almacenable<T>>{
         return true;
     }
 
-    public boolean remove(Product product) {
+    public boolean remove(T agency) {
         if (head == null) {
             System.out.println("La lista está vacía.");
             return false;
         }
 
-        DoubleNode<T> target = binarySearch(product.getBarcode());
+        DoubleNode<T> target = binarySearch(agency.getKey());
         if (target == null) {
             System.out.println("El elemento no existe en la lista.");
             return false;

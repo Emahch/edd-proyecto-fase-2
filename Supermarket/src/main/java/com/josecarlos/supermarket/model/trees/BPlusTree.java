@@ -3,6 +3,11 @@ package com.josecarlos.supermarket.model.trees;
 import com.josecarlos.supermarket.model.exceptions.OperationException;
 import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
+import com.josecarlos.supermarket.services.ExporterSVG;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class BPlusTree {
 
@@ -341,6 +346,53 @@ public class BPlusTree {
                         || node.keys[i].getCategory().compareToIgnoreCase(category) >= 0;
                 if (leftOk && rightOk) {
                     searchByCategory(node.children[i], category, result);
+                }
+            }
+        }
+    }
+
+    public void generateGraphviz(String fileName) {
+        String file = fileName + File.separator + "bPlus";
+        try (PrintWriter pw = new PrintWriter(new FileWriter(file + ".dot"))) {
+            pw.println("digraph BTree {");
+            pw.println("    node [shape=record, height=.1];");
+
+            if (root != null) {
+                generateGraphvizRecursive(root, pw);
+            } else {
+                pw.println("    empty [label=\"Árbol Vacío\"];");
+            }
+
+            pw.println("}");
+            System.out.println("Archivo Graphviz (Árbol B+) generado: " + file);
+        } catch (IOException e) {
+            System.err.println("Error al escribir el archivo: " + e.getMessage());
+        }
+        ExporterSVG.exportToSvg(file);
+    }
+
+    private void generateGraphvizRecursive(BNode node, PrintWriter pw) {
+        if (node == null) {
+            return;
+        }
+
+        String nodeID = "node" + System.identityHashCode(node);
+
+        StringBuilder label = new StringBuilder();
+        label.append("<p0>");
+        for (int i = 0; i < node.numKeys; i++) {
+            String keyLabel = node.keys[i].getCategory().replace("\"", "\\\"");
+            label.append(" | ").append(keyLabel).append("--").append(node.keys[i].getBarcode()).append(" | <p").append(i + 1).append(">");
+        }
+
+        pw.println("    " + nodeID + " [label=\"" + label.toString() + "\"];");
+
+        if (!node.isLeaf()) {
+            for (int i = 0; i <= node.numKeys; i++) {
+                if (node.children[i] != null) {
+                    String childID = "node" + System.identityHashCode(node.children[i]);
+                    pw.println("    " + nodeID + ":p" + i + " -> " + childID + ";");
+                    generateGraphvizRecursive(node.children[i], pw);
                 }
             }
         }

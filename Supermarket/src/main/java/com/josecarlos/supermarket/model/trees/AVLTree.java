@@ -3,6 +3,11 @@ package com.josecarlos.supermarket.model.trees;
 import com.josecarlos.supermarket.model.exceptions.OperationException;
 import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
+import com.josecarlos.supermarket.services.ExporterSVG;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
@@ -40,7 +45,7 @@ public class AVLTree {
         searchByName(root, name.toLowerCase(), resultList);
         return resultList;
     }
-    
+
     public void clear() {
         root = clear(root);
     }
@@ -117,7 +122,7 @@ public class AVLTree {
             searchByName(node.getRight(), name, resultList);
         }
     }
-    
+
     private AVLNode<Product> clear(AVLNode<Product> node) {
         if (node == null) {
             return null;
@@ -228,4 +233,59 @@ public class AVLTree {
     private int getBalance(AVLNode<Product> node) {
         return node == null ? 0 : getHeight(node.getRight()) - getHeight(node.getLeft());
     }
+
+    public void generateGraphviz(String fileName) {
+        String file = fileName + File.separator + "avl";
+        try (PrintWriter pw = new PrintWriter(new FileWriter(file.concat(".dot")))) {
+            pw.println("digraph AVLTree {");
+            pw.println("    node [shape=record, fontname=\"Arial\"];");
+
+            if (root == null) {
+                pw.println("    vacio [label=\"Árbol Vacío\"];");
+            } else {
+                generateGraphvizRecursive(root, pw);
+            }
+
+            pw.println("}");
+            System.out.println("Archivo Graphviz generado: " + file);
+        } catch (IOException e) {
+            System.err.println("Error al generar el archivo Graphviz: " + e.getMessage());
+        }
+        ExporterSVG.exportToSvg(file);
+    }
+
+    private void generateGraphvizRecursive(AVLNode<Product> node, PrintWriter pw) {
+        if (node == null) {
+            return;
+        }
+
+        String nodeID = "node" + node.hashCode();
+        String label = String.format("{ %s | Altura: %d | Bal: %d }",
+                node.getValue().getName(),
+                node.getHeight(),
+                getBalance(node));
+
+        pw.println("    " + nodeID + " [label=\"" + label + "\"];");
+
+        if (node.getLeft() != null) {
+            String leftID = "node" + node.getLeft().hashCode();
+            pw.println("    " + nodeID + " -> " + leftID + " [label=\"L\"];");
+            generateGraphvizRecursive(node.getLeft(), pw);
+        } else {
+            String nullLeftID = "nullL" + node.hashCode();
+            pw.println("    " + nullLeftID + " [shape=point, visible=false];");
+            pw.println("    " + nodeID + " -> " + nullLeftID + " [style=invis];");
+        }
+
+        if (node.getRight() != null) {
+            String rightID = "node" + node.getRight().hashCode();
+            pw.println("    " + nodeID + " -> " + rightID + " [label=\"R\"];");
+            generateGraphvizRecursive(node.getRight(), pw);
+        } else {
+            String nullRightID = "nullR" + node.hashCode();
+            pw.println("    " + nullRightID + " [shape=point, visible=false];");
+            pw.println("    " + nodeID + " -> " + nullRightID + " [style=invis];");
+        }
+    }
+
 }

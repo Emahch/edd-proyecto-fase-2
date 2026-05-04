@@ -1,5 +1,11 @@
 package com.josecarlos.supermarket.model.hash;
 
+import com.josecarlos.supermarket.model.product.Product;
+import com.josecarlos.supermarket.services.ExporterSVG;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -79,7 +85,7 @@ public class HashTable<V> {
             }
             head = head.getNext();
         }
-        
+
         size++;
         head = values[index];
         HashNode<V> newNode = new HashNode<>(key, value);
@@ -100,7 +106,7 @@ public class HashTable<V> {
 
         return Optional.empty();
     }
-    
+
     public boolean exists(String key) {
         int index = getIndex(key);
         HashNode<V> head = values[index];
@@ -153,5 +159,64 @@ public class HashTable<V> {
             }
         }
         return val;
+    }
+
+    public void generateGraphviz(String folderPath) {
+        String file = folderPath + File.separator + "hash";
+
+        try (PrintWriter pw = new PrintWriter(new FileWriter(file.concat(".dot")))) {
+            pw.println("digraph HashTable {");
+            pw.println("    rankdir=LR;");
+            pw.println("    node [shape=record, fontname=\"Arial\", style=filled];");
+
+            StringBuilder bucketsLabel = new StringBuilder();
+            bucketsLabel.append("buckets [fillcolor=\"#EBF5FB\", label=\"");
+
+            boolean first = true;
+            for (int i = 0; i < capacity; i++) {
+                if (values[i] != null) {
+                    if (!first) {
+                        bucketsLabel.append("|");
+                    }
+                    bucketsLabel.append("<f").append(i).append("> Indice: ").append(i);
+                    first = false;
+                }
+            }
+            bucketsLabel.append("\"];");
+
+            pw.println("    " + bucketsLabel.toString());
+
+            for (int i = 0; i < capacity; i++) {
+                HashNode<V> current = values[i];
+                if (current != null) {
+                    String lastID = "buckets:f" + i;
+
+                    while (current != null) {
+                        String currentID = "node" + System.identityHashCode(current);
+
+                        String keyStr = current.getKey().replace("\"", "\\\"");
+                        String valStr = String.valueOf(current.getValue()).replace("\"", "\\\"");
+                        if (current.getValue() instanceof Product product) {
+                            valStr = product.getName();
+                        }
+                        if (valStr.length() > 50) {
+                            valStr = valStr.substring(0, 47) + "...";
+                        }
+
+                        pw.println("    " + currentID + " [fillcolor=\"#AED6F1\", label=\"{Key: " + keyStr + " | Val: " + valStr + "}\"];");
+                        pw.println("    " + lastID + " -> " + currentID + " [color=\"#1B4F72\"];");
+
+                        lastID = currentID;
+                        current = current.getNext();
+                    }
+                }
+            }
+
+            pw.println("}");
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+
+        ExporterSVG.exportToSvg(file);
     }
 }

@@ -4,13 +4,22 @@
  */
 package com.josecarlos.supermarket.view.agencies;
 
+import com.josecarlos.supermarket.model.graphs.ComparationMode;
+import com.josecarlos.supermarket.model.graphs.Dijkstra;
 import com.josecarlos.supermarket.model.graphs.Edge;
+import com.josecarlos.supermarket.model.graphs.Graph;
+import com.josecarlos.supermarket.model.graphs.PathResult;
 import com.josecarlos.supermarket.model.graphs.Vertex;
 import com.josecarlos.supermarket.model.lists.DoubleNode;
 import com.josecarlos.supermarket.model.lists.Node;
 import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
+import com.josecarlos.supermarket.services.CSVService;
+import com.josecarlos.supermarket.services.MovementService;
+import com.josecarlos.supermarket.view.listeners.CreateAgencyListener;
 import com.josecarlos.supermarket.view.listeners.ProductsLoaderListener;
+import com.josecarlos.supermarket.view.listeners.SelectDestinationListener;
+import com.josecarlos.supermarket.view.listeners.SelectVertexListener;
 import com.josecarlos.supermarket.view.products.CreateProductDialog;
 import com.josecarlos.supermarket.view.products.ProductActionsDialog;
 import com.josecarlos.supermarket.view.products.SearchProductDialog;
@@ -18,30 +27,39 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.io.File;
+import java.util.List;
+import java.util.Optional;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
  * @author LENOVO
  */
-public class AgencyView extends javax.swing.JPanel implements ProductsLoaderListener {
+public class AgencyView extends javax.swing.JPanel implements ProductsLoaderListener, SelectDestinationListener {
 
     private Vertex vertex;
+    private final CreateAgencyListener listener;
+    private final Graph graph;
 
     /**
      * Creates new form NewJPanel
      *
      * @param vertex
      */
-    public AgencyView(Vertex vertex) {
+    public AgencyView(Vertex vertex, CreateAgencyListener listener, Graph graph) {
         initComponents();
         this.vertex = vertex;
         this.agencyTitle.setText(vertex.getAgency().getName());
+        this.listener = listener;
+        this.graph = graph;
     }
 
     /**
@@ -59,8 +77,9 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
         buttonsPanel = new javax.swing.JPanel();
         searchProduct = new javax.swing.JButton();
         addProduct = new javax.swing.JButton();
+        orderByName = new javax.swing.JButton();
         movements = new javax.swing.JButton();
-        loadCsv = new javax.swing.JButton();
+        diagrams = new javax.swing.JButton();
         centerPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
@@ -92,13 +111,17 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
         addProduct.addActionListener(this::addProductActionPerformed);
         buttonsPanel.add(addProduct);
 
-        movements.setText("Traslados");
+        orderByName.setText("Listar por Nombre");
+        orderByName.addActionListener(this::orderByNameActionPerformed);
+        buttonsPanel.add(orderByName);
+
+        movements.setText("Info y traslados");
         movements.addActionListener(this::movementsActionPerformed);
         buttonsPanel.add(movements);
 
-        loadCsv.setText("Cargar CSV");
-        loadCsv.addActionListener(this::loadCsvActionPerformed);
-        buttonsPanel.add(loadCsv);
+        diagrams.setText("Generar Diagramas");
+        diagrams.addActionListener(this::diagramsActionPerformed);
+        buttonsPanel.add(diagrams);
 
         infoPanel.add(buttonsPanel, java.awt.BorderLayout.CENTER);
 
@@ -123,26 +146,35 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
     }//GEN-LAST:event_searchProductActionPerformed
 
     private void movementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movementsActionPerformed
-        loadEdges();
-    }//GEN-LAST:event_movementsActionPerformed
-
-    private void loadCsvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadCsvActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loadCsvActionPerformed
-
-    private void loadEdges() {
-        JPanel panel = new JPanel(new GridLayout(5, 5));
-        DoubleNode<Edge<Vertex>> head = vertex.getDestionations().getHead();
-        while (head != null) {
-            panel.add(new JLabel(head.getValue().getDestination().getAgency().getName()));
-            head = head.getNext();
-        }
+        AgencyOptions agencyOptions = new AgencyOptions(listener, vertex, graph, this);
+        
         remove(((BorderLayout) getLayout())
                 .getLayoutComponent(BorderLayout.CENTER));
-        add(panel, BorderLayout.CENTER);
+        add(agencyOptions, BorderLayout.CENTER);
         revalidate();
         repaint();
-    }
+    }//GEN-LAST:event_movementsActionPerformed
+
+    private void orderByNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderByNameActionPerformed
+        onLoadAllProducts();
+    }//GEN-LAST:event_orderByNameActionPerformed
+
+    private void diagramsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_diagramsActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Seleccione el directorio para guardar");
+
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        fileChooser.setAcceptAllFileFilterUsed(false);
+
+        int result = fileChooser.showOpenDialog(this);
+
+        if (result == JFileChooser.APPROVE_OPTION) {
+            File selectedFile = fileChooser.getSelectedFile();
+            String path = selectedFile.getAbsolutePath();
+
+            vertex.getAgency().getCatalog().generateDiagrams(path);
+        }
+    }//GEN-LAST:event_diagramsActionPerformed
 
     @Override
     public void onProductsLoaded(SimpleProductsList products) {
@@ -180,6 +212,17 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
     }
 
     @Override
+    public void onVertexSelected(Vertex agency, ComparationMode mode) {
+        Dijkstra dijkstra = new Dijkstra();
+        Optional<PathResult> result = dijkstra.shortestPath(graph, vertex.getKey(), agency.getKey(), mode);
+        if (result.isPresent()) {
+            MovementService movementService = new MovementService(result.get(), agency);
+            movementService.run();
+        }
+    }
+
+    
+    @Override
     public void onLoadAllProducts() {
         this.onProductsLoaded(vertex.getAgency().getCatalog().inorder());
     }
@@ -189,9 +232,10 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
     private javax.swing.JLabel agencyTitle;
     private javax.swing.JPanel buttonsPanel;
     private javax.swing.JPanel centerPanel;
+    private javax.swing.JButton diagrams;
     private javax.swing.JPanel infoPanel;
-    private javax.swing.JButton loadCsv;
     private javax.swing.JButton movements;
+    private javax.swing.JButton orderByName;
     private javax.swing.JButton searchProduct;
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables

@@ -28,7 +28,7 @@
                 <MenuItem class="javax.swing.JMenuItem" name="connectionsCSVMenu">
                   <Properties>
                     <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                      <KeyStroke key="Ctrl+O"/>
+                      <KeyStroke key="Ctrl+L"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Conexiones"/>
                   </Properties>
@@ -49,6 +49,14 @@
                 </MenuItem>
               </SubComponents>
             </Menu>
+            <MenuItem class="javax.swing.JMenuItem" name="graphMenu">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Grafo"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="graphMenuActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="agenciesMenu">
@@ -73,11 +81,6 @@
               </Events>
             </MenuItem>
           </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="moveMenu">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Traslado"/>
-          </Properties>
         </Menu>
       </SubComponents>
     </Menu>

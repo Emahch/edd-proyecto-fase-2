@@ -81,20 +81,28 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addProductActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="orderByName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listar por Nombre"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="orderByNameActionPerformed"/>
+              </Events>
+            </Component>
             <Component class="javax.swing.JButton" name="movements">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Traslados"/>
+                <Property name="text" type="java.lang.String" value="Info y traslados"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="movementsActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="loadCsv">
+            <Component class="javax.swing.JButton" name="diagrams">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cargar CSV"/>
+                <Property name="text" type="java.lang.String" value="Generar Diagramas"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="loadCsvActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="diagramsActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

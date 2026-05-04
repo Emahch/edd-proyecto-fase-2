@@ -6,7 +6,6 @@ package com.josecarlos.supermarket.view.listeners;
 
 import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
-import java.util.Optional;
 
 /**
  *
@@ -14,7 +13,7 @@ import java.util.Optional;
  */
 public interface ProductListener {
     boolean onProductCreated(Product product);
-    boolean onProductModified(Product product);
+    boolean onProductModified(Product product, Product newProduct);
     void onProductDeleted(Product product);
     SimpleProductsList searchProduct(String key);
     SimpleProductsList searchByCategory(String category);

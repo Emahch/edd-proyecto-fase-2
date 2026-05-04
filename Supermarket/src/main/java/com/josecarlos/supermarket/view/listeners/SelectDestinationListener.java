@@ -4,14 +4,13 @@
  */
 package com.josecarlos.supermarket.view.listeners;
 
-import com.josecarlos.supermarket.model.product.Agency;
+import com.josecarlos.supermarket.model.graphs.ComparationMode;
+import com.josecarlos.supermarket.model.graphs.Vertex;
 
 /**
  *
  * @author LENOVO
  */
-public interface CreateAgencyListener {
-    void onAgencyCreated(Agency agency);
-    void onAgencyUpdated(Agency agency);
-    void onAgencyDeleted(Agency agency);
+public interface SelectDestinationListener {
+    void onVertexSelected(Vertex agency, ComparationMode mode);
 }
