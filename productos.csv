@@ -1,0 +1,1001 @@
+SucursalID,Nombre,CodigoBarra,Categoria,FechaCaducidad,Marca,Precio,Stock
+89,Leche Entera,7501000000010,Lácteos,2029-01-11,Alpura,23.7,128
+12,Pan Integral,7501000000027,Panadería,2028-03-05,Bimbo,32.9,49
+25,Jabón Líquido,7501000000034,Limpieza,2028-10-30,Zest,29.5,45
+39,Arroz Blanco,7501000000041,Cereales,2030-10-26,SOS,19.8,119
+78,Atún Agua,7501000000058,Enlatados,2027-09-03,Dolores,28.6,60
+62,Cereal Choco,7501000000065,Cereales,2027-11-23,Kellogg's,54.0,56
+97,Aceite Vegetal,7501000000072,Grasas,2028-03-16,Nutrioli,57.5,91
+73,Queso Manchego,7501000000089,Lácteos,2029-03-10,Lala,52.5,44
+7,Galletas María,7501000000096,Galletas,2029-12-16,Gamesa,25.1,111
+11,Coca Cola 2L,7501000000102,Bebidas,2027-09-11,Coca-Cola,34.2,96
+23,Sopa Instantánea,7501000000119,Instantáneos,2026-12-18,Maruchan,13.9,73
+50,Frijoles Negros,7501000000126,Enlatados,2030-03-27,Isadora,21.5,109
+45,Detergente Líquido,7501000000133,Limpieza,2029-07-31,Ariel,62.3,38
+18,Mayonesa 400g,7501000000140,Condimentos,2026-02-14,McCormick,41.4,29
+58,Shampoo Frutal,7501000000157,Higiene,2029-02-19,Pantene,67.9,14
+33,Jamón de Pavo,7501000000164,Embutidos,2026-09-21,Fud,41.7,75
+28,Atún Aceite,7501000000171,Enlatados,2027-05-26,Herdez,30.2,53
+43,Tortillas Maíz,7501000000188,Panadería,2026-10-15,Maseca,22.0,102
+60,Agua 1.5L,7501000000195,Bebidas,2026-06-23,Bonafont,17.0,87
+97,Galletas Surtidas,7501000000201,Galletas,2028-11-30,Gamesa,29.1,37
+69,Refresco Naranja,7501000000218,Bebidas,2027-07-27,Fanta,27.4,97
+56,Yogur Natural,7501000000225,Lácteos,2028-06-10,Danone,22.2,95
+98,Aceitunas Verdes,7501000000232,Conservas,2029-04-12,La Costeña,32.8,36
+88,Desodorante,7501000000249,Higiene,2028-05-10,Rexona,48.3,20
+92,Queso Panela,7501000000256,Lácteos,2026-07-19,Alpura,45.0,50
+39,Mermelada Fresa,7501000000263,Untables,2028-12-09,McCormick,33.5,44
+68,Lechuga Romana,7501000000270,Verduras,2026-09-22,CampoFresco,19.5,50
+54,Papel Higiénico,7501000000287,Limpieza,2030-01-30,Regio,58.2,64
+100,Salsa Picante,7501000000294,Condimentos,2029-07-07,Valentina,18.6,113
+79,Atún en Agua,7501000000300,Enlatados,2028-04-08,Dolores,29.3,38
+25,Jabón en Barra,7501000000317,Limpieza,2030-08-18,Zest,25.2,33
+3,Leche Deslactosada,7501000000324,Lácteos,2028-05-24,Santa Clara,28.8,91
+31,Huevos 12pzs,7501000000331,Huevos,2026-07-29,San Juan,41.1,125
+20,Detergente Polvo,7501000000348,Limpieza,2029-06-30,Ariel,53.2,38
+71,Té Limón,7501000000355,Bebidas,2028-09-21,Peñafiel,33.4,66
+86,Queso Oaxaca,7501000000362,Lácteos,2028-06-06,Lala,49.6,70
+72,Kétchup,7501000000379,Condimentos,2028-10-08,Heinz,27.6,25
+99,Queso Crema,7501000000386,Lácteos,2028-11-20,Philadelphia,41.3,36
+21,Cereal Frutal,7501000000393,Cereales,2027-10-10,Kellogg's,61.8,22
+37,Tortillas Harina,7501000000409,Panadería,2026-07-13,Maseca,22.8,61
+81,Refresco Cola,7501000000416,Bebidas,2026-04-21,Coca-Cola,30.1,118
+41,Ensalada,7501000000423,Verduras,2026-03-18,CampoFresco,25.0,46
+37,Cabeza de Ajo,7501000000430,Verduras,2026-09-22,CampoFresco,11.8,40
+17,Salchicha pavo,7501000000447,Embutidos,2026-12-16,Fud,37.0,67
+96,Barra Energética,7501000000454,Cereales,2030-02-03,Nature Valley,19.2,30
+16,Crema 500ml,7501000000461,Lácteos,2028-01-14,Alpura,27.8,65
+85,Atún Vegano,7501000000478,Enlatados,2030-07-19,Dolores,36.0,62
+58,Coca Cola Light,7501000000485,Bebidas,2029-09-16,Coca-Cola,34.5,67
+90,Flan Napolitano,7501000000492,Postres,2027-03-15,Danone,27.8,37
+81,Agua Coco 1L,7501000000508,Bebidas,2028-04-25,A de Coco,41.2,34
+51,Mayonesa 800g,7501000000515,Condimentos,2028-01-09,McCormick,52.3,21
+40,Aceitunas Negras,7501000000522,Conservas,2029-02-13,La Costeña,34.9,46
+68,Jabón Líquido Antibac,7501000000539,Limpieza,2031-02-15,Escudo,27.2,41
+38,Hamburguesa Res,7501000000546,Embutidos,2026-08-31,Fud,50.1,30
+34,Galleta Chocolate,7501000000553,Galletas,2028-11-13,Gamesa,22.7,27
+58,Queso Gouda,7501000000560,Lácteos,2029-03-07,NocheBuena,47.6,34
+95,Galletas Digestivas,7501000000577,Galletas,2028-06-19,Gamesa,26.5,32
+28,Sardina Tomate,7501000000584,Enlatados,2029-12-05,La Sirena,32.0,36
+53,Suavizante,7501000000591,Limpieza,2030-10-09,Ensueño,39.9,64
+100,Barra Granola,7501000000607,Cereales,2027-03-18,Bokados,14.8,26
+44,Salsa Verde,7501000000614,Condimentos,2028-07-29,La Costeña,17.6,38
+98,Queso Cotija,7501000000621,Lácteos,2027-01-09,Zwan,54.4,40
+67,Ensalada de Atún,7501000000638,Enlatados,2029-11-12,Dolores,27.6,28
+5,Queso Manchego 1,7501000000639,Higiene,2029-08-23,Philadelphia,67.3,121
+93,Lechuga Romana,7501000000640,Galletas,2028-05-13,Ensueño,49.6,130
+28,Aceite Vegetal 3,7501000000641,Untables,2027-07-19,Rexona,25.5,95
+13,Agua 1.5L,7501000000642,Untables,2027-09-09,Regio,69.8,33
+53,Lechuga Romana,7501000000643,Embutidos,2029-02-19,SOS,67.1,162
+66,Detergente Líquido 6,7501000000644,Lácteos,2029-02-21,A de Coco,28.3,88
+43,Cereal Choco 7,7501000000645,Embutidos,2029-07-08,Zest,36.4,189
+54,Shampoo Frutal,7501000000646,Cereales,2028-08-27,Bokados,55.8,82
+9,Shampoo Frutal 9,7501000000647,Higiene,2031-10-27,Danone,45.3,126
+39,Galletas María,7501000000648,Higiene,2027-02-06,Bokados,78.2,33
+90,Queso Manchego 11,7501000000649,Verduras,2029-12-22,Heinz,11.0,70
+94,Tortillas Maíz 12,7501000000650,Enlatados,2027-10-05,Coca-Cola,74.4,60
+60,Desodorante,7501000000651,Higiene,2027-07-03,Ensueño,66.2,101
+100,Salsa Picante 14,7501000000652,Cereales,2030-01-01,La Costeña,18.5,96
+38,Mermelada Fresa,7501000000653,Bebidas,2031-10-17,Herdez,46.1,177
+80,Yogur Natural 16,7501000000654,Galletas,2030-07-25,Bimbo,31.3,158
+80,Refresco Naranja,7501000000655,Condimentos,2028-11-06,NocheBuena,50.3,95
+25,Pan Integral,7501000000656,Embutidos,2027-04-12,SOS,69.4,174
+78,Desodorante,7501000000657,Verduras,2028-11-08,Dolores,55.6,23
+95,Agua 1.5L,7501000000658,Untables,2030-06-30,SOS,37.9,140
+15,Papel Higiénico,7501000000659,Limpieza,2030-04-28,Danone,57.5,122
+34,Refresco Naranja 22,7501000000660,Verduras,2027-12-25,Heinz,11.3,104
+19,Aceitunas Verdes,7501000000661,Bebidas,2030-12-23,Kellogg's,11.9,150
+49,Coca Cola 2L,7501000000662,Conservas,2031-12-31,Valentina,34.0,37
+20,Papel Higiénico,7501000000663,Huevos,2030-12-27,Rexona,69.7,43
+27,Jamón de Pavo,7501000000664,Postres,2028-05-04,La Costeña,67.2,114
+15,Jabón Líquido,7501000000665,Cereales,2027-03-05,Pantene,74.5,103
+9,Galletas Surtidas,7501000000666,Cereales,2029-11-25,Dolores,36.9,54
+13,Aceite Vegetal,7501000000667,Limpieza,2031-01-28,Alpura,32.1,143
+56,Yogur Natural,7501000000668,Conservas,2030-06-06,Nature Valley,40.7,93
+45,Galletas María 31,7501000000669,Lácteos,2030-03-11,Alpura,53.4,76
+19,Shampoo Frutal,7501000000670,Huevos,2027-08-18,Gamesa,24.3,142
+84,Yogur Natural,7501000000671,Enlatados,2030-12-20,Maseca,66.1,64
+84,Atún Aceite,7501000000672,Untables,2031-12-02,Rexona,10.3,85
+46,Mayonesa 400g,7501000000673,Higiene,2029-08-16,Nutrioli,65.5,166
+73,Aceitunas Verdes,7501000000674,Huevos,2027-12-21,SOS,47.8,124
+65,Tortillas Maíz,7501000000675,Bebidas,2027-04-04,Zwan,69.1,112
+66,Sopa Instantánea,7501000000676,Panadería,2031-07-12,Alpura,17.0,155
+82,Arroz Blanco,7501000000677,Enlatados,2027-04-24,Nutrioli,32.1,104
+12,Aceitunas Verdes,7501000000678,Huevos,2027-04-25,Zest,35.9,58
+75,Queso Manchego,7501000000679,Enlatados,2026-08-25,Maseca,64.1,122
+30,Sopa Instantánea 42,7501000000680,Higiene,2027-05-23,Rexona,62.9,186
+96,Aceite Vegetal,7501000000681,Verduras,2028-10-24,Bokados,10.1,178
+67,Jabón Líquido,7501000000682,Limpieza,2031-08-13,NocheBuena,70.6,55
+17,Salsa Picante 45,7501000000683,Limpieza,2027-05-12,Maseca,26.2,112
+98,Papel Higiénico 46,7501000000684,Cereales,2026-09-30,Lala,19.4,136
+72,Detergente Líquido,7501000000685,Condimentos,2028-12-24,La Sirena,11.9,131
+5,Yogur Natural 48,7501000000686,Embutidos,2031-04-25,Nature Valley,57.2,35
+58,Pan Integral,7501000000687,Panadería,2028-09-28,Nature Valley,18.9,76
+39,Aceitunas Verdes,7501000000688,Condimentos,2031-06-14,SOS,37.0,103
+76,Refresco Naranja,7501000000689,Lácteos,2030-04-18,Pantene,49.3,60
+69,Arroz Blanco 52,7501000000690,Bebidas,2028-12-20,Ariel,62.7,141
+63,Yogur Natural,7501000000691,Huevos,2027-06-02,Heinz,57.4,121
+34,Tortillas Maíz,7501000000692,Limpieza,2031-12-25,Fud,77.7,92
+42,Sopa Instantánea,7501000000693,Cereales,2028-03-16,NocheBuena,60.5,126
+88,Atún Aceite,7501000000694,Lácteos,2026-04-27,NocheBuena,19.8,124
+13,Refresco Naranja,7501000000695,Embutidos,2027-11-29,Rexona,27.2,131
+91,Desodorante 58,7501000000696,Higiene,2028-03-31,Coca-Cola,46.8,40
+29,Galletas Surtidas,7501000000697,Galletas,2031-10-22,Maseca,53.6,106
+56,Jamón de Pavo,7501000000698,Condimentos,2028-08-30,Bimbo,58.5,67
+13,Desodorante 61,7501000000699,Bebidas,2030-11-15,Escudo,77.7,88
+81,Tortillas Maíz,7501000000700,Huevos,2029-02-17,NocheBuena,65.2,173
+83,Mermelada Fresa,7501000000701,Postres,2027-11-21,Isadora,61.8,56
+14,Papel Higiénico,7501000000702,Galletas,2027-05-29,Valentina,73.4,194
+57,Frijoles Negros,7501000000703,Panadería,2030-10-25,La Sirena,75.3,103
+2,Atún Agua,7501000000704,Embutidos,2026-04-25,NocheBuena,15.7,84
+54,Desodorante,7501000000705,Postres,2028-06-27,Lala,58.3,87
+73,Agua 1.5L,7501000000706,Verduras,2028-11-29,McCormick,71.9,31
+80,Leche Entera 69,7501000000707,Galletas,2029-09-26,Danone,54.1,157
+52,Papel Higiénico,7501000000708,Untables,2030-09-20,Coca-Cola,66.7,41
+22,Leche Entera 71,7501000000709,Conservas,2030-07-21,Rexona,73.3,134
+47,Lechuga Romana 72,7501000000710,Embutidos,2030-07-07,NocheBuena,11.0,28
+8,Mayonesa 400g,7501000000711,Galletas,2026-09-11,Ensueño,75.6,54
+50,Mayonesa 400g,7501000000712,Untables,2031-08-31,Maruchan,40.0,89
+2,Salsa Picante,7501000000713,Huevos,2026-09-08,Dolores,48.1,99
+65,Salsa Picante,7501000000714,Condimentos,2027-07-29,Lala,57.6,165
+38,Atún Agua,7501000000715,Cereales,2031-04-06,Alpura,73.3,105
+30,Yogur Natural,7501000000716,Embutidos,2029-04-28,Dolores,53.4,41
+62,Coca Cola 2L 79,7501000000717,Limpieza,2031-08-20,Bokados,24.7,116
+39,Aceitunas Verdes,7501000000718,Embutidos,2028-07-30,Escudo,31.4,180
+14,Pan Integral 81,7501000000719,Bebidas,2026-03-17,McCormick,41.7,24
+38,Queso Panela,7501000000720,Bebidas,2030-11-24,Philadelphia,57.3,169
+37,Mermelada Fresa,7501000000721,Galletas,2026-07-18,Danone,33.8,161
+45,Coca Cola 2L 84,7501000000722,Untables,2028-12-13,La Sirena,67.6,102
+23,Frijoles Negros,7501000000723,Higiene,2028-12-07,Maseca,42.5,105
+43,Cereal Choco,7501000000724,Limpieza,2031-01-06,McCormick,23.2,63
+86,Galletas Surtidas 87,7501000000725,Lácteos,2028-02-09,Valentina,68.8,199
+100,Atún en Agua,7501000000726,Bebidas,2029-02-17,NocheBuena,35.9,175
+29,Frijoles Negros,7501000000727,Bebidas,2031-07-25,Fud,48.6,90
+80,Detergente Líquido 90,7501000000728,Verduras,2029-06-24,NocheBuena,18.1,21
+6,Mermelada Fresa,7501000000729,Condimentos,2029-01-08,NocheBuena,72.5,166
+5,Atún Agua 92,7501000000730,Conservas,2030-05-26,Bimbo,40.4,53
+3,Sopa Instantánea,7501000000731,Cereales,2031-06-30,Nutrioli,47.2,191
+4,Desodorante,7501000000732,Panadería,2027-05-04,Zwan,62.0,162
+9,Atún Agua 95,7501000000733,Enlatados,2028-07-10,Zest,48.8,183
+11,Salsa Picante,7501000000734,Cereales,2031-02-28,Gamesa,12.2,177
+29,Papel Higiénico,7501000000735,Conservas,2030-05-03,Ariel,50.2,129
+80,Cereal Choco,7501000000736,Enlatados,2030-03-04,Gamesa,45.8,149
+27,Mayonesa 400g,7501000000737,Postres,2029-02-03,Bonafont,26.4,169
+79,Desodorante,7501000000738,Enlatados,2031-02-06,Escudo,67.6,149
+69,Salsa Picante,7501000000739,Enlatados,2029-04-14,Nature Valley,12.0,109
+33,Galletas María,7501000000740,Bebidas,2030-07-16,Lala,41.5,131
+22,Galletas María,7501000000741,Galletas,2031-09-18,Maruchan,21.4,155
+64,Mermelada Fresa,7501000000742,Lácteos,2026-05-30,Alpura,49.6,103
+45,Galletas María,7501000000743,Enlatados,2027-03-01,Herdez,18.5,40
+1,Atún en Agua 106,7501000000744,Enlatados,2030-07-07,Valentina,19.2,80
+73,Salsa Picante,7501000000745,Cereales,2031-04-23,McCormick,43.3,39
+82,Frijoles Negros 108,7501000000746,Condimentos,2031-11-11,Regio,67.7,93
+92,Leche Entera,7501000000747,Untables,2031-10-26,Philadelphia,74.3,198
+65,Shampoo Frutal,7501000000748,Verduras,2028-04-27,Heinz,33.1,167
+10,Lechuga Romana,7501000000749,Embutidos,2031-04-30,La Sirena,15.4,125
+98,Leche Entera,7501000000750,Postres,2030-01-16,La Sirena,53.8,176
+43,Atún Agua 113,7501000000751,Panadería,2030-09-12,Maruchan,75.5,167
+94,Tortillas Maíz,7501000000752,Limpieza,2026-05-29,Bokados,31.3,187
+54,Mermelada Fresa 115,7501000000753,Postres,2031-03-17,Fud,79.4,43
+86,Coca Cola 2L,7501000000754,Panadería,2027-04-26,SOS,53.5,118
+93,Agua 1.5L,7501000000755,Huevos,2031-07-25,Isadora,65.6,49
+74,Refresco Naranja 118,7501000000756,Cereales,2026-03-12,Coca-Cola,62.8,175
+33,Queso Manchego,7501000000757,Huevos,2028-02-01,NocheBuena,44.4,56
+43,Yogur Natural,7501000000758,Untables,2030-08-14,Alpura,14.5,61
+1,Mayonesa 400g,7501000000759,Huevos,2028-07-09,Philadelphia,15.2,133
+9,Papel Higiénico 122,7501000000760,Lácteos,2030-01-03,Fud,34.2,49
+97,Arroz Blanco,7501000000761,Galletas,2028-09-30,Pantene,75.3,159
+34,Detergente Líquido 124,7501000000762,Higiene,2030-09-19,Heinz,43.0,117
+20,Aceitunas Verdes 125,7501000000763,Bebidas,2027-01-15,Fud,54.6,135
+98,Jabón Líquido,7501000000764,Bebidas,2029-09-13,Ariel,65.4,52
+88,Detergente Líquido,7501000000765,Galletas,2028-02-09,NocheBuena,45.5,43
+79,Atún Agua,7501000000766,Conservas,2030-03-24,Coca-Cola,38.1,104
+36,Atún Agua,7501000000767,Panadería,2027-04-17,Ariel,66.8,127
+52,Atún en Agua,7501000000768,Bebidas,2027-06-01,Peñafiel,60.5,34
+15,Refresco Naranja,7501000000769,Cereales,2030-01-04,Heinz,73.6,36
+29,Tortillas Maíz,7501000000770,Verduras,2031-10-11,Zest,27.4,185
+99,Pan Integral 133,7501000000771,Galletas,2031-05-12,Valentina,72.3,159
+76,Agua 1.5L 134,7501000000772,Verduras,2031-06-10,Gamesa,49.1,28
+27,Atún Agua,7501000000773,Enlatados,2027-07-06,Regio,34.0,124
+28,Lechuga Romana,7501000000774,Condimentos,2027-04-04,Heinz,21.0,94
+46,Galletas Surtidas,7501000000775,Higiene,2029-05-15,La Costeña,70.8,96
+56,Mermelada Fresa,7501000000776,Limpieza,2031-01-05,Bimbo,54.3,56
+42,Agua 1.5L 139,7501000000777,Bebidas,2027-08-09,La Sirena,69.6,116
+13,Queso Panela 140,7501000000778,Condimentos,2030-12-14,Peñafiel,40.7,153
+21,Tortillas Maíz,7501000000779,Galletas,2027-08-03,Heinz,13.3,180
+2,Arroz Blanco,7501000000780,Cereales,2028-09-14,Ensueño,15.3,172
+23,Galletas María,7501000000781,Panadería,2028-06-29,Bonafont,78.2,120
+21,Coca Cola 2L,7501000000782,Bebidas,2027-12-09,Peñafiel,79.9,185
+33,Papel Higiénico,7501000000783,Limpieza,2028-05-28,Coca-Cola,45.2,25
+100,Lechuga Romana,7501000000784,Bebidas,2026-03-09,Bonafont,33.6,165
+88,Mayonesa 400g,7501000000785,Galletas,2030-10-22,Maseca,52.6,129
+81,Atún en Agua,7501000000786,Higiene,2028-01-23,Heinz,20.7,185
+35,Coca Cola 2L 149,7501000000787,Huevos,2028-02-13,Gamesa,75.5,154
+51,Refresco Naranja 150,7501000000788,Cereales,2028-11-13,Nature Valley,14.6,27
+65,Cereal Choco 151,7501000000789,Limpieza,2027-01-01,Regio,24.8,169
+47,Jamón de Pavo,7501000000790,Limpieza,2029-03-05,Zest,32.8,102
+77,Mayonesa 400g,7501000000791,Embutidos,2031-12-04,Kellogg's,54.2,86
+94,Agua 1.5L,7501000000792,Enlatados,2031-04-17,Zest,24.6,162
+29,Pan Integral 155,7501000000793,Bebidas,2029-10-07,Ensueño,68.8,50
+18,Lechuga Romana,7501000000794,Condimentos,2029-01-18,Isadora,70.6,36
+5,Lechuga Romana,7501000000795,Embutidos,2028-08-29,Isadora,30.6,29
+34,Tortillas Maíz,7501000000796,Condimentos,2031-09-19,NocheBuena,13.9,91
+35,Mayonesa 400g,7501000000797,Bebidas,2031-06-09,Nutrioli,67.4,33
+81,Galletas Surtidas,7501000000798,Limpieza,2031-10-27,Philadelphia,50.1,136
+18,Aceite Vegetal,7501000000799,Cereales,2027-04-22,Nutrioli,47.8,185
+57,Aceite Vegetal,7501000000800,Embutidos,2030-10-09,NocheBuena,56.5,69
+25,Jamón de Pavo 163,7501000000801,Verduras,2030-05-17,Peñafiel,39.7,168
+34,Mayonesa 400g,7501000000802,Huevos,2031-05-06,Heinz,58.3,31
+2,Yogur Natural,7501000000803,Condimentos,2031-01-01,Dolores,73.7,29
+10,Aceite Vegetal 166,7501000000804,Bebidas,2028-07-16,NocheBuena,59.6,48
+27,Atún en Agua,7501000000805,Limpieza,2027-06-27,Lala,47.5,158
+49,Mayonesa 400g,7501000000806,Lácteos,2028-01-14,Peñafiel,39.6,70
+64,Galletas Surtidas 169,7501000000807,Panadería,2027-09-19,Coca-Cola,34.0,188
+57,Atún Agua,7501000000808,Verduras,2027-07-28,Danone,77.1,190
+69,Galletas Surtidas 171,7501000000809,Lácteos,2026-12-16,NocheBuena,46.9,197
+62,Refresco Naranja,7501000000810,Lácteos,2031-11-03,Regio,29.1,130
+41,Aceite Vegetal,7501000000811,Postres,2031-07-04,Rexona,55.0,117
+6,Salsa Picante,7501000000812,Higiene,2029-10-29,Escudo,76.5,69
+31,Desodorante,7501000000813,Postres,2028-05-03,Regio,68.6,99
+34,Atún en Agua,7501000000814,Bebidas,2026-02-16,Escudo,10.5,199
+81,Galletas Surtidas 177,7501000000815,Embutidos,2029-08-07,Heinz,31.1,176
+1,Queso Panela,7501000000816,Cereales,2030-06-05,NocheBuena,18.3,136
+49,Pan Integral,7501000000817,Galletas,2028-01-02,NocheBuena,67.4,115
+86,Sopa Instantánea,7501000000818,Limpieza,2031-05-10,Kellogg's,62.1,119
+41,Arroz Blanco,7501000000819,Untables,2029-05-31,Peñafiel,76.7,55
+40,Queso Manchego 182,7501000000820,Embutidos,2029-07-29,NocheBuena,41.4,149
+56,Aceitunas Verdes,7501000000821,Enlatados,2030-06-07,Dolores,54.6,68
+48,Atún Aceite,7501000000822,Galletas,2028-12-10,Philadelphia,50.8,179
+38,Jamón de Pavo 185,7501000000823,Huevos,2026-11-12,La Costeña,52.3,68
+43,Pan Integral,7501000000824,Untables,2028-01-23,Danone,28.3,101
+76,Galletas María,7501000000825,Conservas,2027-07-06,Lala,36.5,164
+79,Salsa Picante,7501000000826,Huevos,2031-02-24,Isadora,11.0,51
+52,Cereal Choco,7501000000827,Enlatados,2030-05-03,Valentina,10.5,100
+68,Queso Manchego 190,7501000000828,Postres,2031-11-11,Valentina,43.4,150
+94,Salsa Picante 191,7501000000829,Enlatados,2030-03-15,Kellogg's,69.0,132
+19,Mermelada Fresa,7501000000830,Untables,2031-06-14,La Sirena,15.6,31
+96,Agua 1.5L,7501000000831,Panadería,2026-07-10,La Costeña,33.6,54
+29,Aceite Vegetal,7501000000832,Untables,2029-08-12,Bonafont,46.5,196
+49,Agua 1.5L,7501000000833,Conservas,2028-08-04,Danone,23.4,81
+18,Mayonesa 400g 196,7501000000834,Huevos,2031-08-11,Philadelphia,69.9,60
+62,Mermelada Fresa 197,7501000000835,Conservas,2030-01-02,Maruchan,79.1,121
+56,Mayonesa 400g 198,7501000000836,Galletas,2031-07-06,Gamesa,52.1,68
+47,Cereal Choco,7501000000837,Enlatados,2031-08-20,Danone,29.6,20
+26,Arroz Blanco 200,7501000000838,Huevos,2027-11-03,McCormick,22.8,71
+97,Galletas Surtidas,7501000000839,Enlatados,2031-07-13,Zwan,50.8,57
+87,Queso Panela,7501000000840,Bebidas,2029-02-09,Alpura,42.5,115
+92,Frijoles Negros,7501000000841,Huevos,2026-12-28,NocheBuena,71.0,141
+5,Sopa Instantánea 204,7501000000842,Bebidas,2031-10-16,Nature Valley,44.4,188
+69,Frijoles Negros 205,7501000000843,Limpieza,2028-02-05,Nature Valley,50.7,170
+64,Sopa Instantánea,7501000000844,Embutidos,2030-08-17,Regio,21.6,132
+23,Frijoles Negros,7501000000845,Limpieza,2027-07-09,Dolores,49.5,86
+83,Tortillas Maíz,7501000000846,Huevos,2030-10-13,Rexona,35.3,155
+96,Queso Panela,7501000000847,Embutidos,2026-02-11,Peñafiel,77.4,86
+54,Coca Cola 2L,7501000000848,Verduras,2027-02-18,Maseca,14.8,83
+89,Queso Manchego,7501000000849,Postres,2031-04-26,La Sirena,19.0,162
+63,Lechuga Romana 212,7501000000850,Untables,2027-04-27,La Costeña,46.5,131
+13,Papel Higiénico,7501000000851,Cereales,2030-01-27,Nature Valley,64.9,93
+89,Lechuga Romana 214,7501000000852,Postres,2031-04-13,Zest,69.7,111
+25,Galletas María,7501000000853,Panadería,2027-09-17,Peñafiel,67.9,161
+22,Cereal Choco 216,7501000000854,Galletas,2029-07-30,Maseca,64.8,85
+18,Lechuga Romana,7501000000855,Conservas,2028-09-15,Pantene,68.2,160
+5,Leche Entera,7501000000856,Higiene,2028-07-25,NocheBuena,58.4,125
+59,Agua 1.5L,7501000000857,Enlatados,2027-03-12,La Costeña,14.2,29
+4,Lechuga Romana,7501000000858,Postres,2026-11-24,A de Coco,78.8,139
+93,Mayonesa 400g,7501000000859,Untables,2027-03-30,Dolores,73.7,170
+5,Papel Higiénico,7501000000860,Postres,2029-06-07,Bimbo,73.8,162
+79,Pan Integral,7501000000861,Postres,2030-02-02,Maseca,22.7,56
+69,Leche Entera,7501000000862,Enlatados,2030-02-25,La Costeña,75.7,73
+85,Desodorante,7501000000863,Untables,2031-10-20,A de Coco,59.0,140
+30,Aceite Vegetal,7501000000864,Panadería,2028-03-29,Ariel,56.7,146
+61,Salsa Picante 227,7501000000865,Verduras,2028-02-22,Regio,24.1,157
+79,Leche Entera,7501000000866,Galletas,2026-05-12,Gamesa,16.4,199
+45,Atún en Agua 229,7501000000867,Untables,2031-08-09,La Costeña,79.2,64
+61,Jabón Líquido,7501000000868,Lácteos,2027-04-08,Zest,44.4,119
+61,Pan Integral,7501000000869,Bebidas,2030-08-23,NocheBuena,50.9,183
+96,Arroz Blanco,7501000000870,Lácteos,2028-02-17,Escudo,63.6,128
+4,Tortillas Maíz,7501000000871,Bebidas,2028-07-03,Heinz,51.9,161
+1,Jabón Líquido,7501000000872,Lácteos,2026-11-03,Bokados,38.9,59
+25,Salsa Picante 235,7501000000873,Untables,2027-05-19,Zest,72.5,157
+59,Atún en Agua,7501000000874,Cereales,2029-07-19,Isadora,42.0,132
+61,Desodorante,7501000000875,Galletas,2028-12-09,Coca-Cola,66.9,34
+2,Lechuga Romana 238,7501000000876,Verduras,2027-04-29,Gamesa,73.2,29
+64,Leche Entera,7501000000877,Higiene,2026-04-21,Zwan,13.3,189
+74,Lechuga Romana,7501000000878,Panadería,2028-12-11,Bokados,79.9,86
+11,Salsa Picante,7501000000879,Embutidos,2030-05-17,Peñafiel,56.1,182
+80,Sopa Instantánea,7501000000880,Bebidas,2026-10-23,Gamesa,20.3,93
+47,Coca Cola 2L,7501000000881,Untables,2030-05-05,Escudo,79.4,184
+35,Tortillas Maíz,7501000000882,Huevos,2026-02-28,Philadelphia,77.4,148
+87,Coca Cola 2L,7501000000883,Galletas,2030-10-25,Maseca,64.7,40
+84,Agua 1.5L 246,7501000000884,Huevos,2031-08-15,Herdez,61.4,27
+90,Queso Panela,7501000000885,Limpieza,2030-01-12,Zwan,69.7,77
+71,Jamón de Pavo 248,7501000000886,Galletas,2027-11-08,Danone,70.6,42
+27,Tortillas Maíz 249,7501000000887,Lácteos,2030-11-04,SOS,36.4,151
+14,Arroz Blanco,7501000000888,Untables,2031-01-04,Regio,32.9,152
+99,Jabón Líquido,7501000000889,Galletas,2027-06-02,NocheBuena,54.0,173
+95,Frijoles Negros,7501000000890,Huevos,2028-08-25,Peñafiel,41.5,178
+66,Atún Agua,7501000000891,Enlatados,2027-10-01,Peñafiel,27.2,86
+38,Jamón de Pavo 254,7501000000892,Limpieza,2027-04-25,Nature Valley,47.4,144
+81,Shampoo Frutal,7501000000893,Galletas,2029-05-22,La Sirena,45.8,138
+48,Desodorante,7501000000894,Postres,2029-06-04,Bimbo,61.1,99
+45,Lechuga Romana,7501000000895,Embutidos,2028-06-26,Pantene,26.8,93
+30,Jabón Líquido 258,7501000000896,Conservas,2027-11-16,Rexona,12.1,52
+23,Refresco Naranja,7501000000897,Condimentos,2028-06-29,La Sirena,57.3,31
+21,Galletas María 260,7501000000898,Verduras,2026-06-12,Maruchan,17.3,144
+75,Galletas Surtidas 261,7501000000899,Galletas,2029-12-11,Nature Valley,36.8,48
+58,Detergente Líquido 262,7501000000900,Bebidas,2027-03-31,NocheBuena,37.3,183
+72,Queso Panela 263,7501000000901,Huevos,2030-12-05,Pantene,44.1,162
+21,Agua 1.5L,7501000000902,Higiene,2029-04-18,La Costeña,77.9,77
+89,Tortillas Maíz,7501000000903,Galletas,2031-07-30,SOS,60.9,75
+22,Sopa Instantánea,7501000000904,Lácteos,2031-02-15,Maruchan,43.9,59
+20,Aceite Vegetal 267,7501000000905,Limpieza,2031-07-22,SOS,29.7,172
+54,Galletas Surtidas,7501000000906,Postres,2028-03-03,Gamesa,38.7,188
+40,Arroz Blanco 269,7501000000907,Huevos,2029-06-26,Dolores,31.7,84
+78,Refresco Naranja,7501000000908,Enlatados,2026-10-21,La Sirena,57.4,181
+24,Atún Agua,7501000000909,Huevos,2026-09-27,NocheBuena,70.5,192
+41,Mermelada Fresa,7501000000910,Limpieza,2027-11-28,Maseca,52.4,25
+30,Salsa Picante,7501000000911,Huevos,2031-12-27,Nature Valley,80.0,30
+33,Cereal Choco,7501000000912,Verduras,2027-01-02,La Sirena,29.8,21
+72,Pan Integral,7501000000913,Conservas,2030-03-20,Rexona,23.0,163
+46,Galletas Surtidas,7501000000914,Panadería,2030-12-19,Isadora,42.0,149
+23,Jabón Líquido 277,7501000000915,Panadería,2031-05-06,Alpura,31.3,135
+83,Aceitunas Verdes,7501000000916,Enlatados,2030-03-14,Ariel,67.0,153
+30,Queso Manchego 279,7501000000917,Verduras,2031-10-24,Bokados,24.3,70
+44,Cereal Choco,7501000000918,Enlatados,2027-12-31,NocheBuena,73.7,150
+12,Papel Higiénico,7501000000919,Panadería,2029-12-01,Alpura,75.9,186
+73,Shampoo Frutal,7501000000920,Untables,2028-07-24,A de Coco,31.6,102
+38,Pan Integral,7501000000921,Untables,2027-09-22,Nutrioli,32.3,163
+69,Yogur Natural,7501000000922,Untables,2026-03-17,Heinz,29.0,84
+66,Pan Integral,7501000000923,Enlatados,2030-01-27,Danone,59.2,189
+22,Jabón Líquido,7501000000924,Cereales,2031-05-09,Zest,31.5,20
+23,Yogur Natural,7501000000925,Panadería,2026-05-11,Valentina,62.0,33
+10,Arroz Blanco,7501000000926,Huevos,2026-05-30,Rexona,21.8,93
+63,Detergente Líquido,7501000000927,Condimentos,2029-02-12,Herdez,51.9,133
+36,Detergente Líquido,7501000000928,Panadería,2031-08-18,Pantene,53.4,122
+13,Cereal Choco,7501000000929,Untables,2028-04-15,SOS,17.5,102
+35,Shampoo Frutal,7501000000930,Bebidas,2028-11-25,Pantene,10.4,75
+78,Atún Aceite,7501000000931,Limpieza,2029-04-14,A de Coco,68.5,149
+62,Lechuga Romana,7501000000932,Cereales,2030-10-04,Regio,68.5,48
+20,Galletas Surtidas,7501000000933,Enlatados,2031-08-31,Pantene,10.3,36
+47,Mermelada Fresa,7501000000934,Huevos,2026-06-14,La Costeña,31.3,33
+16,Galletas María,7501000000935,Postres,2027-05-13,Bokados,35.9,200
+27,Mayonesa 400g,7501000000936,Conservas,2027-12-26,Nutrioli,38.9,36
+42,Desodorante,7501000000937,Higiene,2026-05-14,Zest,40.0,189
+68,Lechuga Romana,7501000000938,Embutidos,2027-03-15,Regio,51.5,132
+87,Aceite Vegetal,7501000000939,Huevos,2029-09-26,Bonafont,76.9,153
+71,Salsa Picante,7501000000940,Galletas,2030-03-25,Peñafiel,10.2,101
+92,Jabón Líquido,7501000000941,Embutidos,2028-07-07,Maseca,49.9,105
+30,Coca Cola 2L 304,7501000000942,Higiene,2031-03-07,Rexona,15.8,192
+93,Agua 1.5L,7501000000943,Huevos,2028-05-26,Fud,64.6,90
+30,Galletas Surtidas 306,7501000000944,Embutidos,2028-08-11,Ariel,10.6,78
+60,Atún en Agua,7501000000945,Higiene,2027-11-18,Lala,17.5,168
+77,Atún Agua,7501000000946,Bebidas,2029-01-23,NocheBuena,20.9,137
+30,Leche Entera 309,7501000000947,Enlatados,2030-10-14,Bonafont,41.1,123
+76,Refresco Naranja,7501000000948,Postres,2031-02-18,Fud,75.9,23
+1,Salsa Picante,7501000000949,Limpieza,2030-03-08,Peñafiel,21.5,33
+15,Coca Cola 2L,7501000000950,Higiene,2027-06-14,Philadelphia,68.7,153
+99,Queso Panela 313,7501000000951,Higiene,2030-04-28,Bimbo,52.7,128
+69,Tortillas Maíz,7501000000952,Condimentos,2030-07-30,Peñafiel,63.5,91
+98,Queso Manchego,7501000000953,Conservas,2027-06-06,Alpura,11.9,118
+37,Leche Entera 316,7501000000954,Bebidas,2026-12-13,Pantene,47.5,57
+13,Cereal Choco,7501000000955,Condimentos,2031-07-17,Zwan,16.9,190
+72,Pan Integral 318,7501000000956,Panadería,2031-10-02,Lala,11.6,47
+25,Jabón Líquido,7501000000957,Panadería,2030-06-12,Gamesa,29.2,91
+14,Desodorante 320,7501000000958,Condimentos,2030-01-12,A de Coco,73.7,200
+16,Leche Entera 321,7501000000959,Postres,2031-08-07,NocheBuena,64.3,64
+72,Queso Manchego,7501000000960,Huevos,2028-10-17,Ariel,27.6,22
+40,Shampoo Frutal,7501000000961,Postres,2029-07-05,Regio,77.1,175
+83,Yogur Natural,7501000000962,Enlatados,2031-05-08,Gamesa,12.1,70
+53,Lechuga Romana,7501000000963,Verduras,2029-12-03,Maruchan,21.1,132
+49,Aceite Vegetal,7501000000964,Lácteos,2029-09-24,SOS,64.3,110
+58,Coca Cola 2L,7501000000965,Condimentos,2028-07-20,Maseca,20.1,110
+56,Mayonesa 400g,7501000000966,Bebidas,2029-12-02,Danone,66.8,60
+37,Shampoo Frutal 329,7501000000967,Bebidas,2028-02-22,Isadora,73.5,22
+82,Refresco Naranja,7501000000968,Limpieza,2027-10-20,Rexona,41.5,183
+49,Lechuga Romana 331,7501000000969,Galletas,2030-04-09,Pantene,38.8,85
+5,Aceitunas Verdes 332,7501000000970,Untables,2029-08-02,Danone,60.7,198
+82,Cereal Choco,7501000000971,Enlatados,2031-09-29,NocheBuena,73.6,31
+19,Tortillas Maíz 334,7501000000972,Postres,2027-09-21,Philadelphia,78.0,72
+40,Lechuga Romana,7501000000973,Panadería,2030-04-21,Escudo,58.0,47
+67,Agua 1.5L,7501000000974,Conservas,2031-09-27,McCormick,69.7,189
+83,Sopa Instantánea,7501000000975,Galletas,2028-03-31,Escudo,26.0,167
+34,Mayonesa 400g,7501000000976,Condimentos,2029-11-20,Lala,39.3,98
+4,Atún Agua,7501000000977,Embutidos,2027-03-17,Maseca,45.3,144
+7,Galletas María,7501000000978,Cereales,2026-05-24,Valentina,37.3,145
+86,Aceitunas Verdes,7501000000979,Panadería,2026-02-02,Peñafiel,74.7,107
+60,Detergente Líquido,7501000000980,Galletas,2029-07-09,Valentina,57.4,25
+68,Coca Cola 2L,7501000000981,Huevos,2028-10-08,NocheBuena,55.0,126
+85,Atún Agua,7501000000982,Conservas,2031-09-02,A de Coco,14.0,49
+97,Agua 1.5L,7501000000983,Enlatados,2031-10-20,Bonafont,15.5,197
+42,Atún en Agua 346,7501000000984,Postres,2031-11-24,Heinz,66.8,116
+6,Leche Entera,7501000000985,Lácteos,2028-05-19,Heinz,48.7,43
+46,Sopa Instantánea 348,7501000000986,Galletas,2028-02-06,Coca-Cola,30.8,149
+97,Desodorante,7501000000987,Enlatados,2027-06-15,Zest,19.3,141
+35,Galletas María 350,7501000000988,Embutidos,2029-02-18,Danone,66.4,83
+100,Arroz Blanco,7501000000989,Lácteos,2026-11-06,Bokados,10.1,125
+97,Atún Agua,7501000000990,Embutidos,2027-05-27,SOS,68.7,127
+31,Queso Manchego,7501000000991,Condimentos,2031-08-06,Alpura,33.5,70
+68,Jamón de Pavo,7501000000992,Condimentos,2026-05-25,NocheBuena,53.5,162
+38,Queso Panela,7501000000993,Verduras,2028-12-06,Alpura,13.4,106
+99,Papel Higiénico,7501000000994,Cereales,2030-08-03,Regio,79.3,99
+24,Queso Panela,7501000000995,Untables,2029-04-03,Zwan,24.4,39
+41,Refresco Naranja 358,7501000000996,Galletas,2029-04-08,Bonafont,57.0,143
+5,Shampoo Frutal 359,7501000000997,Limpieza,2027-10-12,Zest,58.2,140
+93,Queso Manchego 360,7501000000998,Bebidas,2030-05-30,Herdez,51.6,185
+16,Aceite Vegetal 361,7501000000999,Galletas,2029-09-06,Regio,46.0,43
+78,Sopa Instantánea,7501000001000,Limpieza,2026-07-03,NocheBuena,60.2,78
+9,Salsa Picante,7501000001001,Limpieza,2027-07-11,Rexona,31.1,24
+50,Galletas María 364,7501000001002,Cereales,2026-04-19,Nutrioli,23.1,137
+100,Agua 1.5L,7501000001003,Panadería,2027-07-11,Herdez,14.1,158
+100,Refresco Naranja,7501000001004,Lácteos,2031-01-12,Dolores,44.1,171
+65,Mayonesa 400g,7501000001005,Limpieza,2031-01-18,Maruchan,23.8,138
+87,Salsa Picante,7501000001006,Bebidas,2030-02-26,Lala,16.4,143
+54,Frijoles Negros 369,7501000001007,Enlatados,2031-12-10,Isadora,26.9,177
+34,Atún Agua,7501000001008,Enlatados,2028-09-26,La Costeña,60.4,80
+6,Lechuga Romana,7501000001009,Verduras,2031-12-09,Regio,53.0,101
+35,Yogur Natural 372,7501000001010,Postres,2027-10-18,Coca-Cola,70.0,176
+77,Atún Aceite,7501000001011,Lácteos,2027-01-09,Alpura,52.6,125
+14,Mermelada Fresa 374,7501000001012,Cereales,2029-12-02,Pantene,58.4,50
+23,Lechuga Romana 375,7501000001013,Huevos,2027-10-18,Lala,61.4,23
+82,Atún en Agua 376,7501000001014,Cereales,2028-02-01,Ensueño,21.9,170
+5,Cereal Choco,7501000001015,Embutidos,2029-06-24,Maruchan,30.5,22
+79,Atún en Agua 378,7501000001016,Condimentos,2029-02-25,Coca-Cola,13.4,139
+41,Aceitunas Verdes,7501000001017,Lácteos,2030-04-27,Heinz,19.0,122
+45,Atún Aceite 380,7501000001018,Embutidos,2028-10-06,Maruchan,44.7,35
+80,Galletas María 381,7501000001019,Higiene,2029-04-29,McCormick,51.8,39
+54,Tortillas Maíz,7501000001020,Bebidas,2030-11-30,Maruchan,27.8,54
+53,Yogur Natural,7501000001021,Huevos,2031-03-12,Ensueño,73.5,54
+85,Frijoles Negros,7501000001022,Panadería,2028-09-15,SOS,13.6,116
+20,Refresco Naranja,7501000001023,Galletas,2027-11-12,Philadelphia,19.5,182
+99,Aceite Vegetal,7501000001024,Conservas,2031-03-14,Ariel,49.0,119
+36,Cereal Choco,7501000001025,Cereales,2029-06-20,Bokados,28.6,78
+48,Tortillas Maíz,7501000001026,Galletas,2027-01-19,A de Coco,72.5,58
+75,Queso Panela,7501000001027,Panadería,2030-02-04,Escudo,71.9,92
+34,Atún en Agua 390,7501000001028,Embutidos,2031-03-18,La Sirena,49.5,173
+5,Galletas Surtidas,7501000001029,Cereales,2029-12-08,McCormick,16.0,165
+17,Queso Manchego,7501000001030,Huevos,2030-12-21,Fud,36.3,89
+26,Leche Entera 393,7501000001031,Cereales,2029-02-05,Coca-Cola,63.6,198
+23,Coca Cola 2L 394,7501000001032,Lácteos,2028-10-22,Danone,53.6,173
+64,Frijoles Negros,7501000001033,Conservas,2031-12-31,McCormick,25.0,115
+18,Queso Manchego,7501000001034,Conservas,2030-10-26,Rexona,24.4,191
+96,Detergente Líquido,7501000001035,Embutidos,2029-10-05,Herdez,54.7,185
+37,Lechuga Romana,7501000001036,Higiene,2031-07-08,Maseca,61.4,21
+50,Salsa Picante 399,7501000001037,Untables,2026-10-02,Philadelphia,50.6,88
+9,Pan Integral,7501000001038,Bebidas,2027-10-19,Ariel,79.0,101
+20,Aceite Vegetal,7501000001039,Verduras,2026-11-21,Zwan,28.7,96
+62,Salsa Picante 402,7501000001040,Limpieza,2029-08-11,Heinz,42.7,63
+41,Leche Entera 403,7501000001041,Verduras,2028-09-24,Gamesa,20.1,41
+17,Desodorante 404,7501000001042,Enlatados,2031-09-08,Philadelphia,28.8,128
+9,Tortillas Maíz 405,7501000001043,Lácteos,2028-04-15,McCormick,21.8,123
+51,Salsa Picante 406,7501000001044,Galletas,2030-01-29,Rexona,56.4,141
+13,Mayonesa 400g,7501000001045,Untables,2028-02-21,Pantene,16.0,63
+42,Cereal Choco,7501000001046,Verduras,2027-06-18,Kellogg's,21.0,99
+63,Shampoo Frutal,7501000001047,Enlatados,2027-10-11,NocheBuena,71.5,93
+5,Pan Integral 410,7501000001048,Panadería,2029-09-25,La Costeña,14.8,191
+87,Leche Entera,7501000001049,Limpieza,2029-11-06,Zest,21.5,63
+21,Arroz Blanco 412,7501000001050,Limpieza,2029-09-19,Bimbo,29.8,105
+80,Shampoo Frutal,7501000001051,Condimentos,2031-03-20,Danone,10.3,91
+94,Queso Panela,7501000001052,Lácteos,2027-09-20,A de Coco,71.8,169
+66,Papel Higiénico 415,7501000001053,Lácteos,2027-10-05,Heinz,43.9,103
+66,Papel Higiénico 416,7501000001054,Huevos,2031-09-26,Nutrioli,42.6,145
+80,Detergente Líquido,7501000001055,Cereales,2029-10-05,Ensueño,62.1,184
+2,Mermelada Fresa 418,7501000001056,Cereales,2029-04-22,SOS,11.0,163
+68,Desodorante,7501000001057,Huevos,2031-05-06,Isadora,11.4,138
+47,Jamón de Pavo,7501000001058,Postres,2027-11-26,McCormick,37.0,127
+43,Tortillas Maíz,7501000001059,Lácteos,2029-12-17,Pantene,17.9,131
+59,Yogur Natural,7501000001060,Condimentos,2031-03-28,Kellogg's,22.0,33
+80,Mermelada Fresa 423,7501000001061,Enlatados,2028-02-17,Dolores,49.2,139
+9,Leche Entera,7501000001062,Galletas,2028-11-27,Nutrioli,41.6,32
+42,Atún Aceite 425,7501000001063,Bebidas,2026-09-10,Ariel,27.6,115
+6,Atún Aceite 426,7501000001064,Bebidas,2030-02-23,Lala,38.6,143
+10,Galletas Surtidas,7501000001065,Verduras,2029-10-08,Maruchan,34.6,154
+65,Atún en Agua,7501000001066,Bebidas,2027-04-24,Nature Valley,25.8,62
+9,Atún en Agua,7501000001067,Postres,2031-10-04,Isadora,29.3,100
+26,Yogur Natural,7501000001068,Limpieza,2026-05-16,Zwan,14.4,177
+38,Shampoo Frutal,7501000001069,Conservas,2031-08-25,NocheBuena,74.9,73
+84,Coca Cola 2L,7501000001070,Limpieza,2031-10-26,NocheBuena,67.8,96
+24,Pan Integral,7501000001071,Untables,2027-11-11,Dolores,48.8,180
+3,Papel Higiénico 434,7501000001072,Huevos,2027-06-07,Nature Valley,24.3,119
+25,Desodorante,7501000001073,Enlatados,2031-01-01,NocheBuena,11.4,114
+41,Queso Manchego 436,7501000001074,Huevos,2031-01-18,La Sirena,77.0,122
+93,Jamón de Pavo,7501000001075,Condimentos,2027-10-23,Bimbo,12.0,113
+99,Jabón Líquido,7501000001076,Condimentos,2028-11-06,Alpura,56.9,179
+16,Galletas María,7501000001077,Lácteos,2031-01-07,Philadelphia,28.3,150
+37,Queso Manchego 440,7501000001078,Enlatados,2026-06-27,NocheBuena,53.8,171
+84,Pan Integral 441,7501000001079,Bebidas,2028-11-12,Dolores,36.6,167
+13,Atún Agua,7501000001080,Higiene,2029-05-09,Gamesa,31.4,59
+31,Agua 1.5L,7501000001081,Panadería,2030-01-15,McCormick,13.6,47
+13,Atún en Agua 444,7501000001082,Galletas,2027-12-11,La Costeña,13.7,20
+94,Detergente Líquido,7501000001083,Verduras,2027-03-15,Heinz,10.6,59
+2,Sopa Instantánea 446,7501000001084,Lácteos,2031-04-03,Peñafiel,72.8,174
+37,Agua 1.5L 447,7501000001085,Limpieza,2028-12-11,La Sirena,55.5,134
+55,Atún Aceite,7501000001086,Cereales,2031-02-12,Alpura,15.0,97
+71,Frijoles Negros,7501000001087,Untables,2029-09-22,SOS,44.2,134
+34,Jamón de Pavo 450,7501000001088,Bebidas,2028-03-23,NocheBuena,57.8,109
+98,Agua 1.5L,7501000001089,Panadería,2029-03-12,Lala,23.2,53
+64,Queso Manchego 452,7501000001090,Limpieza,2030-09-30,Pantene,54.1,173
+91,Sopa Instantánea,7501000001091,Cereales,2026-12-19,Gamesa,33.3,76
+41,Arroz Blanco 454,7501000001092,Postres,2031-04-22,Coca-Cola,52.0,21
+62,Refresco Naranja,7501000001093,Condimentos,2028-11-07,Regio,16.8,109
+99,Atún en Agua,7501000001094,Untables,2026-10-06,Alpura,69.6,61
+37,Atún Agua,7501000001095,Postres,2026-08-01,Alpura,18.6,63
+19,Papel Higiénico,7501000001096,Galletas,2026-12-05,Maruchan,59.1,199
+56,Aceitunas Verdes,7501000001097,Panadería,2031-01-06,Coca-Cola,63.5,142
+89,Shampoo Frutal,7501000001098,Galletas,2026-12-27,Heinz,20.0,159
+80,Agua 1.5L 461,7501000001099,Galletas,2030-06-03,Herdez,61.4,141
+10,Jabón Líquido 462,7501000001100,Galletas,2030-12-20,Heinz,62.4,107
+71,Queso Manchego,7501000001101,Panadería,2029-11-10,La Sirena,33.4,42
+70,Papel Higiénico,7501000001102,Cereales,2030-06-16,Lala,39.1,172
+44,Pan Integral,7501000001103,Higiene,2030-11-23,Bokados,12.8,149
+56,Agua 1.5L,7501000001104,Embutidos,2029-05-08,Maseca,27.7,111
+88,Desodorante,7501000001105,Embutidos,2031-01-25,Kellogg's,26.9,96
+63,Tortillas Maíz,7501000001106,Bebidas,2028-07-04,Kellogg's,27.7,173
+42,Aceitunas Verdes,7501000001107,Postres,2030-10-08,Philadelphia,73.5,131
+99,Jabón Líquido 470,7501000001108,Postres,2029-02-21,Heinz,27.5,23
+10,Atún Aceite,7501000001109,Huevos,2028-12-29,Gamesa,14.8,172
+28,Desodorante,7501000001110,Limpieza,2028-04-26,Lala,18.2,40
+94,Arroz Blanco,7501000001111,Embutidos,2031-03-13,Nutrioli,55.0,164
+35,Arroz Blanco,7501000001112,Untables,2029-05-19,Coca-Cola,32.0,126
+34,Pan Integral,7501000001113,Galletas,2026-12-20,Maseca,17.7,168
+62,Galletas Surtidas 476,7501000001114,Embutidos,2026-10-26,Bimbo,79.4,184
+19,Frijoles Negros,7501000001115,Embutidos,2030-05-04,Zest,25.1,29
+75,Papel Higiénico 478,7501000001116,Embutidos,2029-12-12,Zwan,30.6,178
+67,Mayonesa 400g,7501000001117,Huevos,2028-05-15,Fud,14.4,164
+80,Jamón de Pavo,7501000001118,Embutidos,2026-12-21,La Costeña,57.7,127
+37,Papel Higiénico 481,7501000001119,Huevos,2027-03-21,NocheBuena,39.7,190
+75,Yogur Natural,7501000001120,Galletas,2029-06-21,A de Coco,48.2,141
+95,Coca Cola 2L 483,7501000001121,Cereales,2027-12-30,La Sirena,77.4,111
+50,Desodorante,7501000001122,Embutidos,2031-09-23,Fud,65.6,170
+14,Tortillas Maíz,7501000001123,Lácteos,2026-11-05,Ensueño,30.7,153
+14,Jabón Líquido,7501000001124,Bebidas,2029-10-23,Rexona,53.7,176
+46,Pan Integral,7501000001125,Lácteos,2030-05-22,Lala,59.6,196
+78,Sopa Instantánea,7501000001126,Bebidas,2028-03-16,SOS,58.6,93
+12,Galletas María 489,7501000001127,Embutidos,2029-07-21,Dolores,47.5,41
+94,Desodorante,7501000001128,Untables,2028-09-27,Lala,42.4,130
+83,Leche Entera 491,7501000001129,Condimentos,2028-05-03,Regio,31.6,56
+16,Queso Manchego,7501000001130,Postres,2029-10-17,Herdez,44.2,165
+4,Pan Integral 493,7501000001131,Limpieza,2030-01-30,Bimbo,21.4,38
+57,Atún Agua,7501000001132,Panadería,2028-04-28,Peñafiel,51.1,132
+53,Leche Entera,7501000001133,Conservas,2026-03-10,Maruchan,20.7,170
+80,Queso Panela,7501000001134,Lácteos,2031-01-25,Fud,37.4,75
+20,Mayonesa 400g,7501000001135,Verduras,2028-11-16,Ensueño,77.4,26
+66,Yogur Natural 498,7501000001136,Limpieza,2031-04-06,Kellogg's,50.7,86
+57,Mermelada Fresa,7501000001137,Embutidos,2030-02-16,Escudo,19.0,76
+13,Frijoles Negros,7501000001138,Verduras,2027-12-13,Bokados,41.1,23
+63,Galletas Surtidas 501,7501000001139,Higiene,2030-11-01,NocheBuena,59.4,138
+57,Cereal Choco,7501000001140,Lácteos,2028-07-23,Maruchan,78.5,61
+32,Yogur Natural 503,7501000001141,Panadería,2030-07-22,NocheBuena,44.8,61
+95,Frijoles Negros,7501000001142,Cereales,2027-02-02,SOS,55.4,31
+39,Frijoles Negros,7501000001143,Condimentos,2030-08-14,Philadelphia,23.6,81
+7,Mermelada Fresa,7501000001144,Condimentos,2030-04-12,NocheBuena,71.2,24
+66,Frijoles Negros 507,7501000001145,Limpieza,2031-04-01,La Costeña,67.8,38
+87,Jamón de Pavo,7501000001146,Galletas,2026-03-28,Alpura,14.9,81
+86,Galletas María 509,7501000001147,Embutidos,2030-06-14,Bimbo,10.8,35
+51,Cereal Choco,7501000001148,Higiene,2028-11-05,McCormick,33.6,60
+46,Refresco Naranja,7501000001149,Embutidos,2027-07-02,Pantene,65.7,154
+38,Galletas María 512,7501000001150,Enlatados,2031-09-13,La Sirena,32.3,70
+89,Sopa Instantánea,7501000001151,Embutidos,2031-04-10,Dolores,58.9,76
+7,Papel Higiénico,7501000001152,Condimentos,2027-04-25,Zwan,69.3,30
+68,Aceitunas Verdes,7501000001153,Untables,2031-12-02,Ariel,63.9,110
+73,Agua 1.5L,7501000001154,Untables,2028-08-21,Regio,39.6,178
+58,Jabón Líquido 517,7501000001155,Panadería,2029-03-10,A de Coco,41.5,191
+14,Mermelada Fresa,7501000001156,Enlatados,2030-06-15,Peñafiel,16.5,164
+7,Cereal Choco,7501000001157,Verduras,2031-04-05,Regio,17.3,74
+91,Atún Aceite 520,7501000001158,Postres,2031-02-17,Dolores,39.2,44
+97,Desodorante,7501000001159,Embutidos,2028-08-05,Kellogg's,48.1,194
+25,Leche Entera,7501000001160,Condimentos,2026-06-30,Heinz,24.5,51
+29,Lechuga Romana,7501000001161,Limpieza,2030-07-28,A de Coco,19.3,54
+80,Tortillas Maíz,7501000001162,Enlatados,2028-01-30,Rexona,22.7,153
+59,Jamón de Pavo 525,7501000001163,Condimentos,2026-02-23,Coca-Cola,29.2,88
+28,Coca Cola 2L,7501000001164,Huevos,2028-11-09,Kellogg's,22.0,197
+45,Detergente Líquido,7501000001165,Huevos,2031-06-08,Bokados,72.9,107
+80,Atún Aceite,7501000001166,Higiene,2030-05-08,Valentina,61.5,34
+94,Salsa Picante 529,7501000001167,Galletas,2028-09-08,Fud,27.8,180
+51,Atún en Agua,7501000001168,Untables,2028-12-08,Ariel,50.2,169
+6,Atún Aceite,7501000001169,Verduras,2027-09-13,La Costeña,31.5,74
+70,Leche Entera 532,7501000001170,Panadería,2028-04-20,McCormick,32.3,48
+85,Atún Aceite 533,7501000001171,Lácteos,2030-07-20,Danone,78.6,151
+82,Queso Manchego,7501000001172,Cereales,2029-05-25,Lala,53.6,35
+34,Salsa Picante,7501000001173,Cereales,2027-11-09,La Sirena,17.3,175
+46,Atún Aceite,7501000001174,Embutidos,2030-07-01,Zest,36.6,191
+85,Aceite Vegetal,7501000001175,Galletas,2027-02-21,Fud,37.8,45
+4,Lechuga Romana,7501000001176,Limpieza,2028-12-20,Dolores,31.6,152
+54,Cereal Choco,7501000001177,Verduras,2027-05-27,Alpura,31.3,26
+94,Sopa Instantánea,7501000001178,Untables,2026-03-12,SOS,34.5,171
+92,Aceite Vegetal 541,7501000001179,Lácteos,2027-07-07,Fud,10.3,137
+69,Cereal Choco 542,7501000001180,Postres,2030-05-29,Zest,56.0,93
+27,Salsa Picante,7501000001181,Panadería,2030-07-03,Heinz,30.3,85
+20,Galletas Surtidas 544,7501000001182,Verduras,2031-07-28,Philadelphia,40.9,151
+29,Aceitunas Verdes 545,7501000001183,Enlatados,2030-09-17,Maruchan,67.9,72
+27,Jamón de Pavo 546,7501000001184,Huevos,2030-12-30,Isadora,22.6,160
+58,Salsa Picante 547,7501000001185,Condimentos,2029-11-30,Danone,74.1,125
+92,Agua 1.5L,7501000001186,Lácteos,2030-11-06,Heinz,53.0,169
+23,Salsa Picante,7501000001187,Limpieza,2030-06-15,Pantene,30.9,199
+4,Detergente Líquido,7501000001188,Condimentos,2029-09-06,Heinz,32.3,24
+83,Jabón Líquido,7501000001189,Conservas,2030-07-11,Herdez,72.7,69
+51,Sopa Instantánea,7501000001190,Enlatados,2026-05-09,Coca-Cola,48.8,145
+43,Tortillas Maíz 553,7501000001191,Enlatados,2028-01-10,Rexona,29.5,182
+37,Arroz Blanco,7501000001192,Higiene,2028-10-01,Escudo,23.5,42
+79,Galletas Surtidas 555,7501000001193,Higiene,2027-01-22,Nutrioli,31.7,33
+12,Arroz Blanco,7501000001194,Cereales,2026-10-07,McCormick,49.1,186
+10,Shampoo Frutal,7501000001195,Huevos,2028-10-14,Dolores,33.5,60
+47,Papel Higiénico 558,7501000001196,Untables,2028-07-05,Danone,61.3,55
+74,Tortillas Maíz,7501000001197,Enlatados,2027-05-17,Nature Valley,45.0,125
+93,Salsa Picante 560,7501000001198,Condimentos,2026-03-11,Philadelphia,16.5,38
+66,Sopa Instantánea,7501000001199,Condimentos,2029-09-17,A de Coco,33.3,48
+48,Arroz Blanco,7501000001200,Panadería,2031-11-02,Herdez,33.5,93
+31,Agua 1.5L,7501000001201,Cereales,2031-04-19,La Costeña,11.9,47
+5,Frijoles Negros 564,7501000001202,Higiene,2028-09-02,Nutrioli,64.5,164
+12,Refresco Naranja,7501000001203,Galletas,2030-03-10,La Sirena,46.1,142
+55,Jabón Líquido,7501000001204,Embutidos,2029-03-09,Valentina,38.2,181
+1,Detergente Líquido 567,7501000001205,Enlatados,2028-04-23,Isadora,68.6,127
+65,Mayonesa 400g,7501000001206,Lácteos,2031-04-03,Bokados,14.7,84
+82,Aceite Vegetal,7501000001207,Verduras,2029-08-28,Escudo,36.8,125
+7,Agua 1.5L 570,7501000001208,Bebidas,2026-08-20,Bokados,67.1,23
+39,Aceite Vegetal,7501000001209,Galletas,2031-11-20,Bonafont,59.4,81
+49,Agua 1.5L,7501000001210,Enlatados,2029-01-12,Coca-Cola,54.2,147
+43,Leche Entera,7501000001211,Embutidos,2027-01-19,Fud,18.1,54
+12,Atún en Agua,7501000001212,Verduras,2027-03-28,SOS,68.5,151
+65,Pan Integral,7501000001213,Panadería,2028-06-21,NocheBuena,25.3,86
+39,Sopa Instantánea,7501000001214,Huevos,2026-09-26,Danone,47.4,106
+14,Queso Panela 577,7501000001215,Higiene,2031-07-18,Dolores,57.9,69
+54,Detergente Líquido,7501000001216,Postres,2028-07-28,Ensueño,71.6,68
+86,Coca Cola 2L 579,7501000001217,Verduras,2029-03-22,Zwan,20.1,106
+13,Arroz Blanco,7501000001218,Verduras,2030-02-19,Gamesa,38.2,67
+21,Arroz Blanco,7501000001219,Postres,2028-09-07,Valentina,76.5,73
+22,Atún Agua,7501000001220,Condimentos,2028-06-11,Herdez,13.8,45
+56,Queso Panela,7501000001221,Embutidos,2030-12-31,NocheBuena,29.2,140
+75,Galletas María 584,7501000001222,Verduras,2030-10-09,Zwan,26.1,165
+99,Desodorante,7501000001223,Verduras,2031-08-01,Coca-Cola,25.2,30
+81,Mayonesa 400g,7501000001224,Untables,2028-10-16,Escudo,58.1,161
+33,Sopa Instantánea 587,7501000001225,Embutidos,2028-06-10,La Sirena,45.4,31
+49,Galletas María 588,7501000001226,Higiene,2029-11-22,Herdez,77.6,114
+22,Jamón de Pavo,7501000001227,Conservas,2028-06-09,Kellogg's,31.6,107
+19,Salsa Picante 590,7501000001228,Untables,2029-12-14,Pantene,31.0,106
+32,Galletas Surtidas 591,7501000001229,Limpieza,2027-05-14,Maseca,61.9,168
+81,Aceitunas Verdes,7501000001230,Condimentos,2029-12-31,Ariel,19.2,173
+83,Agua 1.5L 593,7501000001231,Postres,2029-02-15,Ensueño,31.6,100
+2,Queso Panela,7501000001232,Untables,2027-05-13,Valentina,78.9,92
+67,Mayonesa 400g,7501000001233,Lácteos,2026-11-05,Bonafont,44.4,56
+26,Arroz Blanco,7501000001234,Condimentos,2027-08-28,Zest,10.1,187
+93,Desodorante,7501000001235,Bebidas,2027-11-21,La Sirena,43.8,103
+2,Mayonesa 400g 598,7501000001236,Postres,2026-08-15,Herdez,58.3,39
+47,Cereal Choco,7501000001237,Higiene,2030-12-10,La Costeña,19.1,28
+28,Queso Panela,7501000001238,Higiene,2031-06-10,Rexona,51.4,67
+4,Aceite Vegetal 601,7501000001239,Condimentos,2027-11-22,Valentina,37.0,151
+81,Queso Panela 602,7501000001240,Bebidas,2029-09-22,Valentina,27.6,159
+97,Jabón Líquido,7501000001241,Cereales,2028-12-07,Escudo,68.2,114
+17,Frijoles Negros,7501000001242,Conservas,2029-04-22,Alpura,73.6,159
+95,Galletas Surtidas,7501000001243,Limpieza,2029-11-22,Peñafiel,43.4,37
+71,Salsa Picante,7501000001244,Postres,2031-06-11,La Costeña,10.1,23
+56,Galletas María,7501000001245,Postres,2028-10-21,A de Coco,33.1,169
+67,Shampoo Frutal 608,7501000001246,Enlatados,2026-11-11,Zest,19.7,170
+56,Salsa Picante,7501000001247,Untables,2026-05-07,Fud,19.9,133
+80,Papel Higiénico,7501000001248,Conservas,2027-08-06,Lala,34.3,123
+92,Cereal Choco,7501000001249,Verduras,2027-04-27,NocheBuena,66.3,118
+16,Mermelada Fresa 612,7501000001250,Panadería,2026-11-25,Zest,76.1,163
+67,Galletas Surtidas,7501000001251,Panadería,2026-09-13,Nature Valley,34.5,75
+15,Galletas Surtidas 614,7501000001252,Untables,2028-03-17,McCormick,77.0,184
+18,Papel Higiénico,7501000001253,Bebidas,2028-03-12,Rexona,67.0,174
+11,Leche Entera,7501000001254,Huevos,2028-12-16,NocheBuena,16.5,125
+26,Aceitunas Verdes,7501000001255,Postres,2029-12-16,Escudo,73.6,175
+67,Aceitunas Verdes,7501000001256,Verduras,2026-02-19,La Costeña,63.8,170
+96,Detergente Líquido 619,7501000001257,Untables,2028-10-18,Escudo,16.3,141
+87,Cereal Choco,7501000001258,Enlatados,2029-09-01,Maseca,32.7,69
+69,Queso Manchego,7501000001259,Cereales,2031-01-04,Herdez,36.3,187
+12,Papel Higiénico,7501000001260,Lácteos,2027-05-09,Nature Valley,54.8,195
+73,Desodorante 623,7501000001261,Conservas,2031-03-02,Alpura,63.8,66
+57,Refresco Naranja,7501000001262,Higiene,2029-05-07,Alpura,26.5,76
+5,Galletas Surtidas,7501000001263,Conservas,2027-01-17,Kellogg's,66.6,160
+42,Queso Panela,7501000001264,Condimentos,2029-07-05,Zwan,46.7,185
+30,Atún Aceite 627,7501000001265,Huevos,2026-06-12,NocheBuena,15.8,23
+100,Queso Manchego 628,7501000001266,Embutidos,2028-09-27,Danone,74.2,77
+95,Sopa Instantánea,7501000001267,Postres,2030-01-26,Fud,55.2,138
+86,Yogur Natural,7501000001268,Bebidas,2027-11-23,Maseca,43.6,92
+2,Atún en Agua,7501000001269,Bebidas,2027-08-09,Fud,44.7,65
+48,Atún Aceite,7501000001270,Huevos,2026-08-18,Regio,28.0,58
+84,Galletas María,7501000001271,Untables,2030-12-20,Valentina,71.3,194
+94,Yogur Natural,7501000001272,Postres,2028-07-24,NocheBuena,76.8,51
+63,Desodorante 635,7501000001273,Huevos,2031-07-19,Dolores,61.2,157
+65,Agua 1.5L 636,7501000001274,Galletas,2029-08-15,Zwan,56.1,47
+92,Atún Agua,7501000001275,Limpieza,2027-12-27,Valentina,40.5,199
+11,Queso Panela,7501000001276,Cereales,2031-12-18,Zwan,60.2,122
+63,Atún en Agua 639,7501000001277,Cereales,2027-07-26,Pantene,77.6,110
+61,Aceite Vegetal 640,7501000001278,Lácteos,2026-07-25,Gamesa,17.4,30
+73,Atún en Agua,7501000001279,Lácteos,2031-08-13,McCormick,24.0,124
+49,Aceitunas Verdes 642,7501000001280,Untables,2028-05-30,Ensueño,21.2,176
+20,Queso Manchego 643,7501000001281,Huevos,2029-04-11,Pantene,79.2,29
+65,Tortillas Maíz,7501000001282,Embutidos,2026-08-28,Zest,10.0,156
+31,Queso Manchego,7501000001283,Condimentos,2028-04-21,Pantene,65.7,56
+82,Detergente Líquido,7501000001284,Galletas,2026-02-20,Coca-Cola,20.0,43
+86,Galletas María,7501000001285,Verduras,2027-07-25,Fud,10.9,185
+76,Lechuga Romana,7501000001286,Enlatados,2026-02-18,Philadelphia,47.6,118
+26,Galletas María,7501000001287,Embutidos,2030-03-28,Isadora,29.1,38
+59,Atún Aceite 650,7501000001288,Conservas,2028-11-02,Heinz,67.2,185
+24,Salsa Picante 651,7501000001289,Higiene,2026-02-27,Regio,45.8,96
+86,Galletas Surtidas,7501000001290,Higiene,2029-03-26,Gamesa,77.0,115
+97,Frijoles Negros,7501000001291,Verduras,2028-03-12,Maseca,47.7,82
+56,Aceitunas Verdes,7501000001292,Condimentos,2031-06-18,Philadelphia,43.3,135
+46,Coca Cola 2L,7501000001293,Limpieza,2028-08-15,Regio,60.6,167
+38,Desodorante,7501000001294,Postres,2030-03-28,Rexona,17.8,120
+53,Cereal Choco 657,7501000001295,Cereales,2030-10-08,Gamesa,15.5,143
+56,Aceite Vegetal,7501000001296,Panadería,2026-07-14,Regio,75.9,51
+68,Aceitunas Verdes,7501000001297,Bebidas,2026-11-18,Rexona,47.6,105
+89,Aceite Vegetal,7501000001298,Conservas,2029-01-20,Ariel,74.7,50
+76,Galletas Surtidas,7501000001299,Limpieza,2030-10-12,La Sirena,24.1,44
+87,Atún en Agua 662,7501000001300,Embutidos,2030-05-18,Maseca,40.0,127
+95,Cereal Choco,7501000001301,Huevos,2031-04-17,Zwan,29.6,185
+44,Lechuga Romana,7501000001302,Panadería,2031-10-25,Isadora,65.2,93
+1,Galletas Surtidas,7501000001303,Embutidos,2030-06-11,Rexona,63.0,153
+37,Atún en Agua,7501000001304,Bebidas,2028-05-28,Bokados,11.0,186
+33,Lechuga Romana,7501000001305,Higiene,2031-03-31,Bimbo,45.1,35
+62,Refresco Naranja 668,7501000001306,Verduras,2028-12-13,Heinz,73.1,23
+71,Cereal Choco,7501000001307,Higiene,2026-07-09,Kellogg's,42.3,98
+67,Galletas Surtidas,7501000001308,Postres,2028-10-17,Nutrioli,11.0,30
+10,Queso Panela,7501000001309,Conservas,2031-03-22,Fud,31.1,134
+33,Mayonesa 400g,7501000001310,Enlatados,2027-10-04,Nature Valley,79.7,61
+23,Aceitunas Verdes,7501000001311,Verduras,2030-11-02,Heinz,55.5,126
+49,Shampoo Frutal,7501000001312,Galletas,2027-01-18,La Sirena,41.5,26
+68,Atún Aceite,7501000001313,Huevos,2028-07-28,NocheBuena,75.2,78
+72,Desodorante,7501000001314,Panadería,2029-05-05,Zest,57.2,139
+27,Lechuga Romana,7501000001315,Verduras,2027-03-17,Bokados,72.4,130
+62,Detergente Líquido 678,7501000001316,Conservas,2028-04-02,Kellogg's,74.5,116
+90,Detergente Líquido,7501000001317,Verduras,2026-10-12,Zwan,58.1,146
+79,Mayonesa 400g 680,7501000001318,Embutidos,2030-03-02,McCormick,54.7,53
+43,Aceite Vegetal,7501000001319,Cereales,2026-06-27,Valentina,72.2,78
+85,Aceite Vegetal,7501000001320,Panadería,2029-04-10,Dolores,21.2,196
+8,Papel Higiénico,7501000001321,Embutidos,2031-06-10,A de Coco,22.3,23
+93,Jabón Líquido,7501000001322,Postres,2030-03-06,Maseca,71.0,191
+93,Agua 1.5L,7501000001323,Cereales,2027-09-15,SOS,48.8,36
+40,Agua 1.5L,7501000001324,Condimentos,2027-11-20,NocheBuena,46.3,74
+16,Queso Panela,7501000001325,Huevos,2026-09-11,Bokados,15.1,103
+89,Aceitunas Verdes,7501000001326,Cereales,2026-12-01,La Sirena,48.8,180
+28,Sopa Instantánea 689,7501000001327,Panadería,2030-06-20,Isadora,26.6,25
+41,Detergente Líquido,7501000001328,Conservas,2030-10-30,Bimbo,36.5,140
+86,Coca Cola 2L,7501000001329,Limpieza,2031-06-16,Pantene,21.8,90
+28,Queso Panela,7501000001330,Untables,2031-12-13,SOS,18.0,35
+22,Queso Panela 693,7501000001331,Higiene,2031-02-24,Valentina,29.7,60
+57,Papel Higiénico,7501000001332,Bebidas,2031-06-22,A de Coco,38.4,171
+79,Jamón de Pavo 695,7501000001333,Cereales,2027-07-05,Danone,29.0,28
+77,Agua 1.5L,7501000001334,Lácteos,2028-12-02,NocheBuena,47.3,35
+97,Jamón de Pavo 697,7501000001335,Lácteos,2030-09-16,Pantene,49.7,82
+10,Agua 1.5L,7501000001336,Enlatados,2027-08-04,A de Coco,50.5,187
+86,Salsa Picante,7501000001337,Conservas,2029-07-03,Ensueño,77.1,52
+80,Atún en Agua,7501000001338,Higiene,2026-06-12,SOS,47.4,151
+40,Jamón de Pavo 701,7501000001339,Embutidos,2026-12-11,Coca-Cola,65.0,127
+53,Papel Higiénico,7501000001340,Panadería,2031-05-20,Maruchan,37.5,24
+18,Frijoles Negros 703,7501000001341,Embutidos,2030-10-02,Nature Valley,48.9,178
+18,Sopa Instantánea 704,7501000001342,Bebidas,2029-03-31,Maruchan,61.9,115
+61,Galletas María 705,7501000001343,Limpieza,2029-01-26,NocheBuena,56.9,64
+90,Salsa Picante 706,7501000001344,Limpieza,2027-11-27,La Sirena,37.1,21
+54,Queso Manchego,7501000001345,Verduras,2027-03-18,Nutrioli,18.1,151
+14,Queso Manchego 708,7501000001346,Higiene,2026-10-23,Fud,31.6,179
+23,Cereal Choco,7501000001347,Lácteos,2028-12-18,SOS,43.4,114
+18,Atún Agua,7501000001348,Embutidos,2029-10-23,Philadelphia,14.1,171
+24,Lechuga Romana,7501000001349,Postres,2027-01-08,Rexona,43.7,87
+93,Leche Entera,7501000001350,Condimentos,2027-03-17,Herdez,79.6,128
+6,Yogur Natural 713,7501000001351,Huevos,2028-06-29,Bimbo,33.9,27
+68,Cereal Choco,7501000001352,Untables,2029-05-28,McCormick,52.4,119
+79,Atún Agua,7501000001353,Conservas,2029-03-02,Philadelphia,23.9,68
+68,Cereal Choco 716,7501000001354,Enlatados,2031-12-29,Maruchan,36.3,139
+44,Galletas María 717,7501000001355,Galletas,2031-10-21,Philadelphia,29.3,63
+79,Refresco Naranja 718,7501000001356,Condimentos,2030-05-23,Maruchan,71.2,88
+62,Refresco Naranja,7501000001357,Limpieza,2027-06-24,Escudo,63.0,98
+42,Leche Entera 720,7501000001358,Galletas,2026-12-16,Herdez,48.0,131
+1,Queso Manchego,7501000001359,Postres,2027-03-03,La Costeña,35.1,184
+71,Leche Entera,7501000001360,Higiene,2030-10-07,SOS,50.7,88
+59,Aceitunas Verdes,7501000001361,Panadería,2031-04-03,Valentina,45.8,27
+25,Jabón Líquido,7501000001362,Huevos,2031-03-19,Bonafont,67.5,163
+77,Shampoo Frutal,7501000001363,Condimentos,2031-06-09,Pantene,68.8,160
+81,Desodorante,7501000001364,Enlatados,2027-01-11,Ariel,20.5,118
+22,Tortillas Maíz,7501000001365,Condimentos,2030-12-04,Fud,67.0,69
+66,Yogur Natural,7501000001366,Enlatados,2030-09-28,Maruchan,57.5,191
+69,Aceite Vegetal 729,7501000001367,Bebidas,2027-03-05,Pantene,13.3,106
+70,Arroz Blanco,7501000001368,Bebidas,2028-01-02,Maseca,28.9,195
+24,Yogur Natural,7501000001369,Galletas,2028-02-03,Heinz,22.9,28
+33,Refresco Naranja 732,7501000001370,Enlatados,2026-12-15,Lala,78.7,157
+8,Mermelada Fresa 733,7501000001371,Untables,2027-11-24,Ensueño,63.4,127
+28,Pan Integral,7501000001372,Verduras,2029-07-09,Maseca,48.0,88
+81,Queso Panela,7501000001373,Verduras,2030-03-25,Philadelphia,30.8,138
+87,Aceitunas Verdes 736,7501000001374,Conservas,2026-06-15,Zest,75.7,169
+12,Atún Agua,7501000001375,Bebidas,2031-02-01,Nutrioli,68.0,154
+37,Galletas Surtidas,7501000001376,Huevos,2031-08-24,Peñafiel,52.2,61
+77,Queso Panela 739,7501000001377,Higiene,2027-11-29,NocheBuena,71.4,160
+11,Shampoo Frutal,7501000001378,Panadería,2026-12-27,Bimbo,11.2,149
+59,Galletas María,7501000001379,Higiene,2031-07-26,McCormick,41.3,65
+87,Agua 1.5L,7501000001380,Lácteos,2028-01-07,Zest,20.4,70
+41,Atún Agua,7501000001381,Bebidas,2031-09-29,Lala,22.4,96
+8,Sopa Instantánea,7501000001382,Bebidas,2030-10-03,Peñafiel,65.4,92
+77,Lechuga Romana 745,7501000001383,Bebidas,2028-08-17,A de Coco,51.0,83
+52,Papel Higiénico,7501000001384,Cereales,2031-07-22,Escudo,33.4,23
+90,Atún en Agua 747,7501000001385,Panadería,2031-07-06,Herdez,13.3,33
+15,Detergente Líquido,7501000001386,Higiene,2026-11-24,Peñafiel,11.9,199
+37,Frijoles Negros,7501000001387,Untables,2027-04-28,La Costeña,22.5,97
+43,Queso Manchego,7501000001388,Panadería,2028-02-15,NocheBuena,53.4,140
+65,Galletas Surtidas 751,7501000001389,Cereales,2026-11-06,Gamesa,35.6,126
+10,Atún Agua,7501000001390,Cereales,2026-06-30,Isadora,39.1,45
+17,Papel Higiénico 753,7501000001391,Verduras,2031-04-02,Ensueño,74.2,175
+7,Jamón de Pavo,7501000001392,Condimentos,2029-04-30,Isadora,57.4,88
+37,Salsa Picante,7501000001393,Conservas,2026-09-07,Bimbo,67.8,135
+81,Galletas Surtidas,7501000001394,Cereales,2027-10-07,Bimbo,53.3,99
+30,Jabón Líquido 757,7501000001395,Condimentos,2030-01-08,Bonafont,15.6,135
+7,Atún en Agua,7501000001396,Verduras,2027-02-18,Isadora,31.8,181
+72,Jamón de Pavo,7501000001397,Lácteos,2030-10-13,La Costeña,49.7,181
+73,Atún Aceite,7501000001398,Embutidos,2027-10-11,Coca-Cola,69.1,87
+32,Refresco Naranja 761,7501000001399,Bebidas,2027-07-09,Zest,72.4,97
+29,Agua 1.5L 762,7501000001400,Condimentos,2028-11-19,Ensueño,61.1,149
+29,Galletas Surtidas,7501000001401,Lácteos,2026-09-29,A de Coco,48.4,74
+85,Lechuga Romana,7501000001402,Condimentos,2030-03-27,Regio,20.4,172
+52,Mermelada Fresa,7501000001403,Postres,2027-11-09,Fud,43.2,181
+9,Queso Manchego 766,7501000001404,Condimentos,2031-01-22,Regio,19.9,96
+51,Arroz Blanco,7501000001405,Lácteos,2028-07-25,Bonafont,60.4,200
+30,Pan Integral,7501000001406,Conservas,2026-11-21,Alpura,75.8,168
+61,Leche Entera,7501000001407,Conservas,2030-02-06,La Costeña,70.1,172
+11,Aceitunas Verdes,7501000001408,Enlatados,2026-11-04,Ensueño,77.3,145
+28,Leche Entera 771,7501000001409,Bebidas,2026-08-25,Nutrioli,22.0,180
+51,Shampoo Frutal,7501000001410,Condimentos,2029-03-11,NocheBuena,49.6,44
+24,Detergente Líquido,7501000001411,Cereales,2029-12-13,Maruchan,56.4,53
+9,Queso Manchego,7501000001412,Conservas,2028-11-20,Philadelphia,55.6,147
+87,Salsa Picante,7501000001413,Limpieza,2030-10-22,Dolores,46.4,36
+29,Coca Cola 2L 776,7501000001414,Enlatados,2029-08-18,Lala,56.9,30
+91,Coca Cola 2L,7501000001415,Galletas,2029-02-10,Maseca,22.8,65
+93,Frijoles Negros,7501000001416,Conservas,2031-04-27,NocheBuena,36.0,70
+87,Coca Cola 2L,7501000001417,Huevos,2028-04-18,Valentina,71.0,118
+55,Atún Aceite,7501000001418,Embutidos,2029-05-24,McCormick,45.7,23
+20,Mermelada Fresa,7501000001419,Untables,2028-09-30,Nature Valley,11.7,79
+49,Desodorante,7501000001420,Conservas,2030-05-15,Gamesa,52.5,78
+27,Aceite Vegetal 783,7501000001421,Verduras,2030-07-11,Herdez,31.9,80
+90,Mermelada Fresa,7501000001422,Cereales,2026-10-21,Pantene,47.8,94
+39,Aceite Vegetal,7501000001423,Higiene,2029-11-04,Heinz,56.2,108
+9,Tortillas Maíz 786,7501000001424,Condimentos,2026-11-16,A de Coco,73.8,122
+78,Leche Entera 787,7501000001425,Lácteos,2029-05-17,Herdez,71.9,114
+82,Aceite Vegetal,7501000001426,Postres,2028-05-27,Regio,37.7,117
+43,Shampoo Frutal,7501000001427,Enlatados,2030-05-22,Ariel,30.8,154
+40,Jabón Líquido 790,7501000001428,Limpieza,2028-11-16,A de Coco,11.3,165
+34,Papel Higiénico,7501000001429,Cereales,2031-05-25,Ariel,58.4,145
+17,Yogur Natural,7501000001430,Galletas,2029-12-28,Coca-Cola,54.6,43
+7,Papel Higiénico,7501000001431,Lácteos,2031-06-20,NocheBuena,11.9,90
+95,Detergente Líquido,7501000001432,Conservas,2031-06-04,Alpura,53.3,167
+83,Sopa Instantánea 795,7501000001433,Panadería,2030-06-22,NocheBuena,42.1,48
+30,Refresco Naranja,7501000001434,Huevos,2027-09-06,Coca-Cola,34.2,67
+98,Salsa Picante 797,7501000001435,Galletas,2027-11-17,Maseca,30.4,136
+39,Pan Integral 798,7501000001436,Lácteos,2026-11-25,La Sirena,75.8,133
+9,Mayonesa 400g,7501000001437,Untables,2030-06-29,Escudo,56.5,105
+82,Mermelada Fresa,7501000001438,Bebidas,2027-12-07,Herdez,51.0,83
+49,Detergente Líquido,7501000001439,Conservas,2027-07-07,Herdez,16.7,179
+31,Desodorante,7501000001440,Huevos,2026-03-12,Alpura,17.9,30
+94,Queso Manchego,7501000001441,Lácteos,2028-03-12,Bokados,48.0,31
+82,Mayonesa 400g 804,7501000001442,Verduras,2031-12-16,Ensueño,28.9,120
+78,Arroz Blanco,7501000001443,Cereales,2028-11-04,Ensueño,31.3,139
+38,Tortillas Maíz,7501000001444,Enlatados,2029-09-26,Philadelphia,57.2,126
+51,Atún Aceite,7501000001445,Untables,2027-11-12,Regio,40.5,44
+97,Yogur Natural,7501000001446,Postres,2027-01-17,Maseca,75.5,110
+72,Lechuga Romana,7501000001447,Embutidos,2027-12-23,NocheBuena,56.8,143
+24,Leche Entera,7501000001448,Galletas,2028-11-28,McCormick,65.3,57
+20,Galletas María,7501000001449,Panadería,2026-07-11,Valentina,40.7,27
+48,Mayonesa 400g 812,7501000001450,Postres,2030-01-12,Regio,37.6,49
+17,Salsa Picante,7501000001451,Embutidos,2028-03-27,Nature Valley,23.1,135
+65,Detergente Líquido,7501000001452,Conservas,2029-11-18,Peñafiel,54.2,92
+34,Aceitunas Verdes,7501000001453,Enlatados,2027-07-05,La Costeña,28.6,173
+32,Leche Entera,7501000001454,Lácteos,2029-11-16,Rexona,52.6,196
+81,Cereal Choco 817,7501000001455,Huevos,2028-02-20,Maseca,47.2,63
+43,Sopa Instantánea,7501000001456,Verduras,2029-05-13,La Costeña,45.7,103
+50,Cereal Choco,7501000001457,Higiene,2028-10-05,Heinz,62.5,100
+72,Atún Aceite,7501000001458,Limpieza,2028-04-10,La Sirena,41.0,194
+13,Detergente Líquido 821,7501000001459,Conservas,2028-02-07,Herdez,52.9,20
+44,Cereal Choco,7501000001460,Limpieza,2026-09-10,Lala,44.4,48
+35,Aceite Vegetal,7501000001461,Cereales,2026-03-27,Kellogg's,25.2,24
+33,Mermelada Fresa 824,7501000001462,Galletas,2027-04-08,Regio,31.4,166
+100,Desodorante,7501000001463,Lácteos,2029-01-30,Gamesa,71.6,43
+76,Sopa Instantánea 826,7501000001464,Condimentos,2027-06-16,Nature Valley,31.1,124
+44,Shampoo Frutal,7501000001465,Limpieza,2028-12-08,Zwan,19.8,192
+27,Yogur Natural 828,7501000001466,Verduras,2030-01-24,Nature Valley,45.9,86
+45,Cereal Choco,7501000001467,Higiene,2028-11-17,Maseca,58.6,193
+96,Lechuga Romana,7501000001468,Embutidos,2031-05-25,Heinz,29.1,71
+6,Jabón Líquido,7501000001469,Postres,2029-10-21,Maseca,67.9,138
+68,Jamón de Pavo,7501000001470,Untables,2029-04-03,Gamesa,68.6,117
+48,Aceitunas Verdes 833,7501000001471,Bebidas,2028-04-06,NocheBuena,18.7,181
+100,Aceite Vegetal,7501000001472,Postres,2028-05-14,Ensueño,30.5,113
+61,Salsa Picante,7501000001473,Limpieza,2026-09-21,Lala,30.2,180
+36,Leche Entera,7501000001474,Condimentos,2028-08-08,Philadelphia,19.6,164
+56,Pan Integral,7501000001475,Conservas,2031-05-29,Zwan,65.6,190
+39,Leche Entera 838,7501000001476,Galletas,2031-07-06,Heinz,35.9,152
+79,Sopa Instantánea,7501000001477,Galletas,2031-10-25,Zest,76.9,169
+65,Atún Aceite,7501000001478,Enlatados,2027-04-15,Herdez,40.5,185
+86,Papel Higiénico,7501000001479,Cereales,2027-03-05,Nutrioli,64.6,179
+92,Aceite Vegetal 842,7501000001480,Conservas,2031-10-13,La Sirena,20.7,90
+96,Lechuga Romana,7501000001481,Bebidas,2031-09-10,Rexona,10.1,112
+42,Queso Panela 844,7501000001482,Cereales,2028-08-25,A de Coco,64.7,71
+51,Lechuga Romana,7501000001483,Panadería,2031-10-27,Lala,60.4,88
+1,Refresco Naranja 846,7501000001484,Limpieza,2028-08-14,SOS,26.4,88
+6,Jamón de Pavo 847,7501000001485,Huevos,2030-08-14,Bimbo,72.5,57
+64,Queso Manchego 848,7501000001486,Galletas,2030-03-20,McCormick,47.5,170
+76,Jabón Líquido,7501000001487,Limpieza,2031-07-11,Valentina,17.3,26
+41,Aceite Vegetal 850,7501000001488,Enlatados,2029-04-12,Bonafont,13.2,102
+44,Papel Higiénico,7501000001489,Untables,2031-08-22,Ensueño,66.9,162
+15,Desodorante 852,7501000001490,Limpieza,2029-05-19,Bokados,42.6,160
+2,Jabón Líquido,7501000001491,Limpieza,2027-12-06,Isadora,56.2,132
+98,Jabón Líquido 854,7501000001492,Enlatados,2027-10-23,Coca-Cola,20.5,40
+93,Galletas Surtidas 855,7501000001493,Untables,2028-10-19,Pantene,76.0,22
+71,Atún en Agua,7501000001494,Conservas,2029-02-27,Valentina,51.6,63
+36,Mermelada Fresa,7501000001495,Cereales,2031-05-13,Isadora,14.2,38
+79,Refresco Naranja 858,7501000001496,Galletas,2026-06-28,Rexona,53.2,109
+95,Salsa Picante,7501000001497,Limpieza,2028-07-05,Danone,58.0,198
+11,Agua 1.5L,7501000001498,Untables,2030-07-10,Herdez,77.7,35
+77,Galletas María,7501000001499,Lácteos,2029-09-23,Dolores,75.2,85
+29,Papel Higiénico,7501000001500,Cereales,2027-01-04,Peñafiel,41.1,118
+61,Shampoo Frutal,7501000001501,Postres,2030-04-01,Danone,71.0,59
+56,Shampoo Frutal,7501000001502,Panadería,2031-12-30,Rexona,56.3,133
+59,Aceite Vegetal,7501000001503,Bebidas,2031-08-17,Zwan,65.6,125
+91,Galletas Surtidas,7501000001504,Galletas,2027-12-03,Zest,33.3,61
+80,Lechuga Romana 867,7501000001505,Higiene,2028-01-16,Bonafont,44.1,146
+73,Desodorante,7501000001506,Conservas,2031-07-06,Nutrioli,32.6,107
+65,Frijoles Negros,7501000001507,Higiene,2031-07-12,Fud,53.6,166
+42,Papel Higiénico,7501000001508,Panadería,2027-05-03,Nature Valley,73.5,168
+66,Frijoles Negros 871,7501000001509,Lácteos,2030-06-04,McCormick,77.7,164
+77,Mayonesa 400g,7501000001510,Postres,2026-12-17,Ariel,38.6,142
+5,Agua 1.5L 873,7501000001511,Embutidos,2026-09-24,Ariel,26.9,43
+70,Papel Higiénico,7501000001512,Cereales,2029-04-04,Alpura,14.2,137
+58,Tortillas Maíz,7501000001513,Lácteos,2029-08-05,McCormick,61.4,48
+69,Jabón Líquido,7501000001514,Enlatados,2030-03-20,Heinz,23.2,199
+57,Queso Panela,7501000001515,Conservas,2027-01-01,Maruchan,40.2,38
+45,Detergente Líquido 878,7501000001516,Lácteos,2030-09-01,Maruchan,42.2,153
+64,Mayonesa 400g 879,7501000001517,Embutidos,2030-06-27,Regio,56.2,64
+86,Mermelada Fresa,7501000001518,Condimentos,2031-06-05,NocheBuena,26.9,145
+34,Aceite Vegetal,7501000001519,Bebidas,2027-01-30,Ensueño,22.5,108
+38,Aceite Vegetal,7501000001520,Limpieza,2030-02-15,Dolores,23.6,145
+73,Detergente Líquido,7501000001521,Bebidas,2028-03-24,NocheBuena,17.2,28
+3,Shampoo Frutal,7501000001522,Embutidos,2029-03-25,Nutrioli,60.8,68
+97,Atún Aceite,7501000001523,Lácteos,2026-03-03,La Sirena,25.9,86
+4,Queso Manchego,7501000001524,Bebidas,2026-04-09,Coca-Cola,47.6,92
+76,Agua 1.5L,7501000001525,Untables,2027-08-20,Escudo,52.7,79
+52,Sopa Instantánea,7501000001526,Untables,2031-08-15,Escudo,35.2,35
+58,Mayonesa 400g,7501000001527,Embutidos,2027-12-23,La Sirena,54.2,31
+14,Atún Aceite,7501000001528,Enlatados,2028-11-25,Pantene,45.0,21
+51,Pan Integral,7501000001529,Conservas,2031-03-11,Maruchan,26.8,167
+77,Sopa Instantánea 892,7501000001530,Embutidos,2028-03-27,Peñafiel,29.9,97
+69,Queso Manchego,7501000001531,Untables,2029-01-14,A de Coco,63.6,126
+38,Papel Higiénico,7501000001532,Higiene,2030-04-13,Bokados,25.3,63
+80,Leche Entera,7501000001533,Galletas,2031-12-21,Maseca,31.7,173
+37,Atún Aceite 896,7501000001534,Galletas,2030-11-10,Heinz,29.6,165
+44,Aceite Vegetal,7501000001535,Galletas,2028-05-31,Maseca,45.6,25
+40,Atún Agua 898,7501000001536,Postres,2027-10-16,SOS,30.6,130
+51,Galletas María,7501000001537,Conservas,2028-11-23,Zwan,76.5,63
+27,Jamón de Pavo 900,7501000001538,Huevos,2031-06-05,Ariel,57.8,152
+89,Aceitunas Verdes,7501000001539,Untables,2031-12-18,Dolores,42.2,37
+49,Leche Entera,7501000001540,Higiene,2028-10-14,Heinz,67.6,187
+74,Leche Entera,7501000001541,Limpieza,2030-09-13,Maruchan,71.2,57
+18,Atún Agua,7501000001542,Untables,2027-05-30,Zest,15.5,90
+69,Galletas Surtidas 905,7501000001543,Lácteos,2028-04-16,Nature Valley,34.9,154
+47,Lechuga Romana 906,7501000001544,Lácteos,2031-12-12,Lala,50.9,142
+77,Galletas María 907,7501000001545,Verduras,2029-10-14,Dolores,62.7,198
+62,Arroz Blanco,7501000001546,Postres,2031-01-26,Maseca,70.0,158
+18,Atún en Agua,7501000001547,Panadería,2028-12-12,Nature Valley,10.0,30
+74,Sopa Instantánea 910,7501000001548,Enlatados,2029-04-30,Kellogg's,76.1,148
+9,Lechuga Romana 911,7501000001549,Verduras,2027-09-16,Maruchan,48.8,68
+74,Shampoo Frutal,7501000001550,Condimentos,2030-01-21,La Sirena,59.8,154
+80,Salsa Picante,7501000001551,Panadería,2026-06-29,Kellogg's,19.0,170
+61,Mermelada Fresa,7501000001552,Embutidos,2028-12-08,Regio,64.9,168
+40,Papel Higiénico,7501000001553,Postres,2027-03-04,McCormick,49.5,140
+98,Atún Aceite 916,7501000001554,Lácteos,2027-10-17,La Sirena,52.7,99
+51,Aceitunas Verdes,7501000001555,Enlatados,2030-12-27,Isadora,64.9,84
+93,Aceitunas Verdes,7501000001556,Bebidas,2028-04-21,Maseca,49.1,181
+91,Aceitunas Verdes,7501000001557,Cereales,2028-11-16,Herdez,43.2,28
+69,Leche Entera,7501000001558,Huevos,2031-12-13,Maruchan,38.8,76
+94,Salsa Picante,7501000001559,Enlatados,2026-11-26,A de Coco,46.1,199
+3,Galletas Surtidas,7501000001560,Huevos,2028-08-24,Pantene,63.9,172
+9,Aceitunas Verdes,7501000001561,Galletas,2029-08-08,Isadora,32.6,127
+99,Queso Panela,7501000001562,Higiene,2028-08-24,Herdez,68.8,20
+32,Yogur Natural 925,7501000001563,Untables,2030-05-26,Philadelphia,10.4,195
+42,Desodorante,7501000001564,Untables,2031-04-21,Pantene,35.5,89
+35,Coca Cola 2L,7501000001565,Cereales,2026-07-14,Isadora,64.8,69
+100,Detergente Líquido,7501000001566,Enlatados,2028-04-23,Nature Valley,52.0,82
+62,Yogur Natural,7501000001567,Bebidas,2031-01-22,Maruchan,46.3,58
+19,Papel Higiénico,7501000001568,Higiene,2026-09-19,La Sirena,60.7,188
+30,Salsa Picante,7501000001569,Huevos,2028-09-28,SOS,67.8,73
+23,Papel Higiénico,7501000001570,Huevos,2027-07-31,Herdez,73.1,155
+42,Frijoles Negros,7501000001571,Cereales,2029-08-22,Philadelphia,27.3,53
+91,Atún en Agua,7501000001572,Cereales,2031-06-03,Valentina,65.1,45
+19,Queso Manchego 935,7501000001573,Lácteos,2026-04-20,Philadelphia,28.2,32
+34,Atún Aceite,7501000001574,Bebidas,2030-03-17,A de Coco,39.7,150
+11,Shampoo Frutal,7501000001575,Conservas,2026-04-30,Heinz,31.2,145

@@ -10,4 +10,26 @@
         <maven.compiler.release>25</maven.compiler.release>
         <exec.mainClass>com.josecarlos.supermarket.Supermarket</exec.mainClass>
     </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <!--  Here come other details
+               ...
+                -->
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.josecarlos.supermarket.Supermarket</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <!--  Here come other details
+               ...
+                -->
+            </plugin>
+        </plugins>
+    </build>
 </project>
