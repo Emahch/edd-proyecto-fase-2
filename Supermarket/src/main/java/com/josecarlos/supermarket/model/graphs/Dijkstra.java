@@ -6,15 +6,6 @@ import java.util.*;
 
 public class Dijkstra {
 
-    /**
-     * Finds the shortest path between two agencies using Dijkstra's algorithm.
-     *
-     * @param graph the graph to search
-     * @param sourceKey ID of the source agency
-     * @param destKey ID of the destination agency
-     * @param mode whether to minimize TIME or PRICE
-     * @return Optional containing the result, or empty if no path exists
-     */
     public Optional<PathResult> shortestPath(Graph graph, String sourceKey, String destKey, ComparationMode mode) {
         Optional<Vertex> sourceOpt = graph.getById(sourceKey);
         Optional<Vertex> destOpt = graph.getById(destKey);

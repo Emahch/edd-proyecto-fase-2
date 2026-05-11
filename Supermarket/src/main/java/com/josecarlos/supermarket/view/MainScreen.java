@@ -1,5 +1,6 @@
 package com.josecarlos.supermarket.view;
 
+import com.josecarlos.supermarket.model.csv.CSVResponse;
 import com.josecarlos.supermarket.model.graphs.Graph;
 import com.josecarlos.supermarket.model.graphs.Vertex;
 import com.josecarlos.supermarket.model.product.Agency;
@@ -138,9 +139,9 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
             String path = selectedFile.getAbsolutePath();
 
             CSVService cSVService = new CSVService();
-            List<String> errors = cSVService.loadProducts(agencies, path);
+            CSVResponse errors = cSVService.loadProducts(agencies, path);
 
-            showResult(errors, selectedFile);
+            showResult(errors, selectedFile, "Productos");
         }
     }//GEN-LAST:event_productsCSVMenuActionPerformed
 
@@ -159,8 +160,8 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
             String path = selectedFile.getAbsolutePath();
 
             CSVService cSVService = new CSVService();
-            List<String> errors = cSVService.loadAgencies(agencies, path);
-            showResult(errors, selectedFile);
+            CSVResponse errors = cSVService.loadAgencies(agencies, path);
+            showResult(errors, selectedFile, "Sucursales");
         }
     }//GEN-LAST:event_agenciesCSVMenuActionPerformed
 
@@ -179,8 +180,8 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
             String path = selectedFile.getAbsolutePath();
 
             CSVService cSVService = new CSVService();
-            List<String> errors = cSVService.loadConnections(agencies, path);
-            showResult(errors, selectedFile);
+            CSVResponse errors = cSVService.loadConnections(agencies, path);
+            showResult(errors, selectedFile, "Conexiones");
         }
     }//GEN-LAST:event_connectionsCSVMenuActionPerformed
 
@@ -201,15 +202,22 @@ public class MainScreen extends javax.swing.JFrame implements SelectVertexListen
         }
     }//GEN-LAST:event_graphMenuActionPerformed
 
-    private void showResult(List<String> errors, File selectedFile) {
-        if (errors.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Datos cargados desde: " + selectedFile.getName());
+    private void showResult(CSVResponse response, File selectedFile, String type) {
+        if (response.getErrors().isEmpty()) {
+            JOptionPane.showMessageDialog(this, response.getTotalCount() + " datos cargados desde: " + selectedFile.getName());
         } else {
             JPanel listPanel = new JPanel();
             listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
 
             JScrollPane scrollPane = new JScrollPane(listPanel);
-            for (String error : errors) {
+            JLabel title = new JLabel("Errores de " + type);
+            title.setMaximumSize(new Dimension(Integer.MAX_VALUE, 15));
+            title.setAlignmentX(Component.LEFT_ALIGNMENT);
+
+            listPanel.add(title);
+            listPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+            
+            for (String error : response.getErrors()) {
                 JLabel label = new JLabel(error);
                 label.setMaximumSize(new Dimension(Integer.MAX_VALUE, 15));
                 label.setAlignmentX(Component.LEFT_ALIGNMENT);
