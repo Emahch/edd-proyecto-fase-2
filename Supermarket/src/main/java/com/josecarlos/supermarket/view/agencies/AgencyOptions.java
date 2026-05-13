@@ -4,26 +4,11 @@
  */
 package com.josecarlos.supermarket.view.agencies;
 
-import com.josecarlos.supermarket.model.graphs.ComparationMode;
-import com.josecarlos.supermarket.model.graphs.Dijkstra;
-import com.josecarlos.supermarket.model.graphs.Edge;
 import com.josecarlos.supermarket.model.graphs.Graph;
 import com.josecarlos.supermarket.model.graphs.Vertex;
-import com.josecarlos.supermarket.model.lists.DoubleNode;
 import com.josecarlos.supermarket.model.product.Agency;
 import com.josecarlos.supermarket.view.listeners.CreateAgencyListener;
 import com.josecarlos.supermarket.view.listeners.SelectDestinationListener;
-import com.josecarlos.supermarket.view.listeners.SelectVertexListener;
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.util.List;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
@@ -56,7 +41,6 @@ public class AgencyOptions extends javax.swing.JPanel {
         this.vertex = vertex;
         this.graph = graph;
         this.listenerVertex = listenerVertex;
-        loadAgency();
     }
 
     /**
@@ -206,66 +190,6 @@ public class AgencyOptions extends javax.swing.JPanel {
         listener.onAgencyDeleted(vertex.getAgency());
     }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void loadAgency() {
-        idTxt.setText(vertex.getAgency().getId());
-        nameTxt.setText(vertex.getAgency().getName());
-        locationTxt.setText(vertex.getAgency().getLocation());
-        enterTimeSpinner.setValue(vertex.getAgency().getEnterTime());
-        movementTimeSpinner.setValue(vertex.getAgency().getPrepareTime());
-        dispatchTimeSpinner.setValue(vertex.getAgency().getDispatchInterval());
-
-        JPanel listPanel = new JPanel();
-        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
-
-        JScrollPane scrollPane = new JScrollPane(listPanel);
-        JLabel titles = new JLabel(" --- Destinos por tiempo --- ");
-        titles.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
-        titles.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        listPanel.add(titles);
-        listPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-
-        Dijkstra dijkstra = new Dijkstra();
-        List<Vertex> reachableTime = dijkstra.getAllReachableVertices(graph, vertex.getAgency().getKey(), ComparationMode.TIME);
-        for (Vertex vertex1 : reachableTime) {
-            Agency destination = vertex1.getAgency();
-            JButton destinationBtn = new JButton(destination.getName());
-            destinationBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, 15));
-            destinationBtn.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-            destinationBtn.addActionListener(e -> {
-                listenerVertex.onVertexSelected(vertex1, ComparationMode.TIME);
-            });
-            
-            listPanel.add(destinationBtn);
-            listPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-        }
-        
-        JLabel titlePrice = new JLabel(" --- Destinos por costo --- ");
-        titlePrice.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
-        titlePrice.setAlignmentX(Component.CENTER_ALIGNMENT);
-        listPanel.add(titlePrice);
-        listPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-        List<Vertex> reachablePrice = dijkstra.getAllReachableVertices(graph, vertex.getAgency().getKey(), ComparationMode.PRICE);
-        for (Vertex vertex1 : reachablePrice) {
-            Agency destination = vertex1.getAgency();
-            JButton destinationBtn = new JButton(destination.getName());
-            destinationBtn.setMaximumSize(new Dimension(Integer.MAX_VALUE, 15));
-            destinationBtn.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-            destinationBtn.addActionListener(e -> {
-                listenerVertex.onVertexSelected(vertex1, ComparationMode.PRICE);
-            });
-            
-            listPanel.add(destinationBtn);
-            listPanel.add(Box.createRigidArea(new Dimension(0, 5)));
-        }
-        remove(((BorderLayout) getLayout())
-                .getLayoutComponent(BorderLayout.CENTER));
-        add(scrollPane, BorderLayout.CENTER);
-        revalidate();
-        repaint();
-    }
 
     /**
      * Closes the dialog
@@ -294,7 +218,7 @@ public class AgencyOptions extends javax.swing.JPanel {
         } catch (NumberFormatException e) {
             movementTime = 1;
         }
-        listener.onAgencyUpdated(new Agency(idTxt.getText(), nameTxt.getText(), locationTxt.getText(), enterTime, movementTime, dispatchTime));
+        listener.onAgencyUpdated(new Agency(idTxt.getText(), nameTxt.getText(), locationTxt.getText(), enterTime, movementTime, dispatchTime, vertex.getAgency()));
         doClose();
     }//GEN-LAST:event_updateButtonActionPerformed
 

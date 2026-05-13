@@ -2,6 +2,7 @@ package com.josecarlos.supermarket.model.product;
 
 import java.util.List;
 import com.josecarlos.supermarket.model.hash.Almacenable;
+import com.josecarlos.supermarket.model.lists.Queue;
 
 /**
  *
@@ -15,8 +16,13 @@ public class Agency implements Almacenable<Agency> {
     private Double enterTime;
     private Double prepareTime;
     private Double dispatchInterval;
-    private List dispatchs;
     private Catalog catalog;
+    
+    private Queue<Product> enterQueue;
+    private Queue<Product> prepareQueue;
+    private Queue<Product> exitQueue;
+
+    private long nextAvailable = 0;
 
     public Agency(String id, String name, String location, Double enterTime, Double prepareTime, Double dispatchInterval) {
         this.id = id;
@@ -26,6 +32,23 @@ public class Agency implements Almacenable<Agency> {
         this.prepareTime = prepareTime;
         this.dispatchInterval = dispatchInterval;
         this.catalog = new Catalog();
+        this.enterQueue = new Queue<>();
+        this.prepareQueue = new Queue<>();
+        this.exitQueue = new Queue<>();
+    }
+    
+    public Agency(String id, String name, String location, Double enterTime, Double prepareTime, Double dispatchInterval, Agency old) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.enterTime = enterTime;
+        this.prepareTime = prepareTime;
+        this.dispatchInterval = dispatchInterval;
+        this.catalog = old.getCatalog();
+        this.enterQueue = old.getEnterQueue();
+        this.prepareQueue = old.getPrepareQueue();
+        this.exitQueue = old.getExitQueue();
+        this.nextAvailable = old.getNextAvailable();
     }
 
     @Override
@@ -86,14 +109,6 @@ public class Agency implements Almacenable<Agency> {
         this.dispatchInterval = dispatchInterval;
     }
 
-    public List getDispatchs() {
-        return dispatchs;
-    }
-
-    public void setDispatchs(List dispatchs) {
-        this.dispatchs = dispatchs;
-    }
-
     public Catalog getCatalog() {
         return catalog;
     }
@@ -102,4 +117,21 @@ public class Agency implements Almacenable<Agency> {
         this.catalog = catalog;
     }
 
+    public Queue<Product> getEnterQueue() {
+        return enterQueue;
+    }
+
+    public Queue<Product> getPrepareQueue() {
+        return prepareQueue;
+    }
+
+    public Queue<Product> getExitQueue() {
+        return exitQueue;
+    }
+
+    public long getNextAvailable() {
+        return nextAvailable;
+    }
+
+    
 }

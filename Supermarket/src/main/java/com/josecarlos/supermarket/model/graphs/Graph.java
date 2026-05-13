@@ -75,32 +75,93 @@ public class Graph {
 
         try (PrintWriter pw = new PrintWriter(new FileWriter(dotFile))) {
             pw.println("digraph RutaAgencias {");
-            pw.println("    rankdir=LR;");
-            pw.println("    node [shape=circle, fontname=\"Arial\", style=filled, fillcolor=\"#D5F5E3\"];");
-            pw.println("    edge [fontname=\"Arial\", fontsize=10];");
+            pw.println("    graph [");
+            pw.println("        rankdir=LR,");
+            pw.println("        splines=curved,");
+            pw.println("        nodesep=1.0,");
+            pw.println("        ranksep=1.5,");
+            pw.println("        bgcolor=\"#F8F9FA\",");
+            pw.println("        dpi=300,");
+            pw.println("        fontname=\"Arial\",");
+            pw.println("        fontsize=14");
+            pw.println("    ];");
+            pw.println("    ");
+            pw.println("    node [");
+            pw.println("        shape=box,");
+            pw.println("        style=\"rounded,filled\",");
+            pw.println("        fillcolor=\"#3498DB\",");
+            pw.println("        fontcolor=\"white\",");
+            pw.println("        fontname=\"Arial\",");
+            pw.println("        fontsize=11,");
+            pw.println("        width=1.5,");
+            pw.println("        height=0.8");
+            pw.println("    ];");
+            pw.println("    ");
+            pw.println("    edge [");
+            pw.println("        fontname=\"Arial\",");
+            pw.println("        fontsize=9,");
+            pw.println("        color=\"#34495E\",");
+            pw.println("        penwidth=1.5,");
+            pw.println("        arrowsize=1.2");
+            pw.println("    ];");
+            pw.println("    ");
 
             DoubleNode<Vertex> current = adjacencyList.getHead();
+            int agencyCount = 0;
+
+            while (current != null) {
+                agencyCount++;
+                current = current.getNext();
+            }
+
+            current = adjacencyList.getHead();
+            int index = 0;
 
             while (current != null) {
                 Vertex sourceVertex = current.getValue();
                 String sourceKey = sourceVertex.getAgency().getKey();
                 String sourceName = sourceVertex.getAgency().getName().replace("\"", "\\\"");
 
-                pw.println("    \"" + sourceKey + "\" [label=\"" + sourceName + "\"];");
+                String fillColor = (index == 0) ? "#27AE60" : (index == agencyCount - 1) ? "#E74C3C" : "#3498DB";
+                String label = String.format("%s\\n[%s]", sourceName, sourceKey);
+
+                pw.println("    \"" + sourceKey + "\" [label=\"" + label + "\", fillcolor=\"" + fillColor + "\"];");
 
                 DoubleNode<Edge<Vertex>> head = sourceVertex.getDestionations().getHead();
                 while (head != null) {
                     Edge<Vertex> edge = head.getValue();
-                    String destKey = edge.getDestination().getAgency().getName();
+                    String destKey = edge.getDestination().getAgency().getKey();
 
-                    String edgeLabel = String.format("T: %.1fh\n$: %.2f", edge.getTime(), edge.getPrice());
+                    String timeStr = String.format("%.1fh", edge.getTime());
+                    String priceStr = String.format("$%.2f", edge.getPrice());
+                    String edgeLabel = String.format("%s | %s", timeStr, priceStr);
 
-                    pw.println("    \"" + sourceKey + "\" -> \"" + destKey + "\" [label=\"" + edgeLabel + "\", color=\"#2E86C1\"];");
+                    pw.println("    \"" + sourceKey + "\" -> \"" + destKey + "\" [label=\"" + edgeLabel + "\"];");
                     head = head.getNext();
                 }
 
                 current = current.getNext();
+                index++;
             }
+
+            pw.println("    ");
+            pw.println("    {");
+            pw.println("        rank=same;");
+            pw.println("        legend [");
+            pw.println("            shape=plaintext,");
+            pw.println("            label=<");
+            pw.println("                <TABLE BORDER=\"1\" CELLBORDER=\"0\" CELLSPACING=\"4\" BGCOLOR=\"#ECF0F1\">");
+            pw.println("                <TR><TD COLSPAN=\"2\" ALIGN=\"CENTER\"><B>Leyenda</B></TD></TR>");
+            pw.println(
+                    "                <TR><TD BGCOLOR=\"#27AE60\" WIDTH=\"20\"></TD><TD ALIGN=\"LEFT\">Sucursal Origen</TD></TR>");
+            pw.println(
+                    "                <TR><TD BGCOLOR=\"#3498DB\" WIDTH=\"20\"></TD><TD ALIGN=\"LEFT\">Sucursales Intermedias</TD></TR>");
+            pw.println(
+                    "                <TR><TD BGCOLOR=\"#E74C3C\" WIDTH=\"20\"></TD><TD ALIGN=\"LEFT\">Sucursal Destino</TD></TR>");
+            pw.println("                </TABLE>");
+            pw.println("            >");
+            pw.println("        ];");
+            pw.println("    }");
 
             pw.println("}");
             System.out.println("DOT del Grafo generado en: " + dotFile.getAbsolutePath());
