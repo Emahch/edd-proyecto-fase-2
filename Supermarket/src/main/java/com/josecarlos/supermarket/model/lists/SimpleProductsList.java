@@ -56,8 +56,8 @@ public class SimpleProductsList {
         while (current != null && !current.getValue().getBarcode().equals(barcode)) {
             current = current.getNext();
         }
-        
-        if (current == null){
+
+        if (current == null) {
             return Optional.empty();
         }
         return Optional.of(current.getValue());
@@ -67,6 +67,24 @@ public class SimpleProductsList {
         return head;
     }
 
+    public Product getByIndex(int index) {
+        if (index < 0) {
+            return null;
+        }
+
+        Node<Product> current = head;
+        int count = 0;
+
+        while (current != null) {
+            if (count == index) {
+                return current.getValue();
+            }
+            current = current.getNext();
+            count++;
+        }
+        return null;
+    }
+
     public Node<Product> getTail() {
         return tail;
     }
@@ -74,10 +92,9 @@ public class SimpleProductsList {
     public int getSize() {
         return size;
     }
-    
+
     public boolean isEmpty() {
         return size == 0;
     }
-    
-    
+
 }

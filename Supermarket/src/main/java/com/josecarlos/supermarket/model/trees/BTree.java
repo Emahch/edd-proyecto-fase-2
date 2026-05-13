@@ -23,29 +23,6 @@ public class BTree {
         this.degree = degree;
     }
 
-    public Product search(Product key) {
-        BNode current = root;
-
-        while (current != null) {
-            int i = current.numKeys - 1;
-            while (i >= 0 && key.compareDate(current.keys[i]) < 0) {
-                i--;
-            }
-            i++;
-
-            if (i >= 0 && key.compareDate(current.keys[i]) == 0) {
-                return current.keys[i];
-            }
-
-            if (current.isLeaf()) {
-                return null;
-            } else {
-                current = current.children[i];
-            }
-        }
-        return null;
-    }
-
     public boolean insert(Product key) {
         if (root == null) {
             root = new BNode(degree, true);

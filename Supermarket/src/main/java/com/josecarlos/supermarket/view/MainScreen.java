@@ -15,7 +15,6 @@ import com.josecarlos.supermarket.view.shared.WarningDialog;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.io.File;
-import java.util.List;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JFileChooser;

@@ -4,6 +4,7 @@
  */
 package com.josecarlos.supermarket.view.agencies;
 
+import com.josecarlos.supermarket.model.benchmark.BenchmarkResult;
 import com.josecarlos.supermarket.model.graphs.ComparationMode;
 import com.josecarlos.supermarket.model.graphs.Dijkstra;
 import com.josecarlos.supermarket.model.graphs.Edge;
@@ -14,6 +15,7 @@ import com.josecarlos.supermarket.model.lists.DoubleNode;
 import com.josecarlos.supermarket.model.lists.Node;
 import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Product;
+import com.josecarlos.supermarket.services.Benchmark;
 import com.josecarlos.supermarket.services.CSVService;
 import com.josecarlos.supermarket.services.MovementService;
 import com.josecarlos.supermarket.view.listeners.CreateAgencyListener;
@@ -80,6 +82,7 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
         orderByName = new javax.swing.JButton();
         movements = new javax.swing.JButton();
         diagrams = new javax.swing.JButton();
+        benchmark = new javax.swing.JButton();
         centerPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
@@ -94,7 +97,7 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
         titlePanel.setLayout(titlePanelLayout);
         titlePanelLayout.setHorizontalGroup(
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(agencyTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
+            .addComponent(agencyTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 764, Short.MAX_VALUE)
         );
         titlePanelLayout.setVerticalGroup(
             titlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,6 +125,10 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
         diagrams.setText("Generar Diagramas");
         diagrams.addActionListener(this::diagramsActionPerformed);
         buttonsPanel.add(diagrams);
+
+        benchmark.setText("Rendimiento");
+        benchmark.addActionListener(this::benchmarkActionPerformed);
+        buttonsPanel.add(benchmark);
 
         infoPanel.add(buttonsPanel, java.awt.BorderLayout.CENTER);
 
@@ -175,6 +182,27 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
             vertex.getAgency().getCatalog().generateDiagrams(path);
         }
     }//GEN-LAST:event_diagramsActionPerformed
+
+    private void benchmarkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benchmarkActionPerformed
+        JPanel listPanel = new JPanel();
+        listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.Y_AXIS));
+
+        Benchmark benchmark = new Benchmark();
+        List<BenchmarkResult> result = benchmark.runSearchBenchmark(benchmark.getRandomProducts(100, vertex.getAgency().getCatalog()), vertex.getAgency().getCatalog());
+        JScrollPane scrollPane = new JScrollPane(listPanel);
+        for (BenchmarkResult benchmarkResult : result) {
+            
+            JLabel productResult = new JLabel(benchmarkResult.toString());
+
+            listPanel.add(productResult);
+            listPanel.add(Box.createRigidArea(new Dimension(0, 5)));
+        }
+        remove(((BorderLayout) getLayout())
+                .getLayoutComponent(BorderLayout.CENTER));
+        add(scrollPane, BorderLayout.CENTER);
+        revalidate();
+        repaint();
+    }//GEN-LAST:event_benchmarkActionPerformed
 
     @Override
     public void onProductsLoaded(SimpleProductsList products) {
@@ -230,6 +258,7 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addProduct;
     private javax.swing.JLabel agencyTitle;
+    private javax.swing.JButton benchmark;
     private javax.swing.JPanel buttonsPanel;
     private javax.swing.JPanel centerPanel;
     private javax.swing.JButton diagrams;

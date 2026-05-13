@@ -64,9 +64,9 @@ public class AVLTree {
             return new AVLNode<>(value);
         }
 
-        if (node.getValue().compareName(value) < 0) {
+        if (node.getValue().compareName(value) > 0) {
             node.setLeft(insert(node.getLeft(), value));
-        } else if (node.getValue().compareName(value) > 0) {
+        } else if (node.getValue().compareName(value) < 0) {
             node.setRight(insert(node.getRight(), value));
         } else {
             throw new OperationException("El producto ya existe en Árbol AVL");
@@ -80,9 +80,9 @@ public class AVLTree {
             throw new OperationException("El valor no existe en el árbol AVL");
         }
 
-        if (node.getValue().compareName(value) < 0) {
+        if (node.getValue().compareName(value) > 0) {
             node.setLeft(remove(node.getLeft(), value));
-        } else if (node.getValue().compareName(value) > 0) {
+        } else if (node.getValue().compareName(value) < 0) {
             node.setRight(remove(node.getRight(), value));
         } else {
             if (node.getLeft() == null && node.getRight() == null) {

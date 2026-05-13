@@ -149,4 +149,30 @@ public class Catalog implements ProductListener {
             System.err.println("Error al ejecutar Graphviz: " + e.getMessage());
         }
     }
+
+    public SimpleProductsList getSimpleList() {
+        return simpleList;
+    }
+
+    public OrderedList getOrderedList() {
+        return orderedList;
+    }
+
+    public AVLTree getAvlTree() {
+        return avlTree;
+    }
+
+    public BTree getbTree() {
+        return bTree;
+    }
+
+    public BPlusTree getbPlusTree() {
+        return bPlusTree;
+    }
+
+    public HashTable<Product> getHashTable() {
+        return hashTable;
+    }
+    
+    
 }
