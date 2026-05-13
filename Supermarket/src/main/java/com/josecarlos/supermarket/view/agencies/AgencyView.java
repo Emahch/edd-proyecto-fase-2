@@ -6,16 +6,13 @@ package com.josecarlos.supermarket.view.agencies;
 
 import com.josecarlos.supermarket.model.benchmark.BenchmarkResult;
 import com.josecarlos.supermarket.model.graphs.ComparationMode;
-import com.josecarlos.supermarket.model.graphs.Dijkstra;
 import com.josecarlos.supermarket.model.graphs.Graph;
-import com.josecarlos.supermarket.model.graphs.PathResult;
 import com.josecarlos.supermarket.model.graphs.Vertex;
 import com.josecarlos.supermarket.model.lists.Node;
 import com.josecarlos.supermarket.model.lists.SimpleProductsList;
 import com.josecarlos.supermarket.model.product.Agency;
 import com.josecarlos.supermarket.model.product.Product;
 import com.josecarlos.supermarket.services.Benchmark;
-import com.josecarlos.supermarket.services.MovementService;
 import com.josecarlos.supermarket.view.listeners.CreateAgencyListener;
 import com.josecarlos.supermarket.view.listeners.ProductsLoaderListener;
 import com.josecarlos.supermarket.view.listeners.SelectDestinationListener;
@@ -27,7 +24,6 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.io.File;
 import java.util.List;
-import java.util.Optional;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -325,7 +321,7 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
                 parentFrame = new javax.swing.JFrame();
             }
 
-            com.josecarlos.supermarket.view.agencies.TransferDestinationDialog dialog = new com.josecarlos.supermarket.view.agencies.TransferDestinationDialog(
+            TransferDestinationDialog dialog = new TransferDestinationDialog(
                     parentFrame,
                     product,
                     vertex,
@@ -415,12 +411,6 @@ public class AgencyView extends javax.swing.JPanel implements ProductsLoaderList
 
     @Override
     public void onVertexSelected(Vertex agency, ComparationMode mode) {
-        Dijkstra dijkstra = new Dijkstra();
-        Optional<PathResult> result = dijkstra.shortestPath(graph, vertex.getKey(), agency.getKey(), mode);
-        if (result.isPresent()) {
-            MovementService movementService = new MovementService(result.get(), agency);
-            movementService.run();
-        }
     }
 
     @Override

@@ -144,24 +144,6 @@ public class Graph {
                 index++;
             }
 
-            pw.println("    ");
-            pw.println("    {");
-            pw.println("        rank=same;");
-            pw.println("        legend [");
-            pw.println("            shape=plaintext,");
-            pw.println("            label=<");
-            pw.println("                <TABLE BORDER=\"1\" CELLBORDER=\"0\" CELLSPACING=\"4\" BGCOLOR=\"#ECF0F1\">");
-            pw.println("                <TR><TD COLSPAN=\"2\" ALIGN=\"CENTER\"><B>Leyenda</B></TD></TR>");
-            pw.println(
-                    "                <TR><TD BGCOLOR=\"#27AE60\" WIDTH=\"20\"></TD><TD ALIGN=\"LEFT\">Sucursal Origen</TD></TR>");
-            pw.println(
-                    "                <TR><TD BGCOLOR=\"#3498DB\" WIDTH=\"20\"></TD><TD ALIGN=\"LEFT\">Sucursales Intermedias</TD></TR>");
-            pw.println(
-                    "                <TR><TD BGCOLOR=\"#E74C3C\" WIDTH=\"20\"></TD><TD ALIGN=\"LEFT\">Sucursal Destino</TD></TR>");
-            pw.println("                </TABLE>");
-            pw.println("            >");
-            pw.println("        ];");
-            pw.println("    }");
 
             pw.println("}");
             System.out.println("DOT del Grafo generado en: " + dotFile.getAbsolutePath());
